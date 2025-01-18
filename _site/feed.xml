@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Jiyoung Seo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2025-01-18T11:02:53+09:00</updated>
+  <updated>2025-01-18T11:26:11+09:00</updated>
   <author>
     <name>Jiyoung Seo</name>
     <uri>http://localhost:4000/</uri>
@@ -20,16 +20,16 @@
 
   
   <entry>
-    <title>Customize the Favicon</title>
-    <link href="http://localhost:4000/posts/customize-the-favicon/" rel="alternate" type="text/html" title="Customize the Favicon" />
-    <published>2019-08-11T01:34:00+09:00</published>
+    <title>블로그 오픈</title>
+    <link href="http://localhost:4000/posts/First_Blog/" rel="alternate" type="text/html" title="블로그 오픈" />
+    <published>2025-01-18T02:34:00+09:00</published>
   
-    <updated>2024-03-02T02:28:45+09:00</updated>
+    <updated>2025-01-18T02:34:00+09:00</updated>
   
-    <id>http://localhost:4000/posts/customize-the-favicon/</id>
-    <content type="text/html" src="http://localhost:4000/posts/customize-the-favicon/" />
+    <id>http://localhost:4000/posts/First_Blog/</id>
+    <content type="text/html" src="http://localhost:4000/posts/First_Blog/" />
     <author>
-      <name>cotes</name>
+      <name>Jiyoung Seo</name>
     </author>
 
   
@@ -40,11 +40,19 @@
     
   
 
-  <summary>The favicons of Chirpy are placed in the directory assets/img/favicons/. You may want to replace them with your own. The following sections will guide you to create and replace the default favicons.
+  <summary>First Blog
 
-Generate the favicon
+안녕~! 
 
-Prepare a square image (PNG, JPG, or SVG) with a size of 512x512 or more, and then go to the online tool Real Favicon Generator and click the button Select your Favicon image ...</summary>
+데스크탑 운영체제가 리눅스여서 도커 연동이 생각만큼 잘 되지 않아 깃헙 블로그를 만드는 걸 계속 미뤄왔었다. 
+오늘 맥북이 새로 와서 심심해가지고 블로그 미뤄뒀던 걸 다시 도전해봤다. 
+아직 favicon은 반영은 뭐땜시 아직 안되고 있고,, 그대로 테마 갖다 쓰는건데도 생각보다 뭐가 잘 안되서..생각보다 오래걸렸다. 
+글 쓰고 올리는 건 자동화가 잘돼있어서 괜찮을 것 같아 꾸준히 스터디 겸 근황을 이곳에 올리도록 하겠다.
+맥도 아직 익숙하지 않아서 다소 헤맸지만 좀 더 익숙해지면 활용도가 매우 높을 것 같아 만족한다!
+
+
+
+  WELCOME MY GITHUB BLOG, I am a Master student in Computer Vision Lab, Korea Uni...</summary>
 
   </entry>
 
