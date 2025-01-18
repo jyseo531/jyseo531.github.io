@@ -1,3 +1,5 @@
+@use 'vendors/bootstrap';
+@use 'main';
 @import 'colors/typography-light';
 @import 'colors/typography-dark';
 @import 'addon/variables';
@@ -11,5 +13,3 @@
 @import 'layout/archives';
 @import 'layout/categories';
 @import 'layout/category-tag';
-@use 'vendors/bootstrap';
-@use 'main';
