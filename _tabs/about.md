@@ -22,17 +22,13 @@ order: 4
   - Low level Vision
 
 <br>
+
 ### 💻 Study log
-<div style="display: flex; flex-direction: row; gap: 10px;">
-    <a href="https://zy0-ng531.tistory.com/" target="_blank">
-        <img src="https://img.shields.io/badge/Tistory-FF5722?style=for-the-badge&logo=Tistory&logoColor=white" alt="Tistory">
-    </a>
-    <a href="https://velog.io/@zyounguri/posts" target="_blank">
-        <img src="https://img.shields.io/badge/Velog-20C997?style=for-the-badge&logo=Velog&logoColor=white" alt="Velog">
-    </a>
-</div>
+| [![Tistory](https://img.shields.io/badge/Tistory-FF5722?style=for-the-badge&logo=Tistory&logoColor=white)](https://zy0-ng531.tistory.com/) | [![Velog](https://img.shields.io/badge/Velog-20C997?style=for-the-badge&logo=Velog&logoColor=white)](https://velog.io/@zyounguri/posts) |
+| 
 
 ---
 
+<br>
 ### 📞 Contact
 - ✉️ Email: [aa4217121@gmail.com](mailto:aa4217121@gmail.com)
