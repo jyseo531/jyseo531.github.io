@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Jiyoung Seo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2025-01-19T16:10:59+09:00</updated>
+  <updated>2025-01-20T11:38:15+09:00</updated>
   <author>
     <name>Jiyoung Seo</name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,53 @@
 
   
   <entry>
+    <title>SuGaR, CVPR 2024</title>
+    <link href="http://localhost:4000/posts/SuGaR/" rel="alternate" type="text/html" title="SuGaR, CVPR 2024" />
+    <published>2025-01-20T11:00:00+09:00</published>
+  
+    <updated>2025-01-20T11:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/SuGaR/</id>
+    <content type="text/html" src="http://localhost:4000/posts/SuGaR/" />
+    <author>
+      <name>Jiyoung Seo</name>
+    </author>
+
+  
+    
+    <category term="Paper Review" />
+    
+  
+
+  <summary>Abstract
+
+
+  precise and extremely fast mesh extraction from 3DGS representation
+  state-of-the-art method on SDFs, while providing a better rendering quality
+
+
+Contributions
+
+
+  Regularization term
+    
+      Gaussian Splatting 최적화 중의 loss term에 추가시켜서 3D Gaussian들이 표면에 잘 정렬되게 하는 역할
+      3D Gaussian의 surface geometry(density &amp;amp;amp; SDF)를 이용함
+    
+  
+  Refinement strategy
+    
+      mesh에 있는 gau...</summary>
+
+  </entry>
+
+  
+  <entry>
     <title>GS2Mesh, ECCV 2024</title>
     <link href="http://localhost:4000/posts/GS2Mesh/" rel="alternate" type="text/html" title="GS2Mesh, ECCV 2024" />
     <published>2025-01-19T15:00:00+09:00</published>
   
-    <updated>2025-01-19T15:50:26+09:00</updated>
+    <updated>2025-01-19T16:11:33+09:00</updated>
   
     <id>http://localhost:4000/posts/GS2Mesh/</id>
     <content type="text/html" src="http://localhost:4000/posts/GS2Mesh/" />
