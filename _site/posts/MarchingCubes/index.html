@@ -896,9 +896,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="972 words"
+  title="1189 words"
 >
-  <em>5 min</em> read</span>
+  <em>6 min</em> read</span>
 
         </div>
       </div>
@@ -1037,7 +1037,7 @@
 
 <p><br />
     ‘’‘(ex) 0번 패턴 : 모든 vertices가 0으로 선택된 케이스(혹은 모두 1) =&gt; 삼각형을 생산하지 않게 됨 <br />
-         1번 패턴 : surface가 1개의 vertex를 나머지 7개의 vertices에 대해 분리시킨 상태 =&gt; 작은 삼각형 1개 <br /> ‘
+         1번 패턴 : surface가 1개의 vertex를 나머지 7개의 vertices에 대해 분리시킨 상태 =&gt; 작은 삼각형 1개 <br /> 
          ….</p>
 
 <p><a href="/assets/img/posts_storage/MarchingCube/figure4.png" class="popup img-link  shimmer"><img src="/assets/img/posts_storage/MarchingCube/figure4.png" alt="figure4_Triangulated_Cubes.png" loading="lazy"></a></p>
@@ -1057,13 +1057,53 @@
           <li><a href="https://chicken2beef.tistory.com/30">고러드 쉐이딩(Gouraud Shading)</a></li>
         </ul>
       </li>
+      <li><strong>Details :</strong>
+        <ul>
+          <li>surface 의 normal은, surface의 접선 방향에 대한 gradient vector이다.</li>
+          <li>
+            <p>direction of gradient vector를 $\vec{g}$로 표기</p>
+
+\[\vec{g}(x,y,z) = \Delta{\vec{f}(x, y,z)}\]
+          </li>
+        </ul>
+      </li>
     </ul>
+  </li>
+  <li>
+    <p>$\Delta{\vec{f}(x,y,z)}를 구하기 위해 3방향에서의 gradient vector를 아래처럼 계산한 후에 선형보간을 하여 surface 복원</p>
+
+    <p>\(G_x(i,j,k) = \frac{D(i+1, j, k) - D(i-1, j, k)}{\Delta{x}}\) 
+  <br />
+  \(G_x(i,j,k) = \frac{D(i, j+1, k) - D(i, j-1, k)}{\Delta{x}}\)
+  <br />
+  \(G_x(i,j,k) = \frac{D(i, j, k+1) - D(i, j, k-1)}{\Delta{x}}\)</p>
+  </li>
+</ul>
+
+<h2><br /></h2>
+<p><br /></p>
+<ul>
+  <li>
+    <p>In summary, marching cubes creates a surface from a three-dimensional set of data as follows: (논문 표현)</p>
+
+    <ol>
+      <li>Read four slices into memory.</li>
+      <li>Scan two slices and create a cube from four neighbors on one slice and four neighbors on the next slice.</li>
+      <li>Calculate an index for the cube by comparing the eight density values at the cube vertices with the surface con- stant.</li>
+      <li>Using the index, look up the list of edges from a precal- culated table.</li>
+      <li>Using the densities at each edge vertex, find the surface- edge intersection via linear interpolation.</li>
+      <li>Calculate a unit normal at each cube vertex using central differences. Interpolate the normal to each triangle ver- tex.</li>
+      <li>Output the triangle vertices and vertex normals</li>
+    </ol>
   </li>
 </ul>
 
 <p><br /></p>
 
 <h2 id="enhancements-to-the-basic-algorithm"><span class="me-2">Enhancements to the Basic Algorithm</span><a href="#enhancements-to-the-basic-algorithm" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<ul>
+  <li></li>
+</ul>
 
   </div>
 

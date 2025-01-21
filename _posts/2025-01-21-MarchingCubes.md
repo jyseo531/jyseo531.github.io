@@ -80,7 +80,7 @@ tags: [Mesh extraction, Graphics]
 
 <br>
     '''(ex) 0번 패턴 : 모든 vertices가 0으로 선택된 케이스(혹은 모두 1) => 삼각형을 생산하지 않게 됨 <br>
-         1번 패턴 : surface가 1개의 vertex를 나머지 7개의 vertices에 대해 분리시킨 상태 => 작은 삼각형 1개 <br> '
+         1번 패턴 : surface가 1개의 vertex를 나머지 7개의 vertices에 대해 분리시킨 상태 => 작은 삼각형 1개 <br> 
          ....
         
 
@@ -94,9 +94,37 @@ tags: [Mesh extraction, Graphics]
 - 마지막 단계로 각 triangle vertex에 대한 unit normal(단위 법선벡터)를 계산한다.
   - 이렇게 구한 normal로 **Gouraud-shaded image**를 렌더링할 때 사용됨, 즉 명암 넣기 단계임
     - [고러드 쉐이딩(Gouraud Shading)](https://chicken2beef.tistory.com/30)
+  - **Details :**
+    - surface 의 normal은, surface의 접선 방향에 대한 gradient vector이다.
+    - direction of gradient vector를 $\vec{g}$로 표기
+  
+      $$
+      \vec{g}(x,y,z) = \Delta{\vec{f}(x, y,z)}
+      $$
 
+- $\Delta{\vec{f}(x,y,z)}를 구하기 위해 3방향에서의 gradient vector를 아래처럼 계산한 후에 선형보간을 하여 surface 복원
+  
+    $$ G_x(i,j,k) = \frac{D(i+1, j, k) - D(i-1, j, k)}{\Delta{x}} $$ 
+    <br>
+    $$ G_x(i,j,k) = \frac{D(i, j+1, k) - D(i, j-1, k)}{\Delta{x}} $$
+    <br>
+    $$ G_x(i,j,k) = \frac{D(i, j, k+1) - D(i, j, k-1)}{\Delta{x}} $$
+    
+<br>
+---
+<br>
+- In summary, marching cubes creates a surface from a three-dimensional set of data as follows: (논문 표현)
+
+    1. Read four slices into memory.
+    2. Scan two slices and create a cube from four neighbors on one slice and four neighbors on the next slice.
+    3. Calculate an index for the cube by comparing the eight density values at the cube vertices with the surface con- stant.
+    4. Using the index, look up the list of edges from a precal- culated table.
+    5. Using the densities at each edge vertex, find the surface- edge intersection via linear interpolation.
+    6. Calculate a unit normal at each cube vertex using central differences. Interpolate the normal to each triangle ver- tex.
+    7. Output the triangle vertices and vertex normals
 
 
 <br>
 
 ## Enhancements to the Basic Algorithm
+- 
