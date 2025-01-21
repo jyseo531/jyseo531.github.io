@@ -102,7 +102,7 @@ tags: [Mesh extraction, Graphics]
       \vec{g}(x,y,z) = \Delta{\vec{f}(x, y,z)}
       $$
 
-- $\Delta{\vec{f}(x,y,z)}를 구하기 위해 3방향에서의 gradient vector를 아래처럼 계산한 후에 선형보간을 하여 surface 복원
+- $\Delta{\vec{f}(x,y,z)}$ 를 구하기 위해 3방향에서의 gradient vector를 아래처럼 계산한 후에 선형보간을 하여 surface 복원
   
     $$ G_x(i,j,k) = \frac{D(i+1, j, k) - D(i-1, j, k)}{\Delta{x}} $$ 
     <br>
