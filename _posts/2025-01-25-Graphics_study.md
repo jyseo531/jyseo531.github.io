@@ -8,7 +8,6 @@ tags: [Graphics]
 
 ### Fundamentals of Computer Graphics by Steve Marschner and Peter Shirley
 - 교수님 추천 책, ("그래픽스에서 가장 유명한, 정석 같은 책이에요. 그래픽스의 거의 모든 분야 다룸")
-- [교재 pdf](http://repo.darmajaya.ac.id/5422/1/Fundamentals%20of%20Computer%20Graphics%2C%20Fourth%20Edition%20%28%20PDFDrive%20%29.pdf)
 - 아직 차례만 보긴 했는데 깊게 알고싶었던 내용 총집합인 것 같아서 아주 마음에 든다
 
 <br>
