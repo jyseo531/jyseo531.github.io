@@ -1,8 +1,8 @@
 ---
 title: Graphics STUDY
 author: Jiyoung Seo
-date: 2025-01-25 15:00:00 +0800
-categories: [Graphics, Book-Study]
+date: 2025-01-25 10:00:00 +0800
+categories: [Graphics, Study]
 tags: [Graphics]
 ---
 
