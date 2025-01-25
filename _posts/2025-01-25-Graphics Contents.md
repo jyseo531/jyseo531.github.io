@@ -39,7 +39,6 @@ tags: [Graphics]
 - **3.2 Images, Pixels, and Geometry**
 - 3.3 RGB Color 
 - 3.4 Alpha Compositing 
-
 <br>
 
 ### 4. Ray Tracing
@@ -52,7 +51,6 @@ tags: [Graphics]
 - 4.7 Shadows 
 - 4.8 Ideal Specular Reflection 
 - 4.9 Historical Notes
-
 <br>
 
 ### 5. Linear Algebra 
@@ -60,7 +58,6 @@ tags: [Graphics]
 - 5.2 Matrices
 - 5.3 Computing with Matrices and Determinants 
 - 5.4 Eigenvalues and Matrix Diagonalization 
-
 <br>
 
 ### 6 Transformation Matrices 
@@ -69,7 +66,6 @@ tags: [Graphics]
 - **6.3 Translation and Affine Transformations**
 - 6.4 Inverses of Transformation Matrices
 - **6.5 Coordinate Transformations**
-
 <br>
 
 ### 7 Viewing 
@@ -78,7 +74,6 @@ tags: [Graphics]
 - **7.3 Perspective Projection**
 - 7.4 Some Properties of the Perspective Transform
 - 7.5 Field-of-View
-
 <br>
 
 ### 8. The Graphics Pipeline 
@@ -86,16 +81,14 @@ tags: [Graphics]
 - **8.2 Operations Before and After Rasterization**
 - **8.3 Simple Antialiasing**
 - **8.4 Culling Primitives for Efficiency**
-
 <br>
 
 ### 9. Signal Processing 
 - 9.1 Digital Audio: Sampling in 1D 
 - 9.2 Convolution
 - 9.3 Convolution Filters
-- **9.4 Signal Processing for Images **
+- **9.4 Signal Processing for Images**
 - 9.5 Sampling Theory
-
 <br>
 
 ### 10. Surface Shading 
