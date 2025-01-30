@@ -41,7 +41,3 @@ My research interests include :
 | [![Tistory](https://img.shields.io/badge/Tistory-FF5722?style=for-the-badge&logo=Tistory&logoColor=white)](https://zy0-ng531.tistory.com/) | [![Velog](https://img.shields.io/badge/Velog-20C997?style=for-the-badge&logo=Velog&logoColor=white)](https://velog.io/@zyounguri/posts) |
 
 ---
-
-<br>
-### 📞 Contact
-- ✉️ Email: [aa4217121@gmail.com](mailto:aa4217121@gmail.com)
