@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Jiyoung Seo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2025-01-30T21:03:46+09:00</updated>
+  <updated>2025-02-03T16:52:36+09:00</updated>
   <author>
     <name>Jiyoung Seo</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,45 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>2D Gaussian Splatting for Geometrically Accurate Radiance Fields</title>
+    <link href="http://localhost:4000/posts/2DGS/" rel="alternate" type="text/html" title="2D Gaussian Splatting for Geometrically Accurate Radiance Fields" />
+    <published>2025-02-03T16:34:00+09:00</published>
+  
+    <updated>2025-02-03T16:34:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/2DGS/</id>
+    <content type="text/html" src="http://localhost:4000/posts/2DGS/" />
+    <author>
+      <name>Jiyoung Seo</name>
+    </author>
+
+  
+    
+    <category term="Paper Review" />
+    
+  
+
+  <summary>Intro
+
+
+  3DGS : Redering결과 Inconsistency한 depth발생, 왜냐하면 pixel ray사이의 intersection을 통해 gaussian value를 구하기 때문
+  2DGS : explicit ray-splat intersection 이용
+  surface normal 정확하게 추출하면 mesh도 잘 구해짐
+    
+      
+        depth distortion
+
+        : 2D primitives에 집중해서 더 좁은 범위의 ray에 가우시안들이 분포하게 해줌
+      
+      
+        normal consistency
+
+        : rendered normal map과 rendered depth의 gradient 사이의 discr...</summary>
+
+  </entry>
 
   
   <entry>
@@ -184,44 +223,6 @@ Contributions
   Refinement strategy
     
       mesh에 있는 gau...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>GS2Mesh, ECCV 2024</title>
-    <link href="http://localhost:4000/posts/GS2Mesh/" rel="alternate" type="text/html" title="GS2Mesh, ECCV 2024" />
-    <published>2025-01-19T15:00:00+09:00</published>
-  
-    <updated>2025-01-19T15:00:00+09:00</updated>
-  
-    <id>http://localhost:4000/posts/GS2Mesh/</id>
-    <content type="text/html" src="http://localhost:4000/posts/GS2Mesh/" />
-    <author>
-      <name>Jiyoung Seo</name>
-    </author>
-
-  
-    
-    <category term="Paper Review" />
-    
-  
-
-  <summary>GS2Mesh :Surface Reconstruction from Gaussian Splatting via Novel Stereo Views
-
-&amp;amp;lt; 선정 이유 &amp;amp;gt;
-
-  SuGaR (CVPR 2024)논문 이후로 유의미하게 3dgs의 mesh recon 태스크에서 성능이 sota달성하였다는 점,
-  baseline에 SuGaR가 존재한다는 점
-
-
-
-Abstract
-
-  noisy한 3DGS representation으로부터 smooth한 3D mesh representation을 얻는 것 어려움
-  pre-trained stereo-matching model사용해서 scene에 대한 geometry 활용함
-    
-      stereo-aligned 되어있는 image pair를 얻고, 이를 ...</summary>
 
   </entry>
 

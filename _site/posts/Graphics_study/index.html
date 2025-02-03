@@ -1128,6 +1128,13 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/2DGS/">2D Gaussian Splatting for Geometrically Accurate Radiance Fields</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/ch3-Raster/">Ch3. Raster Images</a>
         </li>
       
@@ -1150,13 +1157,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/posts/SuGaR/">SuGaR, CVPR 2024</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/GS2Mesh/">GS2Mesh, ECCV 2024</a>
         </li>
       
     </ul>
@@ -1190,10 +1190,6 @@
     
     
     
-      
-        
-        
-
   
     
     
@@ -1209,26 +1205,16 @@
     
     
       
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+        
+        
+
   
     
     
     
     
       
-        
-        
-
+    
   
     
     
@@ -1253,6 +1239,13 @@
     
     
     
+      
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1264,6 +1257,51 @@
     
     
       
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -1289,6 +1327,23 @@
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1300,6 +1355,44 @@
     
     
     
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -1330,10 +1423,16 @@
         <a class="post-tag btn btn-outline-primary" href="/tags/3d-gaussian-splatting/">3D Gaussian Splatting</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/mesh-extraction/">Mesh extraction</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/mesh-reconstruction/">Mesh reconstruction</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/mesh-extraction/">Mesh extraction</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/geometry-reconstruction/">Geometry Reconstruction</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/novel-view-synthesis/">Novel View Synthesis</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/personal/">personal</a>
@@ -1411,6 +1510,18 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
   
 
@@ -1470,6 +1581,40 @@
   
   디지털 카메라는 image sensor를 포함하고 있는데, 이것은 빛이 들어오는 정도(intensity)와 color를 구성하고 있음
 ...</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/2DGS/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1738568040"
+  data-df="ll"
+  
+>
+  Feb  3, 2025
+</time>
+
+              <h4 class="pt-0 my-2">2D Gaussian Splatting for Geometrically Accurate Radiance Fields</h4>
+              <div class="text-muted">
+                <p>Intro
+
+
+  3DGS : Redering결과 Inconsistency한 depth발생, 왜냐하면 pixel ray사이의 intersection을 통해 gaussian value를 구하기 때문
+  2DGS : explicit ray-splat intersection 이용
+  surface normal 정확하게 추출하면 mesh도 잘 구해짐
+    ...</p>
               </div>
             </div>
           </a>
@@ -1619,10 +1764,6 @@ Introduction
     
     
     
-      
-        
-        
-
   
     
     
@@ -1638,26 +1779,16 @@ Introduction
     
     
       
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
+        
+        
+
   
     
     
     
     
       
-        
-        
-
+    
   
     
     
@@ -1682,6 +1813,13 @@ Introduction
     
     
     
+      
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1693,6 +1831,51 @@ Introduction
     
     
       
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -1718,6 +1901,23 @@ Introduction
     
     
     
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
   
     
     
@@ -1729,6 +1929,44 @@ Introduction
     
     
     
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -1759,10 +1997,16 @@ Introduction
         <a class="post-tag btn btn-outline-primary" href="/tags/3d-gaussian-splatting/">3D Gaussian Splatting</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/mesh-extraction/">Mesh extraction</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/mesh-reconstruction/">Mesh reconstruction</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/mesh-extraction/">Mesh extraction</a>
+        <a class="post-tag btn btn-outline-primary" href="/tags/geometry-reconstruction/">Geometry Reconstruction</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/novel-view-synthesis/">Novel View Synthesis</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/personal/">personal</a>

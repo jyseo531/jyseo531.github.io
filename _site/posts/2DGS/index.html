@@ -30,26 +30,26 @@
 
   <!-- Begin Jekyll SEO tag v2.8.0 -->
 <meta name="generator" content="Jekyll v4.3.4" />
-<meta property="og:title" content="SuGaR, CVPR 2024" />
+<meta property="og:title" content="2D Gaussian Splatting for Geometrically Accurate Radiance Fields" />
 <meta name="author" content="Jiyoung Seo" />
 <meta property="og:locale" content="en" />
 <meta name="description" content="A minimal, responsive and feature-rich Jekyll theme for technical writing." />
 <meta property="og:description" content="A minimal, responsive and feature-rich Jekyll theme for technical writing." />
-<link rel="canonical" href="http://localhost:4000/posts/SuGaR/" />
-<meta property="og:url" content="http://localhost:4000/posts/SuGaR/" />
+<link rel="canonical" href="http://localhost:4000/posts/2DGS/" />
+<meta property="og:url" content="http://localhost:4000/posts/2DGS/" />
 <meta property="og:site_name" content="Jiyoung Seo" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-01-20T11:00:00+09:00" />
+<meta property="article:published_time" content="2025-02-03T16:34:00+09:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="SuGaR, CVPR 2024" />
+<meta property="twitter:title" content="2D Gaussian Splatting for Geometrically Accurate Radiance Fields" />
 <meta name="twitter:site" content="@" />
 <meta name="twitter:creator" content="@Jiyoung Seo" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Jiyoung Seo"},"dateModified":"2025-01-20T11:00:00+09:00","datePublished":"2025-01-20T11:00:00+09:00","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"SuGaR, CVPR 2024","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/SuGaR/"},"url":"http://localhost:4000/posts/SuGaR/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Jiyoung Seo"},"dateModified":"2025-02-03T16:34:00+09:00","datePublished":"2025-02-03T16:34:00+09:00","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"2D Gaussian Splatting for Geometrically Accurate Radiance Fields","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/2DGS/"},"url":"http://localhost:4000/posts/2DGS/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-  <title>SuGaR, CVPR 2024 | Jiyoung Seo
+  <title>2D Gaussian Splatting for Geometrically Accurate Radiance Fields | Jiyoung Seo
   </title>
 
   <!--
@@ -442,7 +442,7 @@
         
           
             
-              <span>SuGaR, CVPR 2024</span>
+              <span>2D Gaussian Splatting for Geometrically Accurate Radiance Fields</span>
             
 
           
@@ -517,6 +517,69 @@
     
       
       
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
     
 
     
@@ -860,6 +923,28 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -875,6 +960,39 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
       
 
       
@@ -938,7 +1056,7 @@
 
 <article class="px-1" data-toc="true">
   <header>
-    <h1 data-toc-skip>SuGaR, CVPR 2024</h1>
+    <h1 data-toc-skip>2D Gaussian Splatting for Geometrically Accurate Radiance Fields</h1>
     
 
     <div class="post-meta text-muted">
@@ -955,13 +1073,13 @@
 
 <time
   
-  data-ts="1737338400"
+  data-ts="1738568040"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Jan 20, 2025
+  Feb  3, 2025
 </time>
 
       </span>
@@ -1013,9 +1131,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1197 words"
+  title="1478 words"
 >
-  <em>6 min</em> read</span>
+  <em>8 min</em> read</span>
 
         </div>
       </div>
@@ -1024,7 +1142,7 @@
 
   
     <div id="toc-bar" class="d-flex align-items-center justify-content-between invisible">
-      <span class="label text-truncate">SuGaR, CVPR 2024</span>
+      <span class="label text-truncate">2D Gaussian Splatting for Geometrically Accurate Radiance Fields</span>
       <button type="button" class="toc-trigger btn me-1">
         <i class="fa-solid fa-list-ul fa-fw"></i>
       </button>
@@ -1037,7 +1155,7 @@
 
     <dialog id="toc-popup" class="p-0">
       <div class="header d-flex flex-row align-items-center justify-content-between">
-        <div class="label text-truncate py-2 ms-4">SuGaR, CVPR 2024</div>
+        <div class="label text-truncate py-2 ms-4">2D Gaussian Splatting for Geometrically Accurate Radiance Fields</div>
         <button id="toc-popup-close" type="button" class="btn mx-1 my-1 opacity-75">
           <i class="fas fa-close"></i>
         </button>
@@ -1057,217 +1175,309 @@
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-<h2 id="abstract"><span class="me-2">Abstract</span><a href="#abstract" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="intro"><span class="me-2">Intro</span><a href="#intro" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
-  <li>precise and extremely fast mesh extraction from 3DGS representation</li>
-  <li>state-of-the-art method on SDFs, while providing a better rendering quality</li>
+  <li>3DGS : Redering결과 Inconsistency한 depth발생, 왜냐하면 pixel ray사이의 intersection을 통해 gaussian value를 구하기 때문</li>
+  <li>2DGS : <strong>explicit ray-splat intersection 이용</strong></li>
+  <li>surface normal 정확하게 추출하면 mesh도 잘 구해짐
+    <ol>
+      <li>
+        <p><strong>depth distortion</strong></p>
+
+        <p>: 2D primitives에 집중해서 더 좁은 범위의 ray에 가우시안들이 분포하게 해줌</p>
+      </li>
+      <li>
+        <p><strong>normal consistency</strong></p>
+
+        <p>: rendered normal map과 rendered depth의 gradient 사이의 discrepancies 를 최소화함</p>
+      </li>
+    </ol>
+
+    <p>두 개 regularaization term을 이용해서 smoother surface 구함</p>
+  </li>
 </ul>
 
 <h2 id="contributions"><span class="me-2">Contributions</span><a href="#contributions" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<ol>
-  <li><strong>Regularization term</strong>
-    <ul>
-      <li>Gaussian Splatting 최적화 중의 loss term에 추가시켜서 3D Gaussian들이 표면에 잘 정렬되게 하는 역할</li>
-      <li>3D Gaussian의 surface geometry(density &amp; SDF)를 이용함</li>
-    </ul>
-  </li>
-  <li><strong>Refinement strategy</strong>
-    <ul>
-      <li>mesh에 있는 gaussian들 삼각형으로 묶어주면서 refinement함</li>
-    </ul>
-  </li>
-</ol>
-
-<h2 id="introduction"><span class="me-2">Introduction</span><a href="#introduction" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
 <ul>
-  <li>mesh extraction task는 3DGS representation의 explicit한 특성 때문에 더 어려움</li>
-  <li>3DGS가 잘 최적화되었으면, 가우시안들이 평평하고 표면에 잘 분포되어있다는 가정을 얻을 수 있음
-    <ul>
-      <li>이때 gaussian density와 관련된 geometry를 이용해서 Loss term에 추가하면서 gaussian으로부터 mesh추출이 더 쉬워지게 만듦</li>
-      <li>volumne density 사용?</li>
-    </ul>
-  </li>
-  <li>Marching Cube 알고리즘 대신 Poisson Reconstruction 알고리즘 사용해서 point cloud로부터 mesh extraction을 했다</li>
-</ul>
-
-<h2 id="method"><span class="me-2">Method</span><a href="#method" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<h3 id="1-aligning-the-gaussians-with-the-surface-regularization"><span class="me-2">1. Aligning the Gaussians with the Surface (=Regularization)</span><a href="#1-aligning-the-gaussians-with-the-surface-regularization" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<ul>
-  <li><strong>목표</strong> : 3DGS가 잘 최적화되어있다는 가정 하에, Gaussian의 SDF(Signed Distance Function)를 이끌어내는 것</li>
-  <li>
-    <p>optimized된 가우시안으로부터 <em>예측된 SDF</em>와 <em>실제의 SDF</em>간의 차이를 최소화함으로써 가우시안들이 평평하게 surface align된 특성을 갖을 수 있도록 encourage</p>
-  </li>
-  <li>
-    <p>최적화된 Gaussian Splatting Scene이 주어져있는 상황에서 시작</p>
-
-    <p>Gaussian의 density function $d(p)$ :</p>
-
-\[d(p) = \sum_g \alpha_g exp(-\frac{1}{2}(p-\mu_g)^T\sigma_g^{-1}(p-\mu_g))\]
-  </li>
-</ul>
-
-<p><strong>&lt; Property 1 &gt;</strong></p>
-
-<aside>
-1️⃣
-
-surface에 가까운 point $p$에 가까이 위치한 Gaussian $g^*$이 density function $d(p)$에 기여하는 정도가 크다
-
-</aside>
-
-\[g^* = \arg\min_g(p-\mu_g)^T\sigma_g^{-1}(p-\mu_g)\]
-
-<p>해석 = g*말고 나머지 가우시안들, g들에 대한 밀도가 최소가 되게 하면 된다.</p>
-
-<p>⇒ 이 성질을 만족하면, 가우시안들이 scene에서 잘 spread되어있다, 즉 scene에 가우시안들이 잘 퍼져있다는 가정을 만족</p>
-
-<p><strong>&lt; Property 2 &gt;</strong></p>
-
-<aside>
-2️⃣
-
-잘 최적화된 3DGS scene에서는 Gaussian들이 평평하다 = scaling factor 3방향 벡터 중에서 하나는 0에 가까워야 함, (길이 짧아야 함)
-
-</aside>
-
-\[(p-\mu_g)^T\Sigma_g^{-1}(p-\mu_g) \approx \frac{1}{s_g^2}&lt;p-\mu_g, n_g&gt;\]
-
-<p><em>[notation]</em></p>
-
-<ul>
-  <li>$s_g$: 가장 짧은 scaling factor</li>
-  <li>$n_g :$ scaling factor에 대응되는 축에 대한 방향, normal(법선 벡터)처럼 생각해도 됨</li>
-</ul>
-
-<p>⇒ 결과적으로 surface-align한 density function $\overline{d}(p)$</p>
-
-\[\overline{d}(p) = exp(-\frac{1}{2s_{g^*}^2} &lt;p-\mu_{g^*}, n_{g^*}&gt;^2)\]
-
-<p><a href="/assets/img/posts_storage/SuGaR/img1.daumcdn.png" class="popup img-link  shimmer"><img src="/assets/img/posts_storage/SuGaR/img1.daumcdn.png" alt="img.png" loading="lazy"></a></p>
-<ul>
-  <li>A : d(p) 밀도함수를 따르는 가우시안,</li>
-  <li>B : $\overline{d}(p)$ 밀도함수를 따르는 가우시안</li>
-</ul>
-
-<h2><br /></h2>
-
-<p><strong>&lt; Optimize Term &gt;</strong>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script></p>
-
-<ol>
-  <li><span>$|d(p) - \overline{d}(p)|$</span>: 위의 density volume을 이용한 optimization term 을 3DGS loss에 추가
-    <ul>
-      <li>밀도를 이용하는 지금 optimize term 일단 좋긴 좋은데,,,density말고 SDF(Signed Distance Function) 활용하는 것도 추가시키면 surface-align Gaussian을 얻는 것에 더 좋다고 함
-    - 평평한 가우시안이 주어졌을 때, 즉 Gaussian $g$의 scaling factor들이 $s_g$ = 0 인 상황에서, point $p$와 true surface와의 거리 : <span>$|&lt;p-\mu_{g’}, n_{g’}&gt;|$</span></li>
-    </ul>
-  </li>
-</ol>
-
-\[SDF : \overline{f}(p) = \pm s_{g^*}\sqrt{-2log(\overline{d}(p))}\]
-
-\[ideal-SDF : {f}(p) = \pm s_{g^*}\sqrt{-2log({d}(p))}\]
-
-<ol>
-  <li><span> $|\overline{f}(p)-f(p)|$ : 위의 SDF를 이용한 optimization term을 통해 표면에 더 잘 정렬된 가우시안들을 얻을 수 있었다. </span></li>
-</ol>
-
-<ul>
-  <li>Regularization term $R$ :</li>
-</ul>
-
-\[R =  \frac{1}{|P|} \sum_{p \in P} |\overline{f}(p) - f(p)|\]
-
-<ul>
-  <li>
-    <p>SDF의 normal(법선 벡터)에 대한 regularization term도 있음</p>
-
-\[R_{Norm} = \frac{1}{|P|}
-  \sum_{p\in P} || \frac{\nabla f(p)}{|| \nabla f(p) ||^2} - n_{g^*} ||_2^2\]
-  </li>
+  <li>efficient differentiable 2D Gaussian Renderer</li>
+  <li>surface recon을 위한 2가지 정규화 텀 소개 (depth distortion, normal consistency)</li>
+  <li>sota Reconstruction &amp; NVS result</li>
 </ul>
 
 <hr />
 
-<h3 id="2-efficient-mesh-extraction-poisson-reconstruction"><span class="me-2">2. Efficient Mesh Extraction (=Poisson Reconstruction)</span><a href="#2-efficient-mesh-extraction-poisson-reconstruction" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<p><a href="/assets/img/posts_storage/2DGS/image-10.png" class="popup img-link  shimmer"><img src="/assets/img/posts_storage/2DGS/image-10.png" alt="image.png" loading="lazy"></a></p>
+
+<h2 id="1-modeling"><span class="me-2">1. Modeling</span><a href="#1-modeling" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<p><a href="/assets/img/posts_storage/2DGS/image-11.png" class="popup img-link  shimmer"><img src="/assets/img/posts_storage/2DGS/image-11.png" alt="image.png" loading="lazy"></a></p>
 
 <ul>
-  <li>최적화된 3DGS scene에서 계산된 가우시안들의 density로부터 3D points를 일정 level set에 대하여 <strong>샘플링</strong>함 =&gt; point clouds 구함
+  <li>normal = the steepest change of density
+    <ul>
+      <li>better alignment with thin surfaces</li>
+    </ul>
+  </li>
+  <li>input = <strong>only a sparse calibration point cloud</strong> &amp; <strong>photometric supervision</strong></li>
+</ul>
+
+<h3 id="2d-gaussian-explicit-properties"><span class="me-2">2D Gaussian Explicit Properties</span><a href="#2d-gaussian-explicit-properties" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>central point $p_k$</li>
+  <li>two principal tangential vector $t_u, t_v$</li>
+  <li>
+    <p>scaling vector $S = (s_u, s_v)$</p>
+  </li>
+  <li>primitive normal : $t_w = t_u \times t_v$</li>
+  <li>
+    <p>3x3 Rotation matrix $R = [t_u, t_v, t_w]$</p>
+  </li>
+  <li>2D Gaussian들은 local tangent plane에 정의됨</li>
+  <li>
+    <p>$P(u,v) = p_k + s_ut_uu + s_vt_vv =H(u,v,1,1)^T$ ⇒  <strong><em>world space</em></strong>에서 정의된 local tangent plane에서의 2D Gaussian  point</p>
+
+    <p>where $H$   is the homogeneous transformation matrix, representing the geometry of the 2D Gaussian</p>
+  </li>
+  <li>
+    <p>$G($u$) = exp(-\frac{u^2+v^2}{2})$</p>
+
+    <p>$point - \mathrm{u} = (u, v)$</p>
+  </li>
+</ul>
+
+<h2 id="2-splatting"><span class="me-2">2. Splatting</span><a href="#2-splatting" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<ul>
+  <li>image space로 2D Gaussian들을 project하는 과정</li>
+  <li><strong>affine approximation of Perspective Transformation</strong> 이용
+    <ul>
+      <li>Perspective transformation은 평행성이 지켜지지 않음, parallel한 line들이 소실점(vanishing point)에서 만남</li>
+      <li>
+        <p>한계점(선행 조건필요) :</p>
+
+        <ol>
+          <li>
+            <p>center of the Gaussian이 정확해야하고,</p>
+          </li>
+          <li>
+            <p>center로부터의 거리가 멀어질수록 approximation error가 증가해야함</p>
+          </li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+  <li>homogeneous coordinate을 이용해서 완화된 해결방법 제안됨</li>
+  <li>
+    <p>2D Splat을 2D image plane에 projection한느 건 일반적인 2D-to-2D mapping in homogeneous coordinate이라고 할 수 있다</p>
+  </li>
+  <li>$W$ :  transformation matrix from <strong><em>World space to Screen space</em></strong></li>
+  <li>
+    <p><strong><em>Screen space</em></strong>에서의 projected points $\mathrm{x}$</p>
+
+    <p>$\mathrm{x} = (xz, yz, z, 1)^T = WP(u,v) = WH(u,v,1,1)^T$ 로 구해짐</p>
+  </li>
+  <li>2D Gaussian들을 rasterize하려면, inverse transfomation 인 $M= (WH)^{-1}$을 이용하는 방법이 있으나, 이 방법은  numerical instability함 특히 splat이 line segment(view가 옆면에서 보이는 상황인 경우, )에서 특히 결함이 많음</li>
+  <li>
+    <p>이 문제 해결위해 previous surface splatting rendering method들은 미리 정의된 predefined threshold을 이용해서  ill-conditioned transformation을 이용해왔음 <em>(related work)</em></p>
+
+    <p><a href="/assets/img/posts_storage/2DGS/image-9.png" class="popup img-link  shimmer"><img src="/assets/img/posts_storage/2DGS/image-9.png" alt="image.png" loading="lazy"></a></p>
+  </li>
+</ul>
+
+<p>⇒ 모두 unstable함, 따라서 본 논문에서는 <strong>“Ray-Splat Intersection”</strong> 기반 방법을 제안</p>
+
+<h3 id="2-1-ray-splat-intersection"><span class="me-2">2-1. Ray-Splat Intersection</span><a href="#2-1-ray-splat-intersection" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>
+    <p>평행하지 않은 3가지 평면 (three non-parallel planes) 에서의 교점을 찾음으로써 ray-splat intersection을 위치시킴  (??)</p>
+  </li>
+  <li>
+    <p>image space coordinate $\mathrm{x} = (x, y)$가 주어졌을 때,</p>
+
+    <p>두개의 수직 plane (x-plane과 y-plane)의 교차 ray를 파라미터화한다</p>
+
+    <p><a href="/assets/img/posts_storage/2DGS/image-8.png" class="popup img-link  shimmer"><img src="/assets/img/posts_storage/2DGS/image-8.png" alt="image.png" loading="lazy"></a></p>
+  </li>
+</ul>
+
+<ol>
+  <li>
+    <p>x - plane : normal vector인 (-1, 0, 0)과 offset x로 정의됨</p>
+
+    <p>⇒ <strong>4D homogeneous Plane</strong> (homogeneous coordinate을 이용한 4D 좌표계 표현한 개념)</p>
+
+    <p>$h_x = (-1, 0, 0, x)^T$</p>
+  </li>
+  <li>
+    <p>y - plane : normal vector인 (0, -1, 0)과 offset y로 정의됨</p>
+
+    <p>⇒ $h_y = (0, -1,  0, y)^T$</p>
+  </li>
+  <li>
+    <p>ray $\mathrm{x} = (x,y),$  ( Image Coordinate ) 는 x-plane과 y-plane사이의 교차되는 line에 대한 좌표로 결정</p>
+  </li>
+</ol>
+
+<ul>
+  <li>각각의 plane을 2D Gaussian의 local coordinate<strong>( $uv-$coordinate system)으로</strong> 변환해야 함</li>
+  <li>point로부터 plane으로의 transformation matrix $M$ 의 역행렬을 곱해주는 Inverse Transpose $M^{-1}$을 수행해야 intersection of the x&amp;y-plane에 대한 좌표를 아래처럼 구할 수 있음,
     <ul>
       <li>
-        <p>이 때, level set은 level parameter인 $\lambda$에 의해 결정됨</p>
+        <p>이 때 $M = (WH)^{-1}$, $M^{-T} =  (WH)^T$</p>
 
-        <p><a href="/assets/img/posts_storage/SuGaR/image(1).png" class="popup img-link  shimmer"><img src="/assets/img/posts_storage/SuGaR/image(1).png" alt="image.png" loading="lazy"></a></p>
+\[\begin{align} h_u = (WH)^Th_x
+   \\ h_v = (WH)^Th_y \end{align}\]
+
+        <p>where, W : world space에서 screen space로 가는 변환 행렬, H : homogeneous 좌표계로 변환하는 행렬</p>
       </li>
     </ul>
   </li>
-  <li>
-    <p>샘플링된 <strong><em>Points</em></strong> 기반으로 Poisson reconstruction 수행하여 mesh 추출</p>
+  <li>두 평면이 만나는 <strong>intersection point</strong> $\mathrm{u}(\mathrm{x})$  구하기
+    <ul>
+      <li>
+        <p>2D Gaussian의 point  : $(u, v, 1, 1)$</p>
 
-    <p><a href="https://xoft.tistory.com/72">참고. Poisson Reconstruction 정리 글</a></p>
+        <p>$h_u^i , h_v^i$ 는 4D homogeneous plane 파라미터들 중에서 i번쨰 파라미터를 의미함</p>
+      </li>
+    </ul>
+
+\[\begin{align}h_u \cdot (u,v,1,1)^T = h_v \cdot (u,v,1,1)^T = 0
+  \\ u(\mathrm{x}) = \frac{h_u^2h_v^4-h_u^4h_v^2}{h_u^1h_v^2-h_u^2h_v^1} \\ v(\mathrm{x}) = \frac{h_u^4h_v^1-h_u^1h_v^4}{h_u^1h_v^2-h_u^2h_v^1} \end{align}\]
+  </li>
+  <li>
+    <p><strong><em>Screen space</em></strong>에서의 projected points</p>
+
+    <p>$\mathrm{x} = (xz, yz, z, 1)^T = WP(u,v) = WH(u,v,1,1)^T$</p>
+
+    <p>이거 식을 Recall해서 $x, y, u, v$ 다 아니까 depth $z$를 구할 수 있다.</p>
   </li>
 </ul>
 
 <hr />
 
-<h3 id="3-binding-new-gaussians-to-the-mesh-refinement"><span class="me-2">3. Binding New Gaussians to the Mesh (=Refinement)</span><a href="#3-binding-new-gaussians-to-the-mesh-refinement" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h2 id="3-improvements"><span class="me-2">3. Improvements</span><a href="#3-improvements" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p><a href="/assets/img/posts_storage/SuGaR/image(2).png" class="popup img-link  shimmer"><img src="/assets/img/posts_storage/SuGaR/image(2).png" alt="image.png" loading="lazy"></a></p>
+<h3 id="3-1-degenerate-case"><span class="me-2">3-1. Degenerate Case</span><a href="#3-1-degenerate-case" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 
 <ul>
-  <li>Barycentric 좌표계 :  삼각형 또는 다면체 내부의 점을 해당 도형의 <strong>꼭짓점</strong>에 대한 가중치로 표현하는 좌표계
-    <ul>
-      <li>(ex) <strong>삼각형의 경우:</strong>
+  <li><strong>object-space low-pass filter</strong> 제안</li>
+</ul>
+
+\[\begin{align}
+    \widehat{G}(\mathrm{x}) = \max \left\{ G(\mathrm{u}(\mathrm{x})), G\left(\frac{\mathrm{x}-c}{\sigma}\right) \right\}
+\end{align}\]
+
+<p>⇒ 직관적인 수식 의미 = fixed screen-space(오른쪽 항)에서의 Gaussian이랑 위에서 구한 intersection point u(x)에서의 가우시안중에 더 큰 값을 선택하여 degenerate하는 가우시안들 없앰</p>
+
+<p>where $c$  : projection of center $p_k$</p>
+
+<p>본 실험에서는 $\sigma = \sqrt{2}/2$로 설정함</p>
+
+<ul>
+  <li>
+    <p><strong>Volumetric alpha blending (Rasterization)</strong></p>
+
+\[c(\mathrm{x}) = \sum_{i = 1}c_i\alpha_i\widehat{G}_i(\mathrm{u}(\mathrm{x}))\prod_{j =1}^{i-1}(1-\alpha_i \widehat{G}_i(\mathrm{u}(\mathrm{x})))\]
+  </li>
+</ul>
+
+<h2 id="4-training"><span class="me-2">4. Training</span><a href="#4-training" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<ul>
+  <li>3DGS의 photometric loss에다가 2가지 정규화 텀을 추가시켜서 더 smooth한 surface align을 촉진하여 geometry reconstruction의 성능 향상</li>
+</ul>
+
+<h3 id="41-depth-distortion"><span class="me-2">4.1. Depth Distortion</span><a href="#41-depth-distortion" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>
+    <p>Depth distortion loss : ray-splat intersection결과상 구한 <strong>depth 간</strong>의 거리 차를 최소화함으로써 ray에 존재하는 weight을 더 concentrate해줌,  Mip-Nerf360에서 영감 받음</p>
+
+\[\begin{align} L_d = \sum_{i,j}w_iw_j|z_i-z_j| \end{align}\]
+
+    <p>where, $w_i :$i번째 intersection하는 지점에서의 <strong>blending weight</strong></p>
+
+    <p>$z_i :$ i번째 교차점에서의 depth</p>
+  </li>
+</ul>
+
+<h3 id="42-normal-consistency"><span class="me-2">4.2. Normal Consistency</span><a href="#42-normal-consistency" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<ul>
+  <li>교차하는 median point(중간 지점) $p_s$에서 actual surface 고려</li>
+  <li>
+    <p>축적된 opacity가 0.5가 되면, splat된 가우시안들의 normal과 depth map에서의 gradient를 고려해서 align해주는 과정</p>
+
+\[\begin{align}L_n = \sum_iw_i(1-n_i^T\mathrm{N}) \end{align}\]
+
+    <p>where $i :$ ray상에 존재하는 intersected 된 splat들</p>
+
+    <p>$w :$ blending weight of the intersection point</p>
+
+    <p>$n_i :$ normal of the splat that is oriented towards the camera</p>
+
+    <p>$\mathrm{N} :$ normal estimate by the gradient of the depth map</p>
+  </li>
+</ul>
+
+<h3 id="final-loss"><span class="me-2">Final Loss</span><a href="#final-loss" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+<p>: $L = L_c + \alpha L_d + \beta L_n$</p>
+
+<p>$L_c :$ RGB reconstruction loss combining L1 with the D-SSIM term</p>
+
+<p>𝛼 = 1000 for bounded scenes, 𝛼 = 100 for unbounded scenes, and 𝛽 = 0.05 for all scenes.</p>
+
+<hr />
+
+<hr />
+
+<h2 id="5-experiments"><span class="me-2">5. Experiments</span><a href="#5-experiments" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<ul>
+  <li>single RTX 3090</li>
+  <li><strong>Datasets</strong>
+    <ol>
+      <li>DTU
         <ul>
-          <li>
-            <p>삼각형의 꼭짓점을 A, B, C라 할 때, 내부의 임의의 점 P는 다음과 같이 표현됩니다:</p>
-
-            <p>$P = \alpha A + \beta B + \gamma C$</p>
-          </li>
-          <li>
-            <p>여기서 α,β,γ는 <strong>가중치</strong>로, 아래 조건을 만족합니다:</p>
-
-            <p>$\alpha + \beta + \gamma = 1$</p>
-          </li>
+          <li>15개 씬으로 구성됨 (49장 또는 69장 이미지, resolution = 1600 x 1200)</li>
+          <li>Colmap으로 sparse point cloud얻어진 상태, 해상도를 800 x 600 으로 downsample한 이후에 사용함 효율성을 위해서</li>
         </ul>
       </li>
+      <li>TnT</li>
+      <li>MipNerf360</li>
+    </ol>
+  </li>
+  <li><strong>Evaluation Metrics</strong>
+    <ul>
+      <li>PSNR</li>
+      <li>SSIM</li>
+      <li>LIPPS</li>
     </ul>
-  </li>
-  <li>
-    <p>논문 표현 :</p>
-
-    <p>Also, the Gaussians have only 2 learnable scaling factors instead
-  of 3 and only 1 learnable 2D rotation encoded with a complex number rather than a quaternion, to keep the Gaussians flat and aligned with the mesh triangles.</p>
-  </li>
-  <li>
-    <p>quaternion이란: 3D 회전을 표현하기 위해 사용되는 수학적 구조로, 복소수의 확장된 형태</p>
-
-    <p>$q=w+xi+yj+zk$</p>
   </li>
 </ul>
 
 <hr />
 
-<h2 id="experiment"><span class="me-2">Experiment</span><a href="#experiment" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<h2 id="limitations"><span class="me-2">Limitations</span><a href="#limitations" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
 <ul>
-  <li>single GPU Nvidia Tesla V100 SXM2 32 Go</li>
+  <li>assume surfaces with full opacity and extract meshes from multi-view depth maps
+    <ul>
+      <li><strong>semi-transparent한 표면</strong>에서는 잘 복원이 안됨, 유리같은 부분</li>
+    </ul>
+  </li>
 </ul>
 
-<p><a href="/assets/img/posts_storage/SuGaR/image(3).png" class="popup img-link  shimmer"><img src="/assets/img/posts_storage/SuGaR/image(3).png" alt="image.png" loading="lazy"></a></p>
+<p><a href="/assets/img/posts_storage/2DGS/image-12.png" class="popup img-link  shimmer"><img src="/assets/img/posts_storage/2DGS/image-12.png" alt="image.png" loading="lazy"></a></p>
 
-<p><br /></p>
-
-<h2 id="느낀점"><span class="me-2">느낀점</span><a href="#느낀점" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <ul>
-  <li>3DGS에서 거의 최초로 mesh reconstruction태스크를 수행해서 성능이 좋게 나왔다는 것이 의의</li>
-  <li>요즘 모델들의 거의 baseline 시초급(?)으로 봐도 무방하다</li>
-  <li>포아송 재건방법이 아직 뭔지 잘 모르겠다. marching cube공부할 때 같이 공부</li>
-  <li>어렵긴 한데 재밌다.</li>
+  <li>fine geometric structure에 대해서는 덜 정확함</li>
+  <li>regularization term사용할 때 이미지 퀄리티와 geometry간의 trade-off가 발생함 ⇒ 특정 영역에서 over-smooth결과 초래할 수 있음</li>
 </ul>
 
   </div>
@@ -1288,14 +1498,24 @@ surface에 가까운 point $p$에 가까이 위치한 Gaussian $g^*$이 density 
         <i class="fa fa-tags fa-fw me-1"></i>
         
           <a
-            href="/tags/mesh-reconstruction/"
+            href="/tags/geometry-reconstruction/"
             class="post-tag no-text-decoration"
-          >Mesh reconstruction</a>
+          >Geometry Reconstruction</a>
         
           <a
-            href="/tags/3d-gaussian-splatting/"
+            href="/tags/mesh-extraction/"
             class="post-tag no-text-decoration"
-          >3D Gaussian Splatting</a>
+          >Mesh extraction</a>
+        
+          <a
+            href="/tags/novel-view-synthesis/"
+            class="post-tag no-text-decoration"
+          >Novel View Synthesis</a>
+        
+          <a
+            href="/tags/graphics/"
+            class="post-tag no-text-decoration"
+          >Graphics</a>
         
       </div>
     
@@ -1331,21 +1551,21 @@ surface에 가까운 point $p$에 가까이 위치한 Gaussian $g^*$이 density 
 
       
 
-      <a href="https://twitter.com/intent/tweet?text=SuGaR,%20CVPR%202024%20-%20Jiyoung%20Seo&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FSuGaR%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
+      <a href="https://twitter.com/intent/tweet?text=2D%20Gaussian%20Splatting%20for%20Geometrically%20Accurate%20Radiance%20Fields%20-%20Jiyoung%20Seo&url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2F2DGS%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter" aria-label="Twitter">
         <i class="fa-fw fa-brands fa-square-x-twitter"></i>
       </a>
     
 
       
 
-      <a href="https://www.facebook.com/sharer/sharer.php?title=SuGaR,%20CVPR%202024%20-%20Jiyoung%20Seo&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FSuGaR%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
+      <a href="https://www.facebook.com/sharer/sharer.php?title=2D%20Gaussian%20Splatting%20for%20Geometrically%20Accurate%20Radiance%20Fields%20-%20Jiyoung%20Seo&u=http%3A%2F%2Flocalhost%3A4000%2Fposts%2F2DGS%2F" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Facebook" aria-label="Facebook">
         <i class="fa-fw fab fa-facebook-square"></i>
       </a>
     
 
       
 
-      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2FSuGaR%2F&text=SuGaR,%20CVPR%202024%20-%20Jiyoung%20Seo" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
+      <a href="https://t.me/share/url?url=http%3A%2F%2Flocalhost%3A4000%2Fposts%2F2DGS%2F&text=2D%20Gaussian%20Splatting%20for%20Geometrically%20Accurate%20Radiance%20Fields%20-%20Jiyoung%20Seo" target="_blank" rel="noopener" data-bs-toggle="tooltip" data-bs-placement="top" title="Telegram" aria-label="Telegram">
         <i class="fa-fw fab fa-telegram"></i>
       </a>
     
@@ -1782,31 +2002,55 @@ surface에 가까운 point $p$에 가까이 위치한 Gaussian $g^*$이 density 
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
 
 
 
@@ -1820,74 +2064,6 @@ surface에 가까운 point $p$에 가까이 위치한 Gaussian $g^*$이 density 
   <aside id="related-posts" aria-labelledby="related-label">
     <h3 class="mb-4" id="related-label">Further Reading</h3>
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
-      
-        <article class="col">
-          <a href="/posts/GS2Mesh/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1737266400"
-  data-df="ll"
-  
->
-  Jan 19, 2025
-</time>
-
-              <h4 class="pt-0 my-2">GS2Mesh, ECCV 2024</h4>
-              <div class="text-muted">
-                <p>GS2Mesh :Surface Reconstruction from Gaussian Splatting via Novel Stereo Views
-
-&amp;lt; 선정 이유 &amp;gt;
-
-  SuGaR (CVPR 2024)논문 이후로 유의미하게 3dgs의 mesh recon 태스크에서 성능이 sota달성하였다는 점,
-  baseline에 SuGaR가 존재한다는 점
-...</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
-        <article class="col">
-          <a href="/posts/2DGS/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1738568040"
-  data-df="ll"
-  
->
-  Feb  3, 2025
-</time>
-
-              <h4 class="pt-0 my-2">2D Gaussian Splatting for Geometrically Accurate Radiance Fields</h4>
-              <div class="text-muted">
-                <p>Intro
-
-
-  3DGS : Redering결과 Inconsistency한 depth발생, 왜냐하면 pixel ray사이의 intersection을 통해 gaussian value를 구하기 때문
-  2DGS : explicit ray-splat intersection 이용
-  surface normal 정확하게 추출하면 mesh도 잘 구해짐
-    ...</p>
-              </div>
-            </div>
-          </a>
-        </article>
       
         <article class="col">
           <a href="/posts/MarchingCubes/" class="post-preview card h-100">
@@ -1927,6 +2103,81 @@ Introduction
           </a>
         </article>
       
+        <article class="col">
+          <a href="/posts/ch3-Raster/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1738141200"
+  data-df="ll"
+  
+>
+  Jan 29, 2025
+</time>
+
+              <h4 class="pt-0 my-2">Ch3. Raster Images</h4>
+              <div class="text-muted">
+                <p>Chapter 3. Raster Images
+서론
+
+  Raster image : 2D 행렬 형태로 픽셀에 대한 RGB color값을 표현한 이미지
+    
+      RGB 색상은 3차원 벡터 형태
+    
+  
+  디지털 카메라는 image sensor를 포함하고 있는데, 이것은 빛이 들어오는 정도(intensity)와 color를 구성하고 있음
+...</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/Graphics_study/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1737770400"
+  data-df="ll"
+  
+>
+  Jan 25, 2025
+</time>
+
+              <h4 class="pt-0 my-2">Graphics STUDY</h4>
+              <div class="text-muted">
+                <p>Fundamentals of Computer Graphics by Steve Marschner and Peter Shirley
+
+  교수님 추천 책, (“그래픽스에서 가장 유명한, 정석 같은 책이에요. 그래픽스의 거의 모든 분야 다룸”)
+  아직 차례만 보긴 했는데 깊게 알고싶었던 내용 총집합인 것 같아서 아주 마음에 든다
+
+
+
+
+Contents
+
+1...</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
     </nav>
   </aside>
   <!-- #related-posts -->
@@ -1942,22 +2193,18 @@ Introduction
 
   
     <a
-      href="/posts/GS2Mesh/"
+      href="/posts/ch3-Raster/"
       class="btn btn-outline-primary"
       aria-label="Older"
     >
-      <p>GS2Mesh, ECCV 2024</p>
+      <p>Ch3. Raster Images</p>
     </a>
   
 
   
-    <a
-      href="/posts/MarchingCubes/"
-      class="btn btn-outline-primary"
-      aria-label="Newer"
-    >
-      <p>MarchingCubes, SIGGRAPH 1987</p>
-    </a>
+    <div class="btn btn-outline-primary disabled" aria-label="Newer">
+      <p>-</p>
+    </div>
   
 </nav>
 
