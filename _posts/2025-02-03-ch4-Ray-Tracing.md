@@ -140,13 +140,13 @@ $$ \begin{align} f(p(t)) = 0 \\  f(\mathrm{e} + t\mathrm{d}) = 0 \end{align} $$
   <br>
 - parameteric surface와 ray간의 intersection point구하는 방법 :
   - Cartesian coordinate (데카르트 좌표계)를 이용한 다음 연립방정식으로 푼다
-  ![img.png](assets/img/posts_storage/ch4/JPEG 이미지-44F3-B05A-7E-0.jpeg)
+  ![img.png](assets/img/posts_storage/ch4/3.jpeg)
   => 식이 세 개이고, 구해야 되는 미지수도 $(t, u, v)$로 세 개이기 때문에 계산 가능
 
 <table>
 <tr>
 <td>
-<img src="assets/img/posts_storage/ch4/JPEG 이미지-4C87-B02C-F3-0.jpeg" width="200">
+<img src="assets/img/posts_storage/ch4/1.jpeg" width="200">
 </td>
 <td>
 왼쪽 그림과 같이, <br>
@@ -177,7 +177,7 @@ intersection point인 $p$는 그림과 같이 ray 연장선 위에 존재한다.
 <table>
 <tr>
 <td>
-<img src="assets/img/posts_storage/ch4/JPEG 이미지-42E4-A1A7-FE-0.jpeg" width="200">
+<img src="assets/img/posts_storage/ch4/2.jpeg" width="200">
 </td>
 <td>
 
