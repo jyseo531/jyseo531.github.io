@@ -152,13 +152,27 @@ $$ \begin{align} f(p(t)) = 0 \\  f(\mathrm{e} + t\mathrm{d}) = 0 \end{align} $$
 왼쪽 그림과 같이, <br>
 $a,b,c$ 의 vertices로 이루어진 삼각형이 존재하고 <br>
 ray $p(t) = \mathrm{e} + t\mathrm{d}$가 존재하는 상황을 가정할 때, <br>
-intersection point인 $p$는 그림과 같이 ray 연장선 위에 존재한다.
+intersection point인 $p$는 그림과 같이 ray 연장선 위에 존재한다. <br>
+$$ \mathrm{e} + t\mathrm{d} = \mathrm{a} + \beta(\mathrm{b} - \mathrm{a}) + \gamma(\mathrm{c}-\mathrm{a}) $$ 
+<br>
+이 식에서 $t, \beta, \gamma$를 구해야 함
 </td>
 </tr>
 </table>
 
-이 때, intersection p가 삼각형 내부에 존재할 조건 : 
+위의 식을 vector form으로 아래처럼 식을 확장할 수 있음 :
 
+$$ 
+\begin{align}
+x_e  + tx_d = x_a + \beta(x_b - x_a) + \gamma(x_c - x_a), \\
+y_e  + ty_d = y_a + \beta(y_b - y_a) + \gamma(y_c - y_a), \\
+z_e  + tz_d = z_a + \beta(z_b - z_a) + \gamma(z_c - z_a).\\
+\end{align}$$
+
+- vector form을 행렬로 바궈서 standard linear system(선형 결합 형태)로 아래처럼 바꿔 표현 가능:
+![img.png](assets/img/posts_storage/ch4/img4.jpeg)
+
+- 그 후, 크래머 규칙(Cramer's rule)을 이용해서 $t, \beta, \gamma$ 값을 도출할 수 있다 (자세한 풀이 생략 책 참고)
 
 <br>
 
