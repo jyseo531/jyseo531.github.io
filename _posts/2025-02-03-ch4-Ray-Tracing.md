@@ -146,7 +146,7 @@ $$ \begin{align} f(p(t)) = 0 \\  f(\mathrm{e} + t\mathrm{d}) = 0 \end{align} $$
 <table>
 <tr>
 <td>
-<img src="assets/img/posts_storage/ch4/img1.jpeg" width="200">
+<img src="assets/img/posts_storage/ch4/img1.jpeg" width="200" alt="Ray Tracing Example 1">
 </td>
 <td>
 왼쪽 그림과 같이, <br>
@@ -177,7 +177,7 @@ intersection point인 $p$는 그림과 같이 ray 연장선 위에 존재한다.
 <table>
 <tr>
 <td>
-<img src="assets/img/posts_storage/ch4/img2.jpeg" width="200">
+<img src="assets/img/posts_storage/ch4/img2.jpeg" width="200" alt="Ray Tracing Example 1">
 </td>
 <td>
 
