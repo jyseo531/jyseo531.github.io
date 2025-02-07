@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Jiyoung Seo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2025-02-07T17:13:01+09:00</updated>
+  <updated>2025-02-07T17:45:11+09:00</updated>
   <author>
     <name>Jiyoung Seo</name>
     <uri>http://localhost:4000/</uri>
@@ -24,7 +24,7 @@
     <link href="http://localhost:4000/posts/ch6-Transformation_Matrices/" rel="alternate" type="text/html" title="Graphics-Ch6. Transformation Matrices" />
     <published>2025-02-07T13:04:00+09:00</published>
   
-    <updated>2025-02-07T13:04:00+09:00</updated>
+    <updated>2025-02-07T17:13:14+09:00</updated>
   
     <id>http://localhost:4000/posts/ch6-Transformation_Matrices/</id>
     <content type="text/html" src="http://localhost:4000/posts/ch6-Transformation_Matrices/" />
@@ -61,7 +61,7 @@
     <link href="http://localhost:4000/posts/ch4-Ray-Tracing/" rel="alternate" type="text/html" title="Graphics-Ch4. Ray Tracing" />
     <published>2025-02-04T17:34:00+09:00</published>
   
-    <updated>2025-02-07T14:18:10+09:00</updated>
+    <updated>2025-02-07T17:13:14+09:00</updated>
   
     <id>http://localhost:4000/posts/ch4-Ray-Tracing/</id>
     <content type="text/html" src="http://localhost:4000/posts/ch4-Ray-Tracing/" />

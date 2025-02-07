@@ -139,4 +139,29 @@ $$\begin{align} reflect-y = \begin{bmatrix}  -1 & 0 \\ 0 & 1 \end{bmatrix}  ,\qu
 
 ## 2. 3D Linear Transformations
 - 2D 변환의 확장된 ver.
-- 
+
+<br>
+
+## 3. Translation and Affine Transformations
+
+[1] 변환 행렬 M이 곱해졌을 때, <br>
+   
+  $$ \begin{align} x' = m_{11}x + m_{12}y \\ y' = m_{21}x + m_{22}y \end{align} $$
+
+[2] Translation 이 있을 때, <br>
+   
+  $$ \begin{align} x' = x + x_t \\ y' = y + y_t \end{align} $$
+
+위의 두 가지 변환 연산을 합친 Transformation matrix M을 single하게 어떻게 나타낼 것인가, <br>
+trick : **Homogeneous coordinate**을 이용함 :  $(x \quad y) -> [x \quad y \quad 1]^T $
+<br>
+
+$$ M = \begin{bmatrix}  m_{11} & m_{12} & x_t \\ m_{21} & m_{22} & y_t \\ 0 & 0 & 1 \end{bmatrix} $$
+
+![img.png](assets/img/posts_storage/ch6/IMG_649527223C1E-1.jpeg)
+
+이렇게 곱해지는 형태의 변환을 "***Affine Transformation***" 이라고 한다.
+
+<br>
+
+... 이어서
