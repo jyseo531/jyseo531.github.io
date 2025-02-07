@@ -1,7 +1,24 @@
 [
   
   {
-    "title": "Ch4. Ray Tracing",
+    "title": "Graphics-Ch6. Transformation Matrices",
+    "url": "/posts/ch6-Transformation_Matrices/",
+    "categories": "Graphics, Study",
+    "tags": "Graphics",
+    "date": "2025-02-07 13:04:00 +0900",
+    
+
+
+
+
+
+    
+    "snippet": "Introduction  Transformation matrix는 왜 필요한가 : Rotation, Translation, Scaling, Projection같은 기하학적 변환에서 행렬 곱을 통해 변환되는데 이때 변환행렬이 필요함,",
+    "content": "Introduction  Transformation matrix는 왜 필요한가 : Rotation, Translation, Scaling, Projection같은 기하학적 변환에서 행렬 곱을 통해 변환되는데 이때 변환행렬이 필요함,"
+  },
+  
+  {
+    "title": "Graphics-Ch4. Ray Tracing",
     "url": "/posts/ch4-Ray-Tracing/",
     "categories": "Graphics, Study",
     "tags": "Graphics",
@@ -35,7 +52,7 @@
   },
   
   {
-    "title": "Ch3. Raster Images",
+    "title": "Graphics-Ch3. Raster Images",
     "url": "/posts/ch3-Raster/",
     "categories": "Graphics, Study",
     "tags": "Graphics",

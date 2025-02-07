@@ -1,5 +1,5 @@
 ---
-title: Ch4. Ray Tracing
+title: Graphics-Ch4. Ray Tracing
 author: jiyoung
 date: 2025-02-04 16:34:00 +0800
 categories: [Graphics, Study]

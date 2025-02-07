@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Jiyoung Seo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2025-02-07T14:03:26+09:00</updated>
+  <updated>2025-02-07T14:17:52+09:00</updated>
   <author>
     <name>Jiyoung Seo</name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,39 @@
 
   
   <entry>
-    <title>Ch4. Ray Tracing</title>
-    <link href="http://localhost:4000/posts/ch4-Ray-Tracing/" rel="alternate" type="text/html" title="Ch4. Ray Tracing" />
+    <title>Graphics-Ch6. Transformation Matrices</title>
+    <link href="http://localhost:4000/posts/ch6-Transformation_Matrices/" rel="alternate" type="text/html" title="Graphics-Ch6. Transformation Matrices" />
+    <published>2025-02-07T13:04:00+09:00</published>
+  
+    <updated>2025-02-07T13:04:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/ch6-Transformation_Matrices/</id>
+    <content type="text/html" src="http://localhost:4000/posts/ch6-Transformation_Matrices/" />
+    <author>
+      <name>jiyoung</name>
+    </author>
+
+  
+    
+    <category term="Graphics" />
+    
+    <category term="Study" />
+    
+  
+
+  <summary>Introduction
+
+  Transformation matrix는 왜 필요한가 : Rotation, Translation, Scaling, Projection같은 기하학적 변환에서 행렬 곱을 통해 변환되는데 이때 변환행렬이 필요함,</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>Graphics-Ch4. Ray Tracing</title>
+    <link href="http://localhost:4000/posts/ch4-Ray-Tracing/" rel="alternate" type="text/html" title="Graphics-Ch4. Ray Tracing" />
     <published>2025-02-04T17:34:00+09:00</published>
   
-    <updated>2025-02-07T12:14:47+09:00</updated>
+    <updated>2025-02-07T14:03:39+09:00</updated>
   
     <id>http://localhost:4000/posts/ch4-Ray-Tracing/</id>
     <content type="text/html" src="http://localhost:4000/posts/ch4-Ray-Tracing/" />
@@ -113,8 +141,8 @@ Ray Tracing이란
 
   
   <entry>
-    <title>Ch3. Raster Images</title>
-    <link href="http://localhost:4000/posts/ch3-Raster/" rel="alternate" type="text/html" title="Ch3. Raster Images" />
+    <title>Graphics-Ch3. Raster Images</title>
+    <link href="http://localhost:4000/posts/ch3-Raster/" rel="alternate" type="text/html" title="Graphics-Ch3. Raster Images" />
     <published>2025-01-29T18:00:00+09:00</published>
   
     <updated>2025-02-07T12:14:47+09:00</updated>
@@ -197,44 +225,6 @@ Contents
 2. Miscellaneous Math
 
   2.1 ...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>MarchingCubes, SIGGRAPH 1987</title>
-    <link href="http://localhost:4000/posts/MarchingCubes/" rel="alternate" type="text/html" title="MarchingCubes, SIGGRAPH 1987" />
-    <published>2025-01-21T11:00:00+09:00</published>
-  
-    <updated>2025-02-07T12:14:47+09:00</updated>
-  
-    <id>http://localhost:4000/posts/MarchingCubes/</id>
-    <content type="text/html" src="http://localhost:4000/posts/MarchingCubes/" />
-    <author>
-      <name>jiyoung</name>
-    </author>
-
-  
-    
-    <category term="Paper Review" />
-    
-  
-
-  <summary>Abstract
-
-  output = 연속적인 density값을 갖는 surface의 triangle model
-  알고리즘 큰 흐름 : 3D medical data를 scan-line order에 처리한 후, 선형 보간(linear interpolation)을 이용해서 삼각형의 vertices(꼭짓점)을 구하는 것
-
-
-
-
-Introduction
-
-  mesh extraction하는 것은 medical image에서 굉장히 유용하게 많이 쓰임
-  새로운 3D surface construction 알고리즘인 “Marching Cube”는 연속적인 density surface를 가지는 물체에 대한 vertices를 추출함으로써 고해상도의 메쉬 만듦
-  3D Medical 알고리즘 흐름 :
-    
-    ...</summary>
 
   </entry>
 
