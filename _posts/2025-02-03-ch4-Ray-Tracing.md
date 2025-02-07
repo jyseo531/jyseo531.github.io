@@ -1,6 +1,6 @@
 ---
 title: Ch4. Ray Tracing
-author: Jiyoung Seo
+author: jiyoung
 date: 2025-02-04 16:34:00 +0800
 categories: [Graphics, Study]
 tags: [Graphics]
@@ -205,9 +205,11 @@ z_e  + tz_d = z_a + \beta(z_b - z_a) + \gamma(z_c - z_a).\\
 </tr>
 </table>
 
-- $k_d$ : diffuse coefficient (정반사 계수) 또는 surface color
+![img.png](assets/img/posts_storage/ch4/CV_L09_LightReflectance-50.jpg)
+- $k_d$ : diffuse coefficient (난반사 계수) 또는 surface color = 표면이 입사된 빛을 얼마나 균일하게(난반사로) 반사하는지를 나타내는 계수
 - $I$ : intensity of the light source
-- 여기서 n과 l은 크기가 1인 단위벡터이기 때문에, $\mathrm{n} \cdot \mathrm{l}$을 $cos\theta$로 계산 가능하다
+- 여기서 n과 l은 크기가 1인 단위벡터이기 때문에, $\mathrm{n} \cdot \mathrm{l}$을 $cos\theta$ 로 계산 가능하다.
+  - 즉, 내적은 cosine 유사도를 의미하므로 빛이 들어오는 방향에 대해서 얼마나 반사되는지 그 강도(intensity)가 결정된다는 의미
 
 <br>
 => 위의 모델링 수식은 RGB 채널 3개에 대해서 각각 적용되어 pixel value가 구해진다
@@ -216,5 +218,6 @@ z_e  + tz_d = z_a + \beta(z_b - z_a) + \gamma(z_c - z_a).\\
 <br>
 
 ### 5.2. Blinn-Phong Shading
-- 모든 광원이 정반사(diffuse)로만 구성되지는 않는다,
-- ... 이어서 
+- 모든 광원이 난반사(diffuse)로만 구성되지는 않는다,
+- **specular component** (정반사되는 성질) 빛을 모델링하기 위한 모델
+- Idea : 

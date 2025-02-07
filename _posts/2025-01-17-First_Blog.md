@@ -1,6 +1,6 @@
 ---
 title: 블로그 오픈
-author: Jiyoung Seo
+author: jiyoung
 date: 2025-01-18 01:34:00 +0800
 categories: [Blogging, Tutorial]
 tags: [personal]

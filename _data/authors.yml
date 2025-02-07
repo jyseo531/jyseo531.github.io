@@ -5,6 +5,10 @@
 #   twitter: {twitter_of_author}
 #   url: {homepage_of_author}
 # -------------------------------------
+jiyoung:
+  name: Jiyoung Seo
+  twitter:
+  url: https://jyseo531.github.io
 
 cotes:
   name: Cotes Chung

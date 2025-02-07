@@ -1,6 +1,6 @@
 ---
 title: MarchingCubes, SIGGRAPH 1987
-author: Jiyoung Seo
+author: jiyoung
 date: 2025-01-21 10:00:00 +0800
 categories: [Paper Review]
 tags: [Mesh extraction, Graphics]

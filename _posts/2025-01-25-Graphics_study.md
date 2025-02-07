@@ -1,6 +1,6 @@
 ---
 title: Graphics STUDY
-author: Jiyoung Seo
+author: jiyoung
 date: 2025-01-25 10:00:00 +0800
 categories: [Graphics, Study]
 tags: [Graphics]
