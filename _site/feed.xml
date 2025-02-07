@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Jiyoung Seo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2025-02-07T14:17:52+09:00</updated>
+  <updated>2025-02-07T17:13:01+09:00</updated>
   <author>
     <name>Jiyoung Seo</name>
     <uri>http://localhost:4000/</uri>
@@ -42,7 +42,16 @@
 
   <summary>Introduction
 
-  Transformation matrix는 왜 필요한가 : Rotation, Translation, Scaling, Projection같은 기하학적 변환에서 행렬 곱을 통해 변환되는데 이때 변환행렬이 필요함,</summary>
+  Chapter 5는 선형대수학(Linear Algebra)이라 아는 내용이 많아서 정리 생략
+  Transformation matrix는 왜 필요한가 : Rotation, Translation, Scaling, Projection같은 기하학적 변환에서 행렬 곱을 통해 변환되는데 이때 변환 행렬이 필요함
+
+
+1. 2D Linear Transformations
+
+  
+    2D vector를 2x2 행렬로 변환하는 과정은 아래처럼 전개됨 : 
+
+\[\begin{bmatrix} a_{11} &amp;amp;amp; a_{12} \\ a_{21} &amp;amp;amp; a_{22} \end{bmatrix}  \begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} ...</summary>
 
   </entry>
 
@@ -52,7 +61,7 @@
     <link href="http://localhost:4000/posts/ch4-Ray-Tracing/" rel="alternate" type="text/html" title="Graphics-Ch4. Ray Tracing" />
     <published>2025-02-04T17:34:00+09:00</published>
   
-    <updated>2025-02-07T14:03:39+09:00</updated>
+    <updated>2025-02-07T14:18:10+09:00</updated>
   
     <id>http://localhost:4000/posts/ch4-Ray-Tracing/</id>
     <content type="text/html" src="http://localhost:4000/posts/ch4-Ray-Tracing/" />
@@ -145,7 +154,7 @@ Ray Tracing이란
     <link href="http://localhost:4000/posts/ch3-Raster/" rel="alternate" type="text/html" title="Graphics-Ch3. Raster Images" />
     <published>2025-01-29T18:00:00+09:00</published>
   
-    <updated>2025-02-07T12:14:47+09:00</updated>
+    <updated>2025-02-07T14:18:10+09:00</updated>
   
     <id>http://localhost:4000/posts/ch3-Raster/</id>
     <content type="text/html" src="http://localhost:4000/posts/ch3-Raster/" />

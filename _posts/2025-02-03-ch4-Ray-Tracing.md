@@ -166,7 +166,7 @@ $$
 \begin{align}
 x_e  + tx_d = x_a + \beta(x_b - x_a) + \gamma(x_c - x_a), \\
 y_e  + ty_d = y_a + \beta(y_b - y_a) + \gamma(y_c - y_a), \\
-z_e  + tz_d = z_a + \beta(z_b - z_a) + \gamma(z_c - z_a).\\
+z_e  + tz_d = z_a + \beta(z_b - z_a) + \gamma(z_c - z_a). \\
 \end{align}$$
 
 - vector form을 행렬로 바궈서 standard linear system(선형 결합 형태)로 아래처럼 바꿔 표현 가능:
@@ -254,7 +254,7 @@ where, $k_s$ is the *specular coefficient*, or the specular color of the surface
 ### 5.3. Ambient Shading
 - 조명이 도달하지 않는 표면에서는 완전하게 black으로 보이기 때문에, 이런 현상을 줄이기 위해서 **constant component**를 shading model에 추가시킴
   
-- Full version of a simple and useful shading model(*Ambident shading *components & *Blinn-Phong* model) :
+- Full version of a simple and useful shading model(*Ambident shading* components & *Blinn-Phong* model) :
   
   $$\begin{align}
   l = k_aI_a + k_dImax(0, \mathrm{n} \cdot \mathrm{l}) + k_s I Max(0, \mathrm{n} \cdot \mathrm{h})^n\\

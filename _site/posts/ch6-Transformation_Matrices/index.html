@@ -510,6 +510,276 @@
 
 
 
+  
+  
+
+  
+    
+      
+      
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+
+  
+
 
 <!-- Add header for code snippets -->
 
@@ -543,6 +813,28 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -550,6 +842,82 @@
   
   
 
+  
+    
+    
+
+    
+      
+        
+        
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+
+    
   
 
   
@@ -653,9 +1021,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="46 words"
+  title="949 words"
 >
-  <em>1 min</em> read</span>
+  <em>5 min</em> read</span>
 
         </div>
       </div>
@@ -699,7 +1067,159 @@
 
 <h2 id="introduction"><span class="me-2">Introduction</span><a href="#introduction" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <ul>
-  <li>Transformation matrix는 왜 필요한가 : Rotation, Translation, Scaling, Projection같은 기하학적 변환에서 행렬 곱을 통해 변환되는데 이때 변환행렬이 필요함,</li>
+  <li>Chapter 5는 선형대수학(Linear Algebra)이라 아는 내용이 많아서 정리 생략</li>
+  <li>Transformation matrix는 왜 필요한가 : <strong>Rotation, Translation, Scaling, Projection</strong>같은 기하학적 변환에서 행렬 곱을 통해 변환되는데 이때 변환 행렬이 필요함</li>
+</ul>
+
+<h2 id="1-2d-linear-transformations"><span class="me-2">1. 2D Linear Transformations</span><a href="#1-2d-linear-transformations" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<ul>
+  <li>
+    <p>2D vector를 2x2 행렬로 변환하는 과정은 아래처럼 전개됨 : <br /></p>
+
+\[\begin{bmatrix} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22} \end{bmatrix}  \begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} a_{11}x &amp; a_{12}y \\ a_{21}x &amp; a_{22}y \end{bmatrix}\]
+  </li>
+  <li>
+    <p>여기서, 벡터 $(x y)^T$에 곱해지는 행렬 $A$를 변환행렬이라고 한다</p>
+  </li>
+</ul>
+
+<h3 id="11-2d-scaling"><span class="me-2">1.1. 2D Scaling</span><a href="#11-2d-scaling" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+
+\[\begin{align} scale(s_x, s_y) = \begin{bmatrix} s_x &amp; 0 \\ 0 &amp; s_y \end{bmatrix} \end{align}\]
+
+<p>=&gt; Cartesian components와 결합되면 아래와 같이 전개됨 <br /></p>
+
+\[\begin{bmatrix} s_x &amp; 0 \\ 0 &amp; s_y \end{bmatrix}  \begin{bmatrix} x \\ y\end{bmatrix} = \begin{bmatrix} s_xx \\ s_yy \end{bmatrix}\]
+
+<p><a href="/assets/img/posts_storage/ch6/IMG_56AA2B96AD73-1.jpeg" class="popup img-link  shimmer"><img src="/assets/img/posts_storage/ch6/IMG_56AA2B96AD73-1.jpeg" alt="scaling_img.img" loading="lazy"></a>
+<br /></p>
+
+<h3 id="12-shearing"><span class="me-2">1.2. Shearing</span><a href="#12-shearing" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<ul>
+  <li>물체에 평행한 방향으로 힘이 가해져 변형되는 현상</li>
+  <li>
+    <p>얼만큼($=s$만큼) x또는 y방향으로 물체를 밀 건지</p>
+
+\[shear-x(s) = \begin{bmatrix} 1 &amp; s \\ 0 &amp; 1 \end{bmatrix} , shear-y(s) = \begin{bmatrix} 1 &amp; 0 \\ s &amp; 1 \end{bmatrix}\]
+  </li>
+  <li>
+    <p>만약, <strong>시계 방향</strong>으로 각도 $\phi$만큼 회전시키는 shear transformation matrix :
+\(\begin{bmatrix} 1 &amp; tan\phi \\ 0 &amp; 1 \end{bmatrix}\)</p>
+  </li>
+  <li>만약, <strong>반시계 방향</strong>으로 각도 $\phi$만큼 회전시키는 shear transformation matrix :
+\(\begin{bmatrix} 1 &amp; 0 \\ tan\phi &amp; 1 \end{bmatrix}\)</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="13-rotation"><span class="me-2">1.3. Rotation</span><a href="#13-rotation" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<div class="table-wrapper"><table>
+<tr>
+<td>
+<a href="/assets/img/posts_storage/ch6/IMG_D842EDCD956E-1.jpeg" class="popup img-link  shimmer"><img src="/assets/img/posts_storage/ch6/IMG_D842EDCD956E-1.jpeg" width="250" alt="Rotation" loading="lazy"></a>
+</td>
+<td>
+vector $\mathrm{a}$가 x축으로부터 각도 $\alpha$만큼 떨어진 길이가 r인 벡터라는 상황 가정 <br />
+반시계방향(counterclockwise)으로 벡터 a를 회전시킨 벡터를 $\mathrm{b}$라고 두자. <br />
+
+  $$ \begin{align} \mathrm{a} = (x_a, y_a) , \mathrm{b} = (x_b, y_b) \end{align} $$
+  $$ \begin{align} x_a = rcos\alpha \\ y_a = rsin\alpha \end{align} $$
+  <br />
+
+  $$ \begin{align} x_b = rcos(\alpha+\phi)=rcos\alpha cos\phi - rsin\alpha sin\phi \\ y_b = rsin(\alpha+\phi) = rsin\alpha cos\phi + rcos\alpha sin\phi \end{align} $$
+  
+</td>
+</tr>
+</table></div>
+
+<p>위 식에서, $x_a =rcos\alpha$ 그리고 $y_a = rsin\alpha$ 를 대입하면 아래처럼 정리된다. <br /></p>
+
+\[\begin{align} x_b = x_a cos\phi - y_a sin\phi \\ y_b = x_bcos\phi + x_a sin\phi \end{align}\]
+
+<p><br /></p>
+
+<p>따라서, vector $\mathrm{a}$에서 vector $\mathrm{b}$로 가는 <strong>Rotation matrix term</strong>은 아래와 같다 :</p>
+
+\[\begin{align} rotate(\phi) = \begin{bmatrix} cos\phi &amp; -sin\phi \\ sin\phi &amp; cos\phi \end{bmatrix} \end{align}\]
+
+<ul>
+  <li>각 행에 대한 원소 norm $(sin^2\phi + cos^2\phi = 1)$ 이기 때문에, 행들은 서로 직교한다(orthogonal)</li>
+  <li>따라서, Rotation matrix를 직교행렬(orthogonal matrix)로 볼 수 있다.</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="14-reflection"><span class="me-2">1.4. Reflection</span><a href="#14-reflection" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<ul>
+  <li>대칭이동(축을 기준으로 뒤집는 변환) <br /></li>
+</ul>
+
+\[\begin{align} reflect-y = \begin{bmatrix}  -1 &amp; 0 \\ 0 &amp; 1 \end{bmatrix}  ,\quad reflect-x = \begin{bmatrix}  - &amp; 0 \\ 0 &amp; -1 \end{bmatrix}  \end{align}\]
+
+<p><br /></p>
+
+<h3 id="15-composition-and-decomposition-of-transformations"><span class="me-2">1.5. Composition and Decomposition of Transformations</span><a href="#15-composition-and-decomposition-of-transformations" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<ul>
+  <li>
+    <p>처음 상태 : 2D vector $\mathrm{v_1}$</p>
+  </li>
+  <li>
+    <p>scale transformation $S$ 적용 이후, Rotation transformation $R$을 적용한다면 : <br /></p>
+
+\[\begin{align} \mathrm{v_2} = S\mathrm{v_1}, \quad then, \mathrm{v_3} = R\mathrm{v_2} \end{align}\]
+
+\[\begin{align}  \mathrm{v_3} = R(S\mathrm{v_1}) . \\ \mathrm{v_3}=(RS)\mathrm{v_1} \end{align}\]
+  </li>
+</ul>
+
+<p>처럼 나타낼 수 있다.</p>
+
+<p>따라서, $M = RS$행렬을 변환 행렬로 취급한다.</p>
+
+<p><a href="/assets/img/posts_storage/ch6/IMG_66A3A4260829-1.jpeg" class="popup img-link  shimmer"><img src="/assets/img/posts_storage/ch6/IMG_66A3A4260829-1.jpeg" alt="img.png" loading="lazy"></a></p>
+
+<ul>
+  <li>중요한 것은, 이러한 변환들은 오른쪽 변환부터 적용된다는 것을 혼동하면 안됨, 즉, RS에서 scaling먼저 적용하는 의미</li>
+  <li>이 순서가 바뀌면 결과도 달라짐</li>
+</ul>
+
+<p><br /></p>
+
+<h3 id="16-decomposition-of-transformations"><span class="me-2">1.6. Decomposition of Transformations</span><a href="#16-decomposition-of-transformations" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<ul>
+  <li>Compoisition말고 곱해진 상태의 변환 행렬을 “분해”하는 방법</li>
+  <li>크게 <strong><em>고유값 분해(Eigenvalue Deomposition)</em></strong> 기반과 <strong><em>특이값 분해(Singular Value Decomposition)</em></strong>기반 방법이 있다.
+<br /></li>
+</ul>
+
+<p><strong>1. Symmetric Eigenvalue Deomposition</strong></p>
+<ul>
+  <li>
+    <p>행렬이 symmetric(대칭)행렬일 때, 
+\(\mathrm{A} = \mathrm{R}\mathrm{S}\mathrm{R}^T\) 
+으로 분해됨  <br /></p>
+
+    <p>1) $\mathrm{R}^T$ 변환 : 행렬 A의 eigen vector(고유벡터)인 $\mathrm{v_1}$과 $\mathrm{v_2}$를 x 또는 y축 기반으로 회전시킴 <br />
+2) $\mathrm{S}$ 변환 : x와 y를 $(\lambda_1, \lambda_2)$만큼 scaling 시킴 <br />
+3) $\mathrm{R}$ 변환 :  $\mathrm{v_1}$과 $\mathrm{v_2}$를 x 또는 y축 기반으로 다시 역회전시킴 
+<a href="/assets/img/posts_storage/ch6/IMG_EA3F993B2FE1-1.jpeg" class="popup img-link  shimmer"><img src="/assets/img/posts_storage/ch6/IMG_EA3F993B2FE1-1.jpeg" alt="img.png" loading="lazy"></a></p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<p><strong>2. Singular Value Deomposition</strong></p>
+<ul>
+  <li>전체적으로 과정은 같음, 대신 전체 변환행렬 A가 대칭행렬이 아님</li>
+  <li>고유값 대신 특이값사용</li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="2-3d-linear-transformations"><span class="me-2">2. 3D Linear Transformations</span><a href="#2-3d-linear-transformations" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<ul>
+  <li>2D 변환의 확장된 ver.</li>
+  <li></li>
 </ul>
 
   </div>
@@ -835,6 +1355,13 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/ch3-Raster/">Graphics-Ch3. Raster Images</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/ch4-Ray-Tracing/">Graphics-Ch4. Ray Tracing</a>
         </li>
       
@@ -850,13 +1377,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/posts/GS2Mesh/">GS2Mesh, ECCV 2024</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/SuGaR/">SuGaR, CVPR 2024</a>
         </li>
       
     </ul>
