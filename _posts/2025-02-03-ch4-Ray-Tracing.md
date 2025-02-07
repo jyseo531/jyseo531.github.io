@@ -220,4 +220,44 @@ z_e  + tz_d = z_a + \beta(z_b - z_a) + \gamma(z_c - z_a).\\
 ### 5.2. Blinn-Phong Shading
 - 모든 광원이 난반사(diffuse)로만 구성되지는 않는다,
 - **specular component** (정반사되는 성질) 빛을 모델링하기 위한 모델
-- Idea : 
+- Idea : $\mathrm{v}$랑 $\mathrm{l}$ 이 surface normal $\mathrm{n}$을 가로지르는 상황에서 반사가 가장 잘된다는 것
+  - ***mirror reflection***이 발생할때 반사율이 가장 크다.
+
+<table>
+<tr>
+<td>
+
+오른쪽 그림처럼, $\mathrm{v}$와 $\mathrm{l}$ 각도 중간에 위치한 half vector $\mathrm{h}$가 있다고 가정해보자, <br>
+이 h가 surface noraml n과 가까울수록, specular component가 증가한다. (밝기가 증가) <br>
+$\mathrm{h}$와 $\mathrm{n}$사이의 유사도는 **dot product(내적)**으로 생각할 수 있다. <br>
+*Phong exponent*라고 불리는 power $p$가 surface에 대한 광택의 정도를 조절하는 역할임
+</td>
+
+<td>
+<img src="assets/img/posts_storage/ch4/IMG_EA19DA042FF2-1.jpeg" width="200" alt="Blinn-Phong Shading Geometry">
+</td>
+</tr>
+</table>
+
+$$ \begin{align}
+h = \frac{\mathrm{v} + \mathrm{l}}{||\mathrm{v} + \mathrm{l}||}, \\
+L = k_d  I  max(0, \mathrm{n} \cdot \mathrm{l}) + k_s I max(0, \mathrm{n} \cdot \mathrm{h})^p \\
+\end{align}
+$$
+
+where, $k_s$ is the *specular coefficient*, or the specular color of the surface
+
+  ![img.png](assets/img/posts_storage/ch4/IMG_B7E8FEC08C5B-1.jpeg)
+
+<br>
+
+### 5.3. Ambient Shading
+- 조명이 도달하지 않는 표면에서는 완전하게 black으로 보이기 때문에, 이런 현상을 줄이기 위해서 **constant component**를 shading model에 추가시킴
+  
+- Full version of a simple and useful shading model(*Ambident shading *components & *Blinn-Phong* model) :
+  
+  $$\begin{align}
+  l = k_aI_a + k_dImax(0, \mathrm{n} \cdot \mathrm{l}) + k_s I Max(0, \mathrm{n} \cdot \mathrm{h})^n\\
+  
+  \end{align}
+  $$

@@ -1163,6 +1163,140 @@
     <!-- combine -->
     
   
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
 
   
 
@@ -1258,6 +1392,17 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
       
 
       
@@ -1474,9 +1619,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="2023 words"
+  title="2300 words"
 >
-  <em>11 min</em> read</span>
+  <em>12 min</em> read</span>
 
         </div>
       </div>
@@ -1827,7 +1972,53 @@ z_e  + tz_d = z_a + \beta(z_b - z_a) + \gamma(z_c - z_a).\\
 <ul>
   <li>모든 광원이 난반사(diffuse)로만 구성되지는 않는다,</li>
   <li><strong>specular component</strong> (정반사되는 성질) 빛을 모델링하기 위한 모델</li>
-  <li>Idea :</li>
+  <li>Idea : $\mathrm{v}$랑 $\mathrm{l}$ 이 surface normal $\mathrm{n}$을 가로지르는 상황에서 반사가 가장 잘된다는 것
+    <ul>
+      <li><strong><em>mirror reflection</em></strong>이 발생할때 반사율이 가장 크다.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="table-wrapper"><table>
+<tr>
+<td>
+
+오른쪽 그림처럼, $\mathrm{v}$와 $\mathrm{l}$ 각도 중간에 위치한 half vector $\mathrm{h}$가 있다고 가정해보자, <br />
+이 h가 surface noraml n과 가까울수록, specular component가 증가한다. (밝기가 증가) <br />
+$\mathrm{h}$와 $\mathrm{n}$사이의 유사도는 **dot product(내적)**으로 생각할 수 있다. <br />
+*Phong exponent*라고 불리는 power $p$가 surface에 대한 광택의 정도를 조절하는 역할임
+</td>
+
+<td>
+<a href="/assets/img/posts_storage/ch4/IMG_EA19DA042FF2-1.jpeg" class="popup img-link  shimmer"><img src="/assets/img/posts_storage/ch4/IMG_EA19DA042FF2-1.jpeg" width="200" alt="Blinn-Phong Shading Geometry" loading="lazy"></a>
+</td>
+</tr>
+</table></div>
+
+\[\begin{align}
+h = \frac{\mathrm{v} + \mathrm{l}}{||\mathrm{v} + \mathrm{l}||}, \\
+L = k_d  I  max(0, \mathrm{n} \cdot \mathrm{l}) + k_s I max(0, \mathrm{n} \cdot \mathrm{h})^p \\
+\end{align}\]
+
+<p>where, $k_s$ is the <em>specular coefficient</em>, or the specular color of the surface</p>
+
+<p><a href="/assets/img/posts_storage/ch4/IMG_B7E8FEC08C5B-1.jpeg" class="popup img-link  shimmer"><img src="/assets/img/posts_storage/ch4/IMG_B7E8FEC08C5B-1.jpeg" alt="img.png" loading="lazy"></a></p>
+
+<p><br /></p>
+
+<h3 id="53-ambient-shading"><span class="me-2">5.3. Ambient Shading</span><a href="#53-ambient-shading" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<ul>
+  <li>
+    <p>조명이 도달하지 않는 표면에서는 완전하게 black으로 보이기 때문에, 이런 현상을 줄이기 위해서 <strong>constant component</strong>를 shading model에 추가시킴</p>
+  </li>
+  <li>
+    <p>Full version of a simple and useful shading model(<em>Ambident shading *components &amp; *Blinn-Phong</em> model) :</p>
+
+\[\begin{align}
+l = k_aI_a + k_dImax(0, \mathrm{n} \cdot \mathrm{l}) + k_s I Max(0, \mathrm{n} \cdot \mathrm{h})^n\\
+  
+\end{align}\]
+  </li>
 </ul>
 
   </div>
