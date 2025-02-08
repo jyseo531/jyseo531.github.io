@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Jiyoung Seo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2025-02-08T17:23:05+09:00</updated>
+  <updated>2025-02-08T20:39:09+09:00</updated>
   <author>
     <name>Jiyoung Seo</name>
     <uri>http://localhost:4000/</uri>
@@ -38,7 +38,7 @@
     
   
 
-  <summary>Gaussian Oopacity Fields: Efficient Adaptive Surface Reconstruction in Unbounded Scenes
+  <summary>Gaussian Opacity Fields: Efficient Adaptive Surface Reconstruction in Unbounded Scenes
 
 Abstract
 
@@ -46,7 +46,7 @@ Abstract
   본 논문의 GOF는 ray-tracing 기반 3D Gaussian의 volume rendering을 통해 직접적으로 geometry를 추출하여 level-set을 확인하는 과정을 수행
     
       SuGaR처럼 포아송 재건(Poisson reconstruction)을 사용하지 않으며, 2DGS와 GS2Mesh처럼 TSDF fusion을 사용하지 않음
-      surface normal을 ray-Gaussian i...</summary>
+      surface normal을 ray-Gaussian in...</summary>
 
   </entry>
 
