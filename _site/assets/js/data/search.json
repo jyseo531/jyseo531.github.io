@@ -1,6 +1,23 @@
 [
   
   {
+    "title": "Gaussian Opacity Fields, SIGGRAPH Asia 2024",
+    "url": "/posts/GOF/",
+    "categories": "Paper Review",
+    "tags": "Surface reconstruction, Graphics",
+    "date": "2025-02-08 11:30:00 +0900",
+    
+
+
+
+
+
+    
+    "snippet": "Gaussian Oopacity Fields: Efficient Adaptive Surface Reconstruction in Unbounded ScenesAbstract  3DGS의 explicit한 특성 때문에 surface reconstruction은 어려운 챌린지임  본 논문의 GOF는 ray-tracing 기반 3D Gaussian의 volu...",
+    "content": "Gaussian Oopacity Fields: Efficient Adaptive Surface Reconstruction in Unbounded ScenesAbstract  3DGS의 explicit한 특성 때문에 surface reconstruction은 어려운 챌린지임  본 논문의 GOF는 ray-tracing 기반 3D Gaussian의 volume rendering을 통해 직접적으로 geometry를 추출하여 level-set을 확인하는 과정을 수행          SuGaR처럼 포아송 재건(Poisson reconstruction)을 사용하지 않으며, 2DGS와 GS2Mesh처럼 TSDF fusion을 사용하지 않음      surface normal을 ray-Gaussian intersection plane(ray와 교차하는 가우시안의 평면)을 이용하여 근사함      geometry extraction method로는 “Marching Tetrahedra“(마칭 큐브아니고 마칭-사면체)방법 사용함      Introduction  NeRF 기반          SDF(Signed Distance Function)와 occupancy 네트워크를 사용하여 surface reconstruction을 수행      foreground object 복원에만 제한적임      e.g., Neuralangelo      NeRF’s opacity Field로부터 real-time rendering 및 surface 추출하는 연구도 진행됨 (e.g., Binary Opacity Grids-BOG)        Marching Cube Algorithm          mesh extraction Algorithm      surface recon자체보다 NVS(novel view synthesis)에 초점이 맞춰져서 고안된 방법이라, 정규화 텀이 부족하고 다소 noisy함        3DGS 기반          SuGaR : surface-align Gaussian들을 얻기 위해 정규화 텀 추가 &amp; depth map으로부터 Poisson reconstruction기반 메쉬추출      2DGS : image plane에 projected된 2D Gaussian의 property이용 + TSDF fusion이용      - 이 방법들은 surface reconstruction 성능 향상이 되었지만, fine-grained geometry를 잡는 것과 background region을 복원하는 것에는 아직 부족하다.        Poisson-Reconstruction 과 TSDF Fusion의 결함          포아송 재건은 Gaussian primitive에 대한 opacity(투명도), scale, rendered depth같은 정보들을 고려하지 않음      TSDF fusion은 얇은 구조물이나 Unbounded scene에 대한 복원 성능이 정확하지 않음      Contributions  Volume Rendering 측면 :          projection-based 방법이랑 다르게, explicit한 ray-Gaussian intersection을 이용해서 volume rendering할 때의 Gaussian의 “기여도”를 결정함      이러한 ray-tracing 으로부터 기반된 formula는 ray상에 존재하는 모든 Point에 존재하는 Gaussian의 opacity를 결정짓게 할 수 있음 //  여기까진 RaDe-GS랑 유사하다      “view independence” = 모든 뷰에 대해 opacity가 최소인 값을 취하면 view에 대해 독립적이다(??) : opacity field가 Poisition에 대한 함수를 전적으로 책임짐        Surface normal 측면 :          ray와 Gausssian사이의 intersection plane(교차 평면)에 대한 normalfh rPtks        Surface extraction technique(alogirthm) 측면 :          poisson recon, marching cube와는 다른 메소드      tetrahedra-grids(다면체 그리드)에 기반한 ‘Marching tetrahedra’ 사용함                  3D Gaussian primitive중에서 3D bounding box의 코너값과 중앙값을 이용하여 다면체 메쉬의 꼭짓점 집합으로 구성하는 방법임                    Methods"
+  },
+  
+  {
     "title": "RaDe-GS, arXiv preprint",
     "url": "/posts/RaDe-GS/",
     "categories": "Paper Review",

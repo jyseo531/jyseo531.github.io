@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Jiyoung Seo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2025-02-08T11:45:56+09:00</updated>
+  <updated>2025-02-08T17:23:05+09:00</updated>
   <author>
     <name>Jiyoung Seo</name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,43 @@
 
   
   <entry>
+    <title>Gaussian Opacity Fields, SIGGRAPH Asia 2024</title>
+    <link href="http://localhost:4000/posts/GOF/" rel="alternate" type="text/html" title="Gaussian Opacity Fields, SIGGRAPH Asia 2024" />
+    <published>2025-02-08T11:30:00+09:00</published>
+  
+    <updated>2025-02-08T11:30:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/GOF/</id>
+    <content type="text/html" src="http://localhost:4000/posts/GOF/" />
+    <author>
+      <name>jiyoung</name>
+    </author>
+
+  
+    
+    <category term="Paper Review" />
+    
+  
+
+  <summary>Gaussian Oopacity Fields: Efficient Adaptive Surface Reconstruction in Unbounded Scenes
+
+Abstract
+
+  3DGS의 explicit한 특성 때문에 surface reconstruction은 어려운 챌린지임
+  본 논문의 GOF는 ray-tracing 기반 3D Gaussian의 volume rendering을 통해 직접적으로 geometry를 추출하여 level-set을 확인하는 과정을 수행
+    
+      SuGaR처럼 포아송 재건(Poisson reconstruction)을 사용하지 않으며, 2DGS와 GS2Mesh처럼 TSDF fusion을 사용하지 않음
+      surface normal을 ray-Gaussian i...</summary>
+
+  </entry>
+
+  
+  <entry>
     <title>RaDe-GS, arXiv preprint</title>
     <link href="http://localhost:4000/posts/RaDe-GS/" rel="alternate" type="text/html" title="RaDe-GS, arXiv preprint" />
     <published>2025-02-07T19:34:00+09:00</published>
   
-    <updated>2025-02-08T11:40:30+09:00</updated>
+    <updated>2025-02-08T11:46:12+09:00</updated>
   
     <id>http://localhost:4000/posts/RaDe-GS/</id>
     <content type="text/html" src="http://localhost:4000/posts/RaDe-GS/" />
@@ -181,46 +213,6 @@ Ray Tracing이란
         normal consistency
 
         : rendered normal map과 rendered depth의 gradient 사이의 discr...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Graphics-Ch3. Raster Images</title>
-    <link href="http://localhost:4000/posts/ch3-Raster/" rel="alternate" type="text/html" title="Graphics-Ch3. Raster Images" />
-    <published>2025-01-29T18:00:00+09:00</published>
-  
-    <updated>2025-02-07T14:18:10+09:00</updated>
-  
-    <id>http://localhost:4000/posts/ch3-Raster/</id>
-    <content type="text/html" src="http://localhost:4000/posts/ch3-Raster/" />
-    <author>
-      <name>jiyoung</name>
-    </author>
-
-  
-    
-    <category term="Graphics" />
-    
-    <category term="Study" />
-    
-  
-
-  <summary>Chapter 3. Raster Images
-서론
-
-  Raster image : 2D 행렬 형태로 픽셀에 대한 RGB color값을 표현한 이미지
-    
-      RGB 색상은 3차원 벡터 형태
-    
-  
-  디지털 카메라는 image sensor를 포함하고 있는데, 이것은 빛이 들어오는 정도(intensity)와 color를 구성하고 있음
-  하지만 우리가 이러한 2D array자체로 이미지를 보지는 않음,
-    
-      이미지 픽셀과 디스플레이 픽셀간의 매칭(direct link)이 필요하고 이를 Rasterizer가 처리함
-    
-  
-  Vector Image : 픽셀에 대한 행렬형태로 나타내는 것이 아니라, shape이랑 line, curves로 경계지어진 color 영역에 대...</summary>
 
   </entry>
 
