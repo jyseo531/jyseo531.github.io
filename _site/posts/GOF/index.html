@@ -45,7 +45,7 @@
 <meta name="twitter:site" content="@" />
 <meta name="twitter:creator" content="@Jiyoung Seo" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Jiyoung Seo","url":"https://jyseo531.github.io/about"},"dateModified":"2025-02-08T11:30:00+09:00","datePublished":"2025-02-08T11:30:00+09:00","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"Gaussian Opacity Fields, SIGGRAPH Asia 2024","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/GOF/"},"url":"http://localhost:4000/posts/GOF/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Jiyoung Seo","url":"https://jyseo531.github.io/about"},"dateModified":"2025-02-08T20:39:16+09:00","datePublished":"2025-02-08T11:30:00+09:00","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"Gaussian Opacity Fields, SIGGRAPH Asia 2024","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/GOF/"},"url":"http://localhost:4000/posts/GOF/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -588,6 +588,148 @@
     <!-- combine -->
     
   
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
 
   
 
@@ -786,6 +928,72 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -841,6 +1049,29 @@
 
       <!-- lastmod date -->
       
+        <span>
+          Updated
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1739014756"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  Feb  8, 2025
+</time>
+
+        </span>
+      
 
       
 
@@ -886,9 +1117,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1431 words"
+  title="2828 words"
 >
-  <em>7 min</em> read</span>
+  <em>15 min</em> read</span>
 
         </div>
       </div>
@@ -1107,7 +1338,7 @@ and $\alpha_k$ : additional parameter that influences the <em>opacity of Gaussia
     <ul>
       <li>이 GOF를 이용하면 poisson reconstruction이나 TSDF Fusion없이도 <strong>surface</strong>를 바로 추출할 수 있다.</li>
       <li>by identifying their <strong>level sets</strong></li>
-      <li>본 논문에서 만든 Tetrahedral 기반 메쉬 추출 방법과 연결되어 사용함, 4.에 더 자세히 수록</li>
+      <li>본 논문에서 만든 Tetrahedral 기반 메쉬 추출 방법과 연결되어 사용함, 4.섹션에 더 자세히 수록</li>
     </ul>
   </li>
 </ul>
@@ -1117,22 +1348,143 @@ and $\alpha_k$ : additional parameter that influences the <em>opacity of Gaussia
 <h3 id="3-optimization"><span class="me-2">3. Optimization</span><a href="#3-optimization" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 <ul>
   <li>기본적으로 <a href="https://jyseo531.github.io/posts/2DGS/">2DGS</a>에서 언급된 loss들(depth distortion, normal consistency loss)를 이용하여 정규화함</li>
-  <li></li>
+</ul>
+
+<h4 id="31-depth-distortion-loss"><span class="me-2">3.1. Depth Distortion loss</span><a href="#31-depth-distortion-loss" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<ul>
+  <li><em>Mip-NeRF360 논문</em>에서 처음으로 제안됨</li>
+  <li>
+    <p>ray-Gaussian intersection들이 더 밀집되고 집중되게 해주는 것 촉진함</p>
+
+\[\begin{align} L_d = \sum\limits_{i,j}w_iw_j|t_i-t_j| \end{align}\]
+
+    <ul>
+      <li>
+        <p>where $w_i$ : i번째 가우시안의 blending weight <br /></p>
+
+\[w_i = \alpha_k\mathcal{E}(\mathcal{G}_k, \mathrm{o}, \mathrm{r})\prod_{j=1}^{k-1}(1-\alpha_j\mathcal{E}(\mathcal{G}_k, \mathrm{o}, \mathrm{r}))\]
+      </li>
+    </ul>
+  </li>
+  <li>하지만, depth distortion만으로는 Gaussian마다의 <u>거리와 weight</u>를 모두 감소시키는 정규화 텀이기 때문에, 이것은 <strong>alpha values가 증가</strong>하는 결과가 초래될 수 있다.
+    <ul>
+      <li>alpha blending에서 섞여지는 초기 가우시안의 alpha value값이 지나치게 크다면, 과장된 Gaussian이 초래되고 이것은 <strong><u>"floater"</u></strong>를 유발하는 원인이 됨</li>
+    </ul>
+  </li>
+  <li>따라서, 가우시안끼리의 거리에 대해서만 최소화하고, blending weight $w_i$는 최소화 텀에서 뗴어냄</li>
+</ul>
+
+<h4 id="32-normal-consistency-loss"><span class="me-2">3.2. Normal Consistency loss</span><a href="#32-normal-consistency-loss" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+\[\begin{align} L_n = \sum\limits_{i}w_i(1-n_i^TN) \end{align}\]
+
+<ul>
+  <li>2DGS의 normal consistency regularization을 바로 3D normal로 적용하는 것이 챌린지</li>
+  <li>2D Gaussian의 gradient는 항상 투영된 image plane에서의 가우시안 중심점(center, mu)에서 바깥쪽으로 위치하는 특성이 있음
+    <ul>
+      <li>투영된 2D 가우시안 중심에서 픽셀 좌표까지의 방향이 다르면, 두 개의 다른 픽셀에서 렌더링된 노멀은 서로 다르게 나타난다 =&gt; 정확성이 떨어지는 모호함이 발생함</li>
+    </ul>
+  </li>
+  <li>
+    <p>이 문제 완화를 위해서 <strong><u>3D Gaussian의 normal</u></strong>을 ray direction r이 주어졌을 때, <strong><u>intersection plane</u>의 normal</strong>로 정의함.</p>
+
+    <p><a href="/assets/img/posts_storage/GOF/IMG_5F48D4D3100D-1.jpeg" class="popup img-link  shimmer"><img src="/assets/img/posts_storage/GOF/IMG_5F48D4D3100D-1.jpeg" width="600" alt="normal" loading="lazy"></a></p>
+  </li>
+</ul>
+
+<h4 id="final-loss"><span class="me-2">Final Loss</span><a href="#final-loss" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+
+\[\begin{align} L = L_c + \alpha L_d + \beta L_n \end{align}\]
+
+<ul>
+  <li>where,  $L_c$ : RGB reconstruction loss with combining $L_1$ with the D-SSIm term</li>
 </ul>
 
 <p><br /></p>
 
-<h3 id="4-surface-extraction-marching-tetrahedral"><span class="me-2">4. Surface Extraction (Marching Tetrahedral)</span><a href="#4-surface-extraction-marching-tetrahedral" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<h3 id="4-surface-extraction-marching-tetrahedral"><span class="me-2">4. Surface Extraction (Marching-Tetrahedral)</span><a href="#4-surface-extraction-marching-tetrahedral" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 <ul>
-  <li>tetrahedral(다면체) 기반으로 그리드를 생성하여 메쉬 추출하는 알고리즘까지 개발해버림</li>
-  <li>이어서..</li>
+  <li>tetrahedral(다면체) 기반으로 그리드를 생성하여 메쉬 추출하는 알고리즘을 이용</li>
+  <li>학습 이후, surface 또는 triangle mesh extraction 단계</li>
+  <li>전통적인 메쉬 추출 방법들은 DTU dataset처럼 작은 물체단위의 베경없는 foreground object(regions of interest)영역은 비교적 잘 되지만, <strong><u>large-scale의 unbounded</u></strong> dataset에는 성능 좋게 나오는게 어려운 문제였음
+    <ul>
+      <li>dense evaluation으로 하는 기존 방법 -&gt; 그리드의 해상도에 따라 computation complexity가 증가한다는 점에서, large scale mesh에 적합하지 않고 시간이 매우 많이 걸리는 문제</li>
+    </ul>
+  </li>
+  <li>본 논문에서 novel method 소개 : <strong>“Tetrahedral grid”</strong>를 이용한 <strong>“<u>Marching Tetrahedra</u>“</strong></li>
+</ul>
+
+<h4 id="41-tetrahedral-grids-generation"><span class="me-2">4.1. Tetrahedral Grids Generation</span><a href="#41-tetrahedral-grids-generation" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<ul>
+  <li>3D Gaussian의 primitive에서 position과 scale value는 surface의 존재에 유의미한 정보를 주는 역할</li>
+  <li>각각의 가우시안을 감싸는 <strong>3D Bounding box</strong>를 정의 :
+    <ul>
+      <li>3d box의 중심점에서 가장 높은 opacity를 가지고, 가장자리 꼭짓점(corner)에서 가장 작은 opacity를 가진다.</li>
+      <li>이 opacity자체를 고려하는 것은 아님, 낮은 opacity value를 가지는 가우시안을 filter out(pruning)하긴 함</li>
+    </ul>
+  </li>
+  <li>bbox의 center와 corner들로 <strong>[사면체 그리드]를 생성</strong>함
+    <ul>
+      <li>CGAL 라이브러리 이용(Tetra-NeRF에서 영감받아 사용)해서 <strong>[Delaunay triangulation]</strong> 수행</li>
+      <li>들로네 삼각법이란? : 2D 평면의 점 집합을 삼각형들로 연결하는 방법 중 하나로, 삼각형의 내접원의 원 안에 다른 점이 포함되지 않도록 삼각형을 구성하는 기법</li>
+      <li>refer : <a href="https://darkpgmr.tistory.com/96">들로네-삼각분할</a></li>
+    </ul>
+  </li>
+  <li>생성된 사면체 그리드에서 <strong>filtering step</strong>을 통해 겹쳐지지 않은 가우시안과 연결된 edge를 포함하는 사면체 cell들을 제거함
+    <ul>
+      <li>겸쳐지지 않은 가우시안으로 판별하는 과정 : 사면체의 edge 길이가 그것에 대한 <em>maximum scale</em>(평균에서 3σ(표준편차)의 최대 범위까지 확장된 차원)의 합을 초과할 때</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="42-efficient-opacity-evaluation"><span class="me-2">4.2. Efficient Opacity Evaluation</span><a href="#42-efficient-opacity-evaluation" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<ul>
+  <li>앞서 구해진 사면체 그리드의 vertices 즉, <strong>꼭짓점에서의 opacity</strong>를 측정하기 위해, 3DGS의 rasterized method처럼 <strong><u>tile-based</u></strong> evaluation algorithm 설계함
+    <ol>
+      <li>꼭짓점들을 image space로 projection한 후, 타일로 쪼개져있을 때 그 대응되는 <em>타일 ID</em>를 확인한다.</li>
+      <li>각각의 타일에 대해서 projection으로 들어가져있는 point 리스트를 얻을 수 있다. 그 후에 점들을 다시 pixel space로 projection해서 대응되어 떨어지는 pixel을 구할 수 있다.</li>
+      <li>따라서 해당 pixel에 기여하는 가우시안들을 추적할 수 있고 이 과정은 모든 학습 이미지들에 대해서 수행된다.</li>
+      <li>그 후, pre-filtered된(pruning) Opcaity를 가지는 가우시안들중에서 minimum값을 Tetrahedral grid 꼭짓점의 opacity로 삼는다.</li>
+    </ol>
+  </li>
+</ul>
+
+<h4 id="43-binary-search-of-level-set"><span class="me-2">4.3. Binary Search of level Set</span><a href="#43-binary-search-of-level-set" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h4>
+<ul>
+  <li>traingle mesh 추출 단계 via. Marching Tetrahedral method</li>
+  <li>“marching tetrahedral” : <br />
+    <ul>
+      <li><strong>선형 보간(linear interpolation)</strong>이 level set구분하는 것에 의존하기 때문에, Opacity Field라는 가우시안의 비선형적 특성에는 misalign되어서 성능이 불완전함</li>
+      <li>선형 추정(linear assumption)을 늘려가면서 non-linear한 opacity field로 level set을 정확하게 확인</li>
+      <li><strong>Binary Search(이진 탐색)</strong>알고리즘으로 구현함
+        <ul>
+          <li>8 iteration binary search한 것이 dense evaluation 256번 한 것이랑 같은 시뮬레이션 효과나오는 것 확인함</li>
+        </ul>
+
+        <p><a href="/assets/img/posts_storage/GOF/JPEG-이미지-46C0-8342-6E-0.jpeg" class="popup img-link  shimmer"><img src="/assets/img/posts_storage/GOF/JPEG-이미지-46C0-8342-6E-0.jpeg" width="500" alt="binary-search" loading="lazy"></a></p>
+      </li>
+    </ul>
+  </li>
 </ul>
 
 <p><br /></p>
 
 <h2 id="experiments"><span class="me-2">Experiments</span><a href="#experiments" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<ul>
+  <li>custom CUDA kernel</li>
+  <li>DTU, TnT 같은 foreground simple dataset뿐만 아니라 Mip-Nerf360 dataset처럼 unbounded된 scene에서 background영역까지 복원 잘 됨</li>
+  <li></li>
+</ul>
 
-<h2 id="느낀점"><span class="me-2">느낀점</span><a href="#느낀점" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<p><br /></p>
+
+<h2 id="느낀점--future-work"><span class="me-2">느낀점 &amp; Future work</span><a href="#느낀점--future-work" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<ul>
+  <li>ray-Gaussian Intersection(GOF)과 ray-tracing based rasterized method(RaDe-GS)에 나오는 공통 방법론이 어디서부터 시작된 이론인지 레퍼런스 찾기</li>
+  <li>(mip-nerf 360) 논문에서 depth distortion loss 부분 중심으로 읽기</li>
+  <li>들로네 삼각분할 « 대충 훑기만 해선 이해안됨</li>
+  <li>포아송 재건, 마칭큐브// 마칭-사면체 같은 메쉬추출 알고리즘만 정리돼있는 내용 어디없는지 확인</li>
+</ul>
 
   </div>
 
