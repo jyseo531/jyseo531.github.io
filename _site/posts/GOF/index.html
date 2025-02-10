@@ -45,7 +45,7 @@
 <meta name="twitter:site" content="@" />
 <meta name="twitter:creator" content="@Jiyoung Seo" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Jiyoung Seo","url":"https://jyseo531.github.io/about"},"dateModified":"2025-02-08T20:39:16+09:00","datePublished":"2025-02-08T11:30:00+09:00","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"Gaussian Opacity Fields, SIGGRAPH Asia 2024","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/GOF/"},"url":"http://localhost:4000/posts/GOF/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Jiyoung Seo","url":"https://jyseo531.github.io/about"},"dateModified":"2025-02-09T16:02:58+09:00","datePublished":"2025-02-08T11:30:00+09:00","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"Gaussian Opacity Fields, SIGGRAPH Asia 2024","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/GOF/"},"url":"http://localhost:4000/posts/GOF/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1061,13 +1061,13 @@
 
 <time
   
-  data-ts="1739014756"
+  data-ts="1739084578"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  Feb  8, 2025
+  Feb  9, 2025
 </time>
 
         </span>
@@ -1117,7 +1117,7 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="2828 words"
+  title="2840 words"
 >
   <em>15 min</em> read</span>
 
@@ -1165,7 +1165,6 @@
 
 <h2 id="abstract"><span class="me-2">Abstract</span><a href="#abstract" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <ul>
-  <li>3DGS의 explicit한 특성 때문에 surface reconstruction은 어려운 챌린지임</li>
   <li>본 논문의 GOF는 ray-tracing 기반 3D Gaussian의 volume rendering을 통해 직접적으로 geometry를 추출하여 level-set을 확인하는 과정을 수행
     <ul>
       <li><a href="https://jyseo531.github.io/posts/SuGaR/">SuGaR</a>처럼 포아송 재건(Poisson reconstruction)을 사용하지 않으며, <a href="https://jyseo531.github.io/posts/2DGS/">2DGS</a>와 <a href="https://jyseo531.github.io/posts/GS2Mesh/">GS2Mesh</a>처럼 TSDF fusion을 사용하지 않음</li>
@@ -1215,13 +1214,13 @@
   <li><strong>Volume Rendering</strong> 측면 :
     <ul>
       <li>projection-based 방법이랑 다르게, explicit한 <strong>ray-Gaussian intersection</strong>을 이용해서 volume rendering할 때의 Gaussian의 “기여도”를 결정함</li>
-      <li>이러한 ray-tracing 으로부터 기반된 formula는 ray상에 존재하는 모든 Point에 존재하는 Gaussian의 opacity를 결정짓게 할 수 있음 //  여기까진 <a href="https://jyseo531.github.io/posts/RaDe-GS/">RaDe-GS</a>랑 유사하다</li>
+      <li>이러한 ray-tracing 으로부터 기반된 formula는 ray상에 존재하는 모든 Point에 존재하는 Gaussian의 opacity를 결정짓게 할 수 있음 //  (여기까진 <a href="https://jyseo531.github.io/posts/RaDe-GS/">RaDe-GS</a>에서도 ray-tracing intersection을 이용해서 rasterized method로 가우시안의 primitive들을 풀어냈다는 점이 유사하다.)</li>
       <li>“view independence” = 모든 뷰에 대해 opacity가 최소인 값을 취하면 view에 대해 독립적이다(??) : opacity field가 Poisition에 대한 함수를 전적으로 책임짐</li>
     </ul>
   </li>
   <li><strong>Surface normal</strong> 측면 :
     <ul>
-      <li>ray와 Gausssian사이의 intersection plane(교차 평면)에 대한 normalfh rPtks</li>
+      <li>ray와 Gausssian사이의 intersection plane(교차 평면)에 대한 normal</li>
     </ul>
   </li>
   <li><strong>Surface extraction technique(alogirthm)</strong> 측면 :
@@ -1481,7 +1480,7 @@ and $\alpha_k$ : additional parameter that influences the <em>opacity of Gaussia
 <h2 id="느낀점--future-work"><span class="me-2">느낀점 &amp; Future work</span><a href="#느낀점--future-work" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <ul>
   <li>ray-Gaussian Intersection(GOF)과 ray-tracing based rasterized method(RaDe-GS)에 나오는 공통 방법론이 어디서부터 시작된 이론인지 레퍼런스 찾기</li>
-  <li>(mip-nerf 360) 논문에서 depth distortion loss 부분 중심으로 읽기</li>
+  <li><a href="https://jyseo531.github.io/posts/MipNerf360/">(mip-nerf 360)</a> 논문에서 depth distortion loss 부분 중심으로 읽기 <em>(완)</em></li>
   <li>들로네 삼각분할 « 대충 훑기만 해선 이해안됨</li>
   <li>포아송 재건, 마칭큐브// 마칭-사면체 같은 메쉬추출 알고리즘만 정리돼있는 내용 어디없는지 확인</li>
 </ul>
@@ -1623,6 +1622,13 @@ and $\alpha_k$ : additional parameter that influences the <em>opacity of Gaussia
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/MipNerf360/">Mip-Nerf 360, CVPR 2022</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/RaDe-GS/">RaDe-GS, arXiv preprint</a>
         </li>
       
@@ -1638,13 +1644,6 @@ and $\alpha_k$ : additional parameter that influences the <em>opacity of Gaussia
         
         <li class="text-truncate lh-lg">
           <a href="/posts/ch4-Ray-Tracing/">Graphics-Ch4. Ray Tracing</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/ch3-Raster/">Graphics-Ch3. Raster Images</a>
         </li>
       
     </ul>
@@ -2147,6 +2146,18 @@ and $\alpha_k$ : additional parameter that influences the <em>opacity of Gaussia
 
   
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
 
@@ -2200,6 +2211,45 @@ Abstract
         </article>
       
         <article class="col">
+          <a href="/posts/MipNerf360/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1738985400"
+  data-df="ll"
+  
+>
+  Feb  8, 2025
+</time>
+
+              <h4 class="pt-0 my-2">Mip-Nerf 360, CVPR 2022</h4>
+              <div class="text-muted">
+                <p>Mip-NeRF 360: Unbounded Anti-Aliased Neural Radiance Fields
+
+  depth distortion loss의 시초
+    
+      현재 GS기반 Surface Reconstruction 정규화 텀들에 많이 사용함
+    
+  
+
+
+Abstract
+
+  “unbounded scene” : 학습된 데이터의 ...</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
           <a href="/posts/ch6-Transformation_Matrices/" class="post-preview card h-100">
             <div class="card-body">
               <!--
@@ -2233,45 +2283,6 @@ Abstract
           </a>
         </article>
       
-        <article class="col">
-          <a href="/posts/ch4-Ray-Tracing/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1738658040"
-  data-df="ll"
-  
->
-  Feb  4, 2025
-</time>
-
-              <h4 class="pt-0 my-2">Graphics-Ch4. Ray Tracing</h4>
-              <div class="text-muted">
-                <p>Rendering
-
-  Object based Rendering
-    
-      각각의 object단위로 고려됨
-      물체가 존재하는 모든 픽셀들이 찾아지고 업데이트 됨
-    
-  
-  Image based Rendering
-    
-      각각의 pixel단위로 고려됨
-      물체에 영향을 주는 각 pixel들이 찾아지고 업데이트 ...</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
     </nav>
   </aside>
   <!-- #related-posts -->
@@ -2296,9 +2307,13 @@ Abstract
   
 
   
-    <div class="btn btn-outline-primary disabled" aria-label="Newer">
-      <p>-</p>
-    </div>
+    <a
+      href="/posts/MipNerf360/"
+      class="btn btn-outline-primary"
+      aria-label="Newer"
+    >
+      <p>Mip-Nerf 360, CVPR 2022</p>
+    </a>
   
 </nav>
 

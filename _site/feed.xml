@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Jiyoung Seo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2025-02-09T15:57:58+09:00</updated>
+  <updated>2025-02-10T16:56:29+09:00</updated>
   <author>
     <name>Jiyoung Seo</name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,53 @@
 
   
   <entry>
+    <title>Mip-Nerf 360, CVPR 2022</title>
+    <link href="http://localhost:4000/posts/MipNerf360/" rel="alternate" type="text/html" title="Mip-Nerf 360, CVPR 2022" />
+    <published>2025-02-08T12:30:00+09:00</published>
+  
+    <updated>2025-02-08T12:30:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/MipNerf360/</id>
+    <content type="text/html" src="http://localhost:4000/posts/MipNerf360/" />
+    <author>
+      <name>jiyoung</name>
+    </author>
+
+  
+    
+    <category term="Paper Review" />
+    
+  
+
+  <summary>Mip-NeRF 360: Unbounded Anti-Aliased Neural Radiance Fields
+
+  depth distortion loss의 시초
+    
+      현재 GS기반 Surface Reconstruction 정규화 텀들에 많이 사용함
+    
+  
+
+
+Abstract
+
+  “unbounded scene” : 학습된 데이터의 방향(direction)과 거리(distance)와 무관하게 모든 ray상에 존재하는 point에 대해 잘 합성된 scene
+    
+      주로 전경 물체 뿐만아니라 배경까지 있는 scene을 의미함
+    
+  
+  NeRF(Neural Radiance Fields)
+    
+      volumentric density 랑 color를 MLP를 통...</summary>
+
+  </entry>
+
+  
+  <entry>
     <title>Gaussian Opacity Fields, SIGGRAPH Asia 2024</title>
     <link href="http://localhost:4000/posts/GOF/" rel="alternate" type="text/html" title="Gaussian Opacity Fields, SIGGRAPH Asia 2024" />
     <published>2025-02-08T11:30:00+09:00</published>
   
-    <updated>2025-02-08T20:39:16+09:00</updated>
+    <updated>2025-02-09T16:02:58+09:00</updated>
   
     <id>http://localhost:4000/posts/GOF/</id>
     <content type="text/html" src="http://localhost:4000/posts/GOF/" />
@@ -42,11 +84,11 @@
 
 Abstract
 
-  3DGS의 explicit한 특성 때문에 surface reconstruction은 어려운 챌린지임
   본 논문의 GOF는 ray-tracing 기반 3D Gaussian의 volume rendering을 통해 직접적으로 geometry를 추출하여 level-set을 확인하는 과정을 수행
     
       SuGaR처럼 포아송 재건(Poisson reconstruction)을 사용하지 않으며, 2DGS와 GS2Mesh처럼 TSDF fusion을 사용하지 않음
-      surface normal을 ray-Gaussian in...</summary>
+      surface normal을 ray-Gaussian intersection plane(ray와 교차하는 가우시안의 평면)을 이용하여 근사함
+      geome...</summary>
 
   </entry>
 
@@ -174,45 +216,6 @@ Ray Tracing이란
 1. Basic Ray-Tracing Algorithm
 
   image상의 Pixel에서 ray t...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>2D Gaussian Splatting, SIGGRAPH 2024</title>
-    <link href="http://localhost:4000/posts/2DGS/" rel="alternate" type="text/html" title="2D Gaussian Splatting, SIGGRAPH 2024" />
-    <published>2025-02-03T16:34:00+09:00</published>
-  
-    <updated>2025-02-07T12:14:47+09:00</updated>
-  
-    <id>http://localhost:4000/posts/2DGS/</id>
-    <content type="text/html" src="http://localhost:4000/posts/2DGS/" />
-    <author>
-      <name>jiyoung</name>
-    </author>
-
-  
-    
-    <category term="Paper Review" />
-    
-  
-
-  <summary>Intro
-
-
-  3DGS : Redering결과 Inconsistency한 depth발생, 왜냐하면 pixel ray사이의 intersection을 통해 gaussian value를 구하기 때문
-  2DGS : explicit ray-splat intersection 이용
-  surface normal 정확하게 추출하면 mesh도 잘 구해짐
-    
-      
-        depth distortion
-
-        : 2D primitives에 집중해서 더 좁은 범위의 ray에 가우시안들이 분포하게 해줌
-      
-      
-        normal consistency
-
-        : rendered normal map과 rendered depth의 gradient 사이의 discr...</summary>
 
   </entry>
 
