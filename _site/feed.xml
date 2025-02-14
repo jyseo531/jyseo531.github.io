@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Jiyoung Seo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2025-02-14T14:25:31+09:00</updated>
+  <updated>2025-02-14T14:33:28+09:00</updated>
   <author>
     <name>Jiyoung Seo</name>
     <uri>http://localhost:4000/</uri>
@@ -24,7 +24,7 @@
     <link href="http://localhost:4000/posts/ch7-Viewing/" rel="alternate" type="text/html" title="Graphics-Ch7. Viewing" />
     <published>2025-02-13T12:04:00+09:00</published>
   
-    <updated>2025-02-13T12:04:00+09:00</updated>
+    <updated>2025-02-14T14:25:36+09:00</updated>
   
     <id>http://localhost:4000/posts/ch7-Viewing/</id>
     <content type="text/html" src="http://localhost:4000/posts/ch7-Viewing/" />
