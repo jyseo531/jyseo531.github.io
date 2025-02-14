@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Jiyoung Seo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2025-02-10T16:56:29+09:00</updated>
+  <updated>2025-02-14T13:49:27+09:00</updated>
   <author>
     <name>Jiyoung Seo</name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,43 @@
 
   
   <entry>
-    <title>Mip-Nerf 360, CVPR 2022</title>
-    <link href="http://localhost:4000/posts/MipNerf360/" rel="alternate" type="text/html" title="Mip-Nerf 360, CVPR 2022" />
-    <published>2025-02-08T12:30:00+09:00</published>
+    <title>Graphics-Ch7. Viewing</title>
+    <link href="http://localhost:4000/posts/ch7-Viewing/" rel="alternate" type="text/html" title="Graphics-Ch7. Viewing" />
+    <published>2025-02-13T12:04:00+09:00</published>
   
-    <updated>2025-02-08T12:30:00+09:00</updated>
+    <updated>2025-02-13T12:04:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/ch7-Viewing/</id>
+    <content type="text/html" src="http://localhost:4000/posts/ch7-Viewing/" />
+    <author>
+      <name>jiyoung</name>
+    </author>
+
+  
+    
+    <category term="Graphics" />
+    
+    <category term="Study" />
+    
+  
+
+  <summary>Intro
+
+  3D to 2D mapping을 통해 object를 3d location과 2D view 사이에서 이동시키는 것을 “viewing Transformation“이라고 함
+  object-order rendering에서 중요함
+  ch4(Ray-Tracing)단원에서 orthographic(paralled) view와 perspective view에서 vieweing ray가 어떻게 생성되는지에 대해 간단하게 다루었음
+    
+      ray-tracer는 ray와 만나는 가장 가까운 교차점에 대한 surface를 찾는 것이고, object-order renderer는 solid-looking object에서 어떤 표면이 screen space(pixcel space)의 어떤 점들에 매칭...</summary>
+
+  </entry>
+
+  
+  <entry>
+    <title>Mip-NeRF 360, CVPR 2022</title>
+    <link href="http://localhost:4000/posts/MipNerf360/" rel="alternate" type="text/html" title="Mip-NeRF 360, CVPR 2022" />
+    <published>2025-02-10T12:30:00+09:00</published>
+  
+    <updated>2025-02-10T17:01:50+09:00</updated>
   
     <id>http://localhost:4000/posts/MipNerf360/</id>
     <content type="text/html" src="http://localhost:4000/posts/MipNerf360/" />
@@ -66,7 +98,7 @@ Abstract
     <link href="http://localhost:4000/posts/GOF/" rel="alternate" type="text/html" title="Gaussian Opacity Fields, SIGGRAPH Asia 2024" />
     <published>2025-02-08T11:30:00+09:00</published>
   
-    <updated>2025-02-09T16:02:58+09:00</updated>
+    <updated>2025-02-10T16:56:54+09:00</updated>
   
     <id>http://localhost:4000/posts/GOF/</id>
     <content type="text/html" src="http://localhost:4000/posts/GOF/" />
@@ -162,60 +194,6 @@ Abstract
     2D vector를 2x2 행렬로 변환하는 과정은 아래처럼 전개됨 : 
 
 \[\begin{bmatrix} a_{11} &amp;amp;amp; a_{12} \\ a_{21} &amp;amp;amp; a_{22} \end{bmatrix}  \begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} ...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Graphics-Ch4. Ray Tracing</title>
-    <link href="http://localhost:4000/posts/ch4-Ray-Tracing/" rel="alternate" type="text/html" title="Graphics-Ch4. Ray Tracing" />
-    <published>2025-02-04T17:34:00+09:00</published>
-  
-    <updated>2025-02-07T17:13:14+09:00</updated>
-  
-    <id>http://localhost:4000/posts/ch4-Ray-Tracing/</id>
-    <content type="text/html" src="http://localhost:4000/posts/ch4-Ray-Tracing/" />
-    <author>
-      <name>jiyoung</name>
-    </author>
-
-  
-    
-    <category term="Graphics" />
-    
-    <category term="Study" />
-    
-  
-
-  <summary>Rendering
-
-  Object based Rendering
-    
-      각각의 object단위로 고려됨
-      물체가 존재하는 모든 픽셀들이 찾아지고 업데이트 됨
-    
-  
-  Image based Rendering
-    
-      각각의 pixel단위로 고려됨
-      물체에 영향을 주는 각 pixel들이 찾아지고 업데이트 됨
-
-둘의 차이점에 대해서는 ch8에서 더 자세하게 다룬다
-    
-  
-
-
-
-
-Ray Tracing이란
-
-  3D Scene을 렌더링하는데에 사용되는 image-order 알고리즘
-  object-order rendering에서 사용되어지는 수학적 방법
-
-
-1. Basic Ray-Tracing Algorithm
-
-  image상의 Pixel에서 ray t...</summary>
 
   </entry>
 
