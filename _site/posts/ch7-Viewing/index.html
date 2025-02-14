@@ -777,6 +777,132 @@
     <!-- combine -->
     
   
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
 
   
 
@@ -802,6 +928,17 @@
       
         
         
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
       
 
       
@@ -1010,9 +1147,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1165 words"
+  title="1409 words"
 >
-  <em>6 min</em> read</span>
+  <em>7 min</em> read</span>
 
         </div>
       </div>
@@ -1133,7 +1270,11 @@
   <li><strong>canonical</strong> view volume 좌표계로 옮기는 변환 과정</li>
   <li>input : camera coordinate (orthographic view)</li>
   <li><strong><em>orthographic view volume</em></strong>을 아래의 3D space로 정의할 수 있음 <br />
-  = $[l,r]$ x $[b,t]$ x $[f,n]$</li>
+  = $[l,r]$ x $[b,t]$ x $[f,n]$
+    <ul>
+      <li>좌우, 상하, 앞뒤 절단면을 정의하는 클리핑 파라미터</li>
+    </ul>
+  </li>
   <li>아래 그림처럼 orthorgraphic view volume에서 $-z$방향으로 바라보고 있다고 가정하기 때문에(상황마다 다르게 설정가능하긴 하다) $f$(far)가 $n$(near)보다 작은 값임
   <a href="/assets/img/posts_storage/ch7/orthographic_view_volume.png" class="popup img-link  shimmer"><img src="/assets/img/posts_storage/ch7/orthographic_view_volume.png" alt="img.png" loading="lazy"></a>
 <br /></li>
@@ -1268,12 +1409,62 @@ x_w &amp; y_w &amp; z_w &amp; 0 \\
       <li>여기서 1을 $(x,y,z)$좌표의 분포로 생각할 수 있다.</li>
     </ul>
   </li>
-  <li>Affine 변환을 통해 변환된 point $x’ = ax + by + cz +d$</li>
+  <li><em>Affine 변환</em>을 통해 변환된 point $x’ = ax + by + cz +d$</li>
 </ul>
 
 <p><br /></p>
 
 <h2 id="3-perspective-projection"><span class="me-2">3. Perspective Projection</span><a href="#3-perspective-projection" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<ul>
+  <li>
+    <p>matrix transformation : \(\begin{bmatrix} y_s \\ 1 \end{bmatrix}
+  \sim \begin{bmatrix} d &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \end{bmatrix}
+  \begin{bmatrix} y \\ z \\ 1 \end{bmatrix}.\)</p>
+  </li>
+  <li>
+    <p>Perspective Matrix $P$ : <br />
+\(\begin{align} \mathbf{P} =
+\begin{bmatrix}
+n &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; n &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; n + f &amp; -f n \\
+0 &amp; 0 &amp; 1 &amp; 0
+\end{bmatrix}.\end{align}\)</p>
+  </li>
+</ul>
+
+<p><a href="/assets/img/posts_storage/ch7/perspective_projection.png" class="popup img-link  shimmer"><img src="/assets/img/posts_storage/ch7/perspective_projection.png" alt="img.png" loading="lazy"></a></p>
+
+<ul>
+  <li>perspective matrix를 orthograpic 시스템에 병합하기 위해서, $M_{per} = M_{orth} P.$를 이용하여 아래와 같은 transforamtion matrix 로 분해할 수 있다:</li>
+  <li>
+\[\begin{align} M = M_{vp} (M_{orth} P) M_{cam} \end{align}\]
+
+    <ul>
+      <li>
+\[\begin{align} M_{\text{per}} =  M_{orth} P =
+  \begin{bmatrix}
+  \frac{2n}{r - l} &amp; 0 &amp; \frac{l + r}{l - r} &amp; 0 \\
+  0 &amp; \frac{2n}{t - b} &amp; \frac{b + t}{b - t} &amp; 0 \\
+  0 &amp; 0 &amp; \frac{f + n}{n - f} &amp; \frac{2fn}{f - n} \\
+  0 &amp; 0 &amp; 1 &amp; 0
+  \end{bmatrix}. \end{align}\]
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="5-field-of-viewfov"><span class="me-2">5. Field-of-View(FOV)</span><a href="#5-field-of-viewfov" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+<ul>
+  <li>한국말로 시야각이라는 의미</li>
+  <li>$\theta$로 표현 = the angle from the <u>bottom</u> of the screen to the <u>top</u> of the screen as measured from the eye
+<a href="/assets/img/posts_storage/ch7/field-of-view.png" class="popup img-link  shimmer"><img src="/assets/img/posts_storage/ch7/field-of-view.png" alt="FOV.png" loading="lazy"></a></li>
+</ul>
+
+\[\begin{align} tan\frac{2}{\theta} = frac{t}{|n|}  \end{align}\]
+
 
   </div>
 
@@ -1401,14 +1592,14 @@ x_w &amp; y_w &amp; z_w &amp; 0 \\
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/ch7-Viewing/">Graphics-Ch7. Viewing</a>
+          <a href="/posts/MipNerf360/">Mip-NeRF 360, CVPR 2022</a>
         </li>
       
         
         
         
         <li class="text-truncate lh-lg">
-          <a href="/posts/MipNerf360/">Mip-NeRF 360, CVPR 2022</a>
+          <a href="/posts/ch7-Viewing/">Graphics-Ch7. Viewing</a>
         </li>
       
         

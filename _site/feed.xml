@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Jiyoung Seo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2025-02-14T13:49:27+09:00</updated>
+  <updated>2025-02-14T14:25:31+09:00</updated>
   <author>
     <name>Jiyoung Seo</name>
     <uri>http://localhost:4000/</uri>
@@ -56,7 +56,7 @@
     <link href="http://localhost:4000/posts/MipNerf360/" rel="alternate" type="text/html" title="Mip-NeRF 360, CVPR 2022" />
     <published>2025-02-10T12:30:00+09:00</published>
   
-    <updated>2025-02-10T17:01:50+09:00</updated>
+    <updated>2025-02-14T13:49:38+09:00</updated>
   
     <id>http://localhost:4000/posts/MipNerf360/</id>
     <content type="text/html" src="http://localhost:4000/posts/MipNerf360/" />
