@@ -108,8 +108,8 @@ for y in range(y_min, y_max + 1):
             drawpixel(x, y, color=c)
 ```
 - 여기서 $f_{ij}$는 꼭짓점을 잇는 직선의 방정식(line drawing 섹션)이고 아래처럼 표현함
-  $$\begin{align} f_{01}(x,y) &= (y_0 - y_1)x + (x_1 - x_0)y + x_0y_1 - x_1y_0 , 
-                  f_{12}(x,y) &= (y_1 - y_2)x + (x_2 - x_1)y + x_1y_2 - x_2y_1 , 
+  $$\begin{align} f_{01}(x,y) &= (y_0 - y_1)x + (x_1 - x_0)y + x_0y_1 - x_1y_0 , \\
+                  f_{12}(x,y) &= (y_1 - y_2)x + (x_2 - x_1)y + x_1y_2 - x_2y_1 , \\
                   f_{20}(x,y) &= (y_2 - y_0)x + (x_0 - x_2)y + x_2y_0 - x_0y_2 . \end{align}$$
 
   ![img.png](assets/img/posts_storage/ch8/IMG_2F6ED0EC9567-1.jpeg)
