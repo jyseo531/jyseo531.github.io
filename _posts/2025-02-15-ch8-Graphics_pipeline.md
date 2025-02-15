@@ -63,6 +63,7 @@ tags: [Graphics]
 </table>
 
 </div>
+<br>
 
 ### 1.2. Triangle Rasterization
 - 2D points로 **2D 삼각형** 그리는 방법
@@ -71,4 +72,48 @@ tags: [Graphics]
   
   $$\begin{align} c = \alpha c_0 + \beta c_1 + \gamma c_2. \end{align}$$
 
-- 
+  - 위 방법의 interpolation을 "**Gouraud interpolation**"(고러드 보간, 고러드 쉐딩이랑 차이점 공부하기)이라고도 부름
+
+
+- line drawing이랑 삼각형 rasterization의 미묘한 차이점중에 하나는 **vertices and edges**에 있다.
+1. "Hole problem": 인접한 삼각형을 그릴 떄, hole이 생기면 안됨  <br>
+   => 'midpoint algorithm'사용해서 각 삼각형의 outline을 그리고, 그 내부 픽셀들을 채우기
+  - 인접한 삼각형이 각 edge(꼭짓점을 잇는 선분)를 따라 같은 픽셀을 그린다(공유한다)는 의미와 상통함
+2. "Order problem" : 만약 인접한 삼각형들이 다른 색상을 갖고 있다면 그려지는 순서에 따라서 이미지 색상이 달라짐
+
+이 두가지 문제를 완화하기 위해, 삼각형의 center가 삼각형 내부에 존재할때만 픽셀을 그리는 성질을 이용함 (당연한거 아님?)
+- 같은 말로, barycentric coordinate상에서 삼각형의 중심점(center)이 (0,1)간격 사이에 존재해야 한다는 의미
+- 만약, center가 삼각형의 edge에 정확하게 존재하면 어떻게 하는가?? 이 질문에 대한 내용은 후에 다룬다
+
+- **Barycentric Coordinate**을 통해 삼각형같은 다면체의 **"꼭짓점"**이 주어지는 상황에서 어떤 <u>위치</u>의 픽셀에 그릴지와 그 픽셀의 <u>색상</u>또한 결정하는 key가 된다.
+- 모든 픽셀에 대해서 고러드 보간을 이용하면 계산 복잡성이 크기 때문에, 아래의 간단한 방법으로 효율성 증가시킬 수 있음
+  - 삼각형의 세 꼭짓점을 기준으로 한 **bounding rectangle**을 찾아서 이 직사각형 내부에 존재하는 후보 픽셀들에 대해서만 계산 Looping을 진행한다
+
+
+#### 알고리즘
+```python
+x_min = floor(x_i)
+x_max = ceiling(x_i)
+y_min = floor(y_i)
+y_max = ceiling(y_i)
+
+for y in range(y_min, y_max + 1):
+    for x in range(x_min, x_max + 1):
+        α = f_12(x, y) / f_12(x_0, y_0)
+        β = f_20(x, y) / f_20(x_1, y_1)
+        γ = f_01(x, y) / f_01(x_2, y_2)
+
+        if α > 0 and β > 0 and γ > 0:s
+            c = α * c_0 + β * c_1 + γ * c_2
+            drawpixel(x, y, color=c)
+```
+- 여기서 $f_{ij}$는 꼭짓점을 잇는 직선의 방정식(line drawing 섹션)이고 아래처럼 표현함
+  $$\begin{align} f_{01}(x,y) &= (y_0 - y_1)x + (x_1 - x_0)y + x_0y_1 - x_1y_0 , 
+                  f_{12}(x,y) &= (y_1 - y_2)x + (x_2 - x_1)y + x_1y_2 - x_2y_1 , 
+                  f_{20}(x,y) &= (y_2 - y_0)x + (x_0 - x_2)y + x_2y_0 - x_0y_2 . \end{align}$$
+
+  ![img.png](assets/img/posts_storage/ch8/IMG_2F6ED0EC9567-1.jpeg)
+
+
+#### Dealing with Pixels on Triangle Edges
+- dd이어서
