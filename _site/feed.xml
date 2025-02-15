@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Jiyoung Seo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2025-02-14T14:33:28+09:00</updated>
+  <updated>2025-02-15T16:42:01+09:00</updated>
   <author>
     <name>Jiyoung Seo</name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,44 @@
 
   
   <entry>
+    <title>Graphics-Ch8. Graphics Pipeline</title>
+    <link href="http://localhost:4000/posts/ch8-Graphics_pipeline/" rel="alternate" type="text/html" title="Graphics-Ch8. Graphics Pipeline" />
+    <published>2025-02-15T12:04:00+09:00</published>
+  
+    <updated>2025-02-15T12:04:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/ch8-Graphics_pipeline/</id>
+    <content type="text/html" src="http://localhost:4000/posts/ch8-Graphics_pipeline/" />
+    <author>
+      <name>jiyoung</name>
+    </author>
+
+  
+    
+    <category term="Graphics" />
+    
+    <category term="Study" />
+    
+  
+
+  <summary>Intro
+
+  Graphics Pipeline : object에서 시작해서 pixel이 업데이트되기까지의 일련의 operations sequence
+  object-order rendering = rendering by “rasterization”
+  그래픽스 파이프라인 과정들 중에서 “vertex processing”, “Rasterization”, “Fragment Processing”, “Blending” 이렇게 핵심 네 스텝에 대해서 이번 단원에 다루도록 하겠다
+    
+      Vertex processing : vertices(꼭짓점)들이 연산되는 과정
+      Rasterziation stage : 그 꼭짓점들을 이용한 primitives가 보내져서 연산되고, 각각의 Primitive...</summary>
+
+  </entry>
+
+  
+  <entry>
     <title>Graphics-Ch7. Viewing</title>
     <link href="http://localhost:4000/posts/ch7-Viewing/" rel="alternate" type="text/html" title="Graphics-Ch7. Viewing" />
     <published>2025-02-13T12:04:00+09:00</published>
   
-    <updated>2025-02-14T14:25:36+09:00</updated>
+    <updated>2025-02-14T14:33:33+09:00</updated>
   
     <id>http://localhost:4000/posts/ch7-Viewing/</id>
     <content type="text/html" src="http://localhost:4000/posts/ch7-Viewing/" />
@@ -157,43 +190,6 @@ Abstract
   3DGS의 이산적이고 비구조적인 특성때문에 shape accurac가 떨어지는 문제 있음
   최근 관련 연구 중, 2D-GS에서는 shape reconstruction 성능을 올리기 위해, Gaussian primitives들을 이용했지만 이것은 렌더링 퀄리티랑 계산적인 효율성은 감소시키는 효과가 있음
   그래서 본 논문에서는 rasterized 접근법을 통해, 3DGS의 d...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Graphics-Ch6. Transformation Matrices</title>
-    <link href="http://localhost:4000/posts/ch6-Transformation_Matrices/" rel="alternate" type="text/html" title="Graphics-Ch6. Transformation Matrices" />
-    <published>2025-02-07T13:04:00+09:00</published>
-  
-    <updated>2025-02-07T17:46:22+09:00</updated>
-  
-    <id>http://localhost:4000/posts/ch6-Transformation_Matrices/</id>
-    <content type="text/html" src="http://localhost:4000/posts/ch6-Transformation_Matrices/" />
-    <author>
-      <name>jiyoung</name>
-    </author>
-
-  
-    
-    <category term="Graphics" />
-    
-    <category term="Study" />
-    
-  
-
-  <summary>Introduction
-
-  Chapter 5는 선형대수학(Linear Algebra)이라 아는 내용이 많아서 정리 생략
-  Transformation matrix는 왜 필요한가 : Rotation, Translation, Scaling, Projection같은 기하학적 변환에서 행렬 곱을 통해 변환되는데 이때 변환 행렬이 필요함
-
-
-1. 2D Linear Transformations
-
-  
-    2D vector를 2x2 행렬로 변환하는 과정은 아래처럼 전개됨 : 
-
-\[\begin{bmatrix} a_{11} &amp;amp;amp; a_{12} \\ a_{21} &amp;amp;amp; a_{22} \end{bmatrix}  \begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} ...</summary>
 
   </entry>
 

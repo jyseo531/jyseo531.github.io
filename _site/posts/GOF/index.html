@@ -1615,6 +1615,13 @@ and $\alpha_k$ : additional parameter that influences the <em>opacity of Gaussia
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/ch8-Graphics_pipeline/">Graphics-Ch8. Graphics Pipeline</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/ch7-Viewing/">Graphics-Ch7. Viewing</a>
         </li>
       
@@ -1637,13 +1644,6 @@ and $\alpha_k$ : additional parameter that influences the <em>opacity of Gaussia
         
         <li class="text-truncate lh-lg">
           <a href="/posts/RaDe-GS/">RaDe-GS, arXiv preprint</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/ch6-Transformation_Matrices/">Graphics-Ch6. Transformation Matrices</a>
         </li>
       
     </ul>
@@ -2157,6 +2157,18 @@ and $\alpha_k$ : additional parameter that influences the <em>opacity of Gaussia
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
     
   
 
@@ -2183,44 +2195,6 @@ and $\alpha_k$ : additional parameter that influences the <em>opacity of Gaussia
   <aside id="related-posts" aria-labelledby="related-label">
     <h3 class="mb-4" id="related-label">Further Reading</h3>
     <nav class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
-      
-        <article class="col">
-          <a href="/posts/RaDe-GS/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1738924440"
-  data-df="ll"
-  
->
-  Feb  7, 2025
-</time>
-
-              <h4 class="pt-0 my-2">RaDe-GS, arXiv preprint</h4>
-              <div class="text-muted">
-                <p>RaDe-GS: Rasterizing Depth in Gaussian Splatting
-
-  인용도 많이 됐고 나온지 꽤 됐는데 아직 아카이브이길래 아마 cvpr2025 이번에 내지 않았을까 싶은데…
-  GOF(Gaussian Opacity Fields, SIGGRAPH Asia 2024) 다음에 읽기
-
-
-
-
-Abstract
-
-  3DGS의 이산적이고...</p>
-              </div>
-            </div>
-          </a>
-        </article>
       
         <article class="col">
           <a href="/posts/MipNerf360/" class="post-preview card h-100">
@@ -2262,7 +2236,7 @@ Abstract
         </article>
       
         <article class="col">
-          <a href="/posts/ch7-Viewing/" class="post-preview card h-100">
+          <a href="/posts/RaDe-GS/" class="post-preview card h-100">
             <div class="card-body">
               <!--
   Date format snippet
@@ -2274,20 +2248,58 @@ Abstract
 
 <time
   
-  data-ts="1739415840"
+  data-ts="1738924440"
   data-df="ll"
   
 >
-  Feb 13, 2025
+  Feb  7, 2025
 </time>
 
-              <h4 class="pt-0 my-2">Graphics-Ch7. Viewing</h4>
+              <h4 class="pt-0 my-2">RaDe-GS, arXiv preprint</h4>
+              <div class="text-muted">
+                <p>RaDe-GS: Rasterizing Depth in Gaussian Splatting
+
+  인용도 많이 됐고 나온지 꽤 됐는데 아직 아카이브이길래 아마 cvpr2025 이번에 내지 않았을까 싶은데…
+  GOF(Gaussian Opacity Fields, SIGGRAPH Asia 2024) 다음에 읽기
+
+
+
+
+Abstract
+
+  3DGS의 이산적이고...</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
+          <a href="/posts/ch8-Graphics_pipeline/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1739588640"
+  data-df="ll"
+  
+>
+  Feb 15, 2025
+</time>
+
+              <h4 class="pt-0 my-2">Graphics-Ch8. Graphics Pipeline</h4>
               <div class="text-muted">
                 <p>Intro
 
-  3D to 2D mapping을 통해 object를 3d location과 2D view 사이에서 이동시키는 것을 “viewing Transformation“이라고 함
-  object-order rendering에서 중요함
-  ch4(Ray-Tracing)단원에서 orthographic(paralled) view와 perspective...</p>
+  Graphics Pipeline : object에서 시작해서 pixel이 업데이트되기까지의 일련의 operations sequence
+  object-order rendering = rendering by “rasterization”
+  그래픽스 파이프라인 과정들 중에서 “vertex processing”, “Rasterization”...</p>
               </div>
             </div>
           </a>
