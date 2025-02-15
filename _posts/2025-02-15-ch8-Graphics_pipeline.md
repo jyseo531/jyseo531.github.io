@@ -45,7 +45,6 @@ tags: [Graphics]
 - **Midpoint** = $(x+1, y+0.5)$
   
 <div align="center">
-
 <table>
 <tr>
 <td>
@@ -61,7 +60,6 @@ tags: [Graphics]
 </td>
 </tr>
 </table>
-
 </div>
 <br>
 
@@ -76,10 +74,8 @@ tags: [Graphics]
 
 
 - line drawing이랑 삼각형 rasterization의 미묘한 차이점중에 하나는 **vertices and edges**에 있다.
-1. "Hole problem": 인접한 삼각형을 그릴 떄, hole이 생기면 안됨  <br>
-   => 'midpoint algorithm'사용해서 각 삼각형의 outline을 그리고, 그 내부 픽셀들을 채우기
-  - 인접한 삼각형이 각 edge(꼭짓점을 잇는 선분)를 따라 같은 픽셀을 그린다(공유한다)는 의미와 상통함
-2. "Order problem" : 만약 인접한 삼각형들이 다른 색상을 갖고 있다면 그려지는 순서에 따라서 이미지 색상이 달라짐
+1. **"Hole problem"**: 인접한 삼각형을 그릴 떄, hole이 생기면 안됨  
+2. **"Order problem"** : 만약 인접한 삼각형들이 다른 색상을 갖고 있다면 그려지는 순서에 따라서 이미지 색상이 달라짐
 
 이 두가지 문제를 완화하기 위해, 삼각형의 center가 삼각형 내부에 존재할때만 픽셀을 그리는 성질을 이용함 (당연한거 아님?)
 - 같은 말로, barycentric coordinate상에서 삼각형의 중심점(center)이 (0,1)간격 사이에 존재해야 한다는 의미
@@ -116,4 +112,61 @@ for y in range(y_min, y_max + 1):
 
 
 #### Dealing with Pixels on Triangle Edges
-- dd이어서
+- 삼각형의 *중심(center)이 Edge에 정확하게 존재*하는 경우의 픽셀은 어떻게 결정할 것인지에 대한 내용
+- 삼각형 중심이 삼각형 변에 위치하는 대표적인 예시가 **직각-삼각형**임
+
+<div align="center">
+<table>
+<tr>
+<td>
+<img src="assets/img/posts_storage/ch8/IMG_20C5C034366A-1.jpeg" width="200" alt="Midpoing algorithm">
+</td>
+<td>
+ "off-screen point"는 두 삼각형의 공유된 변의 정확히 한쪽에 위치하며, <br>
+ 우리가 그릴 edge는 바로 그 변임, <br>
+ 공유 변 위에 있지 않은 정점들은 해당 변 기준으로 서로 반대쪽에 위치한다. <br>
+</td>
+</tr>
+</table>
+</div>
+<br>
+
+- 따라서, 그림 상 a 또는 b 정점 중 하나는 off-screen point와 shared edge기준 **같은 부호**면을 가진다는 성질이용 
+- $pq > 0$
+
+#### 알고리즘
+```python
+y_max = ceiling(y_i)
+
+f_α = f_12(x_0, y_0)
+f_β = f_20(x_1, y_1)
+f_γ = f_01(x_2, y_2)
+
+for y in range(y_min, y_max + 1):
+    for x in range(x_min, x_max + 1):
+        α = f_12(x, y) / f_α
+        β = f_20(x, y) / f_β
+        γ = f_01(x, y) / f_γ
+
+        if α >= 0 and β >= 0 and γ >= 0:
+            if (α > 0 or f_α * f_12(-1, -1) > 0) and \  # 부호
+               (β > 0 or f_β * f_20(-1, -1) > 0) and \  # 부호
+               (γ > 0 or f_γ * f_01(-1, -1) > 0):       # 부호
+
+                c = α * c_0 + β * c_1 + γ * c_2
+                drawpixel(x, y, color=c)
+```
+<br>
+
+### 1.3. CLipping
+- 눈의 뒤(behind)에 존재하는 공간 혹은 **view volume의 바깥**에 존재하는 primitive를 clipping해주는 과정들이 있어야 정확한 Rasterizing을 수행할 수 있다
+- 
+
+<br>
+
+## 2. Operations <u>Before and After</u> Rasterization
+
+
+<br>
+
+## 3. Simple Anti-aliasing
