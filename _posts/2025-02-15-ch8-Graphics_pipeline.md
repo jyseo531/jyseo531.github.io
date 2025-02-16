@@ -159,14 +159,99 @@ for y in range(y_min, y_max + 1):
 <br>
 
 ### 1.3. CLipping
-- 눈의 뒤(behind)에 존재하는 공간 혹은 **view volume의 바깥**에 존재하는 primitive를 clipping해주는 과정들이 있어야 정확한 Rasterizing을 수행할 수 있다
-- 
+- 눈의 뒤(behind)에 존재하는 공간 혹은 **view volume의 바깥**에 존재하는 primitive를 clipping해주는 과정들이 있어야 정확한 Rasterizing을 수행할 수 있다.
+- 삼각형에서 두 정점은 view volume 내부에 존재하지만, 하나의 정점이 behind the eye에 있다는 상황을 생각해보자.
+  - perspective transformation을 하게 되면, depth $z$가 $z'$로 변환되고 부호도 반대로 바뀜
+  - 이떄 모든 정점이 view volume에 있지 않는다면 제대로 transformation이 이루어지지 않아서 삼각형 모양도 변형되는 *incorrect* result가 초래됨
+- **Clipping** : removes part of primitives that could extend *behind the eye* (시야에 보이지 않는 primitives들을 제거하는 역할)
+<br>
+
+1. transform되기 이전 단계의 **6개의 평면**을 이용하여 표현된 world coordinate들에서 수행되는 clipping module
+2. homogeneous coordinate을 이용하여 **4D transform된 space**에서 수행되는 clipping module
+- 위의 두 가지 옵션을 통해 clipping 작업이 수행된다.
+
+### 1.4. Clipping against a Plane
+- 평면의 방정식 : $f(\mathrm{p}) = \mathrm{n} \cdot (\mathrm{p}-\mathrm{q}) = 0$ 이 implicit equation을 다시 쓰면 아래처럼 재표현 가능:
+  
+  $$\begin{align} f(\mathrm{p}) = \mathrm{n} \cdot \mathrm{p} + D = 0, \end{align}$$
+
+- points $a$와 $b$를 잇는 **line segment**가 있는 상황에서, 이 선분은 평면에 의해 clipping되어짐
+- 평면 $f(\mathrm{p}) > 0$ 이면 평면의 내부(inside)에 존재하는 것이고, $f(\mathrm{p}) < 0$이면 평면의 외부(outside)에 존재하는 것임
+  - clipping된 선분의 양끝 지점에 대한 부호가 다르다는 성질
+- 선분과 평면이 만나는 **intersection point $\mathrm{p}$** ($\mathrm{p} = a + t(b-a)$)에서의 $f(\mathrm{p}) = 0$이라는 성질 이용해서 아래 그림처럼 교차점에서의 $t$값을 도출할 수 있다.
+  ![clipping.png](assets/img/posts_storage/ch8/IMG_230C9A5A3765-1.jpeg)
 
 <br>
 
 ## 2. Operations <u>Before and After</u> Rasterization
-
-
+- Graphics pipeline을 recall
+  - Rasterization <u>이전</u>에 **"Vertex processing"** 단계를 통해 geometry들이 적절하게 transformed되어 primitives로 도출되어야 함
+    - 이 때, viewing transformations을 이용해서 world coordinate에서 screen space로 변환되는 정보들 + *colors, surface normals, texture coordinate* 같은 정보들도 변환되어야함
+    - 전자는 chapter 7에서 다루었기 때문에 후자의 내용을 이번 챕터에서 어떻게 변환시키는지 다루도록 한다.
+  - Rasterization <u>이후</u>에는 **"Fragment processing"** 단계를 통해 rasterization으로 나온 interpolated color와 depth를 그대로 통과시키던가,아니면 복잡한 **shading** operation으로 각각의 fragment에 대한 color와 depth를 계산한다.
+  - 그 후, **"Blending"** 단계를 통해 각 픽셀마다 겹쳐있는 primitive에서 final color를 혼합시켜 결정한다.
+    - 가장 쉽고 흔한 방법으로는 depth가 가장 작은, 즉 eye와 가장 가까운 fragment의 color로 선택하는 것
 <br>
 
-## 3. Simple Anti-aliasing
+### 2.1. Simple 2D Drawing
+- 가장 간단한 파이프라인은, vertex와 fragments stage, 그리고 blending stage 에서 아무것도 수행되지 않고 **오로지 rasterization**에서 pixel coordinate에 직접적으로 연산들이 모두 수행되는 것
+<br>
+
+### 2.2. A Minimal 3D Pipeline
+- 3D 공간에 물체를 그리기 위해서는 2D Drawing pipeline에서 **matrix transformation**이 포함되어 vertex processing이 이루어진다.
+  - vertex-processing에서 인풋으로 들어오는 vertex position에다가 camera, projection, 그리고 viewport transformation같은 행렬을 곱함으로써 행렬 변환이 수행됨
+- 이 결과로 삼각형이 *screen space*에 띄워질 수 있고, 이것은 2D상에 직접적으로 그려지는 것과 같은 결과임
+
+- **Occlusion problem** : back-to-front 순서로 물체들을 그리지 않으면, 더 가까이 있는 물체가 멀리 있는 물체에 가려지는 incorrect result가 초래됨
+  - 이 back-to-front 순서로 물체 그리는 걸 ***Painter's algorithm***이라고도 부름
+  - hidden surface를 제거하는 가장 타당한 방법임
+  - 하지만, *Occlusion cycle*같은 어떤 물체가 더 앞에 있고 뒤에있는지 이 상대적인 깊이를 평가할 수 없는 경우가 존재함
+    - 이럴때는 painter's algorithm으로 back-to-front order를 설정할 수가 없다.
+    - 또한, depth 기준으로 primitives를 정렬하는 것은 시간소요적이라서 큰 씬에 대해서는 애초에 painter's algorithm을 사용하기가 거의 어려움
+ <br> 
+
+### 2.3. Using a <u>Z-Buffer</u> for Hidden Surfaces
+- 앞선 occlusion problem에서 필요한 depth sorting이 시간소요적이라는 측면에서, painter's algorithm이 거의 사용되지 않기 떄문에 나온 방법
+- 아이디어 = 각 픽셀에서 지금까지 렌더링된 가장 가까운 표면까지의 거리(depth)를 기록하고, 그 거리보다 더 멀리 있는 fragment는 폐기한다.
+  - 이 거리를 RGB color 세 값에 추가적으로 buffer를 두어 z값을 저장하고 z차원에서 grid를 생성함
+- buffer algorithm은 **Fragment blending** phase에서 구현됨
+- 현재 z-buffer에 저장된 depth value랑 각 fragment별로 depth를 비교하면서, 만약 해당 fragment value값이 더 작다면 color와 depth value를 덮어씌운다.
+![z-buffer.png](assets/img/posts_storage/ch8/IMG_07F0745595CA-1.jpeg)
+<br>
+
+### 2.4. Per-vertex Shading
+- rasterization으로 interpolated된 color와 계산된 depth로만 3D 공간에서 object를 나타내는 것으로 충분할 수도 있지만, 대부분은 objects with **shading**을 구현하고 싶어함
+- **light direction, eye direction, surface normal** 같은 조명과 관련한 변수들 필요로 함
+- vertex stage에서 shading computation을 수행하는 방법 소개
+  - **"고러드 쉐이딩"**
+  - 카메라 poistion, lights, vertex에 의해서 빛의 방향과 viewer의 gaze direction이 계산되는 방법
+  - 이 shading equation을 통해 계산된 vertex color는 rasterizer에게 넘어감 (즉, rasterizer 이전 단계에서 수행되는 shading equation이다)
+- 각각의 vertex에서 shading을 다루고 vertex끼리는 다루지 않아서 아무래도 디테일이 좀 떨어진다는 단점이 있다.
+<br>
+
+### 2.5. Per-fragment Shading
+- Rasterization 이후에 나온 interpolated color를 이용해서 fragment stage에서 수행되는 shading 
+- **"Phong shading"** (Phong illumination model이랑 다른 개념임)
+- shading equation자체는 똑같지만, 정점 각각에 행해지는 것이 아니라 rasterziation으로 나온 보간된 색상을 이용한 fragment각각에 수행된다는 점이 다름
+  - 이것을 위해서 vertex stage 좌표계가 fragment stage와 일련되게 존재해야 데이터가 적절하게 사용될 수 있음
+<br>
+
+### 2.6. Texture Mapping
+- Texture에 대한 디테일은 chapter-11에서 더 자세하게 다룰 예정
+- **Textures** : 표면의 음영(shading)에 추가적인 디테일을 더하기 위해 사용되는 이미지로, 추가되지 않으면 지나치게 균일하고 인공적으로 보이게 될 수 있음
+<br>
+
+### 2.7. Shading Frequency
+- shading computation들을 어떤 스텝에 위치시킬지를 **color change가 얼마나 빠른지**에 따라 결정할 수 있다.
+- 이 변하는 정도를 "scale"로 확인할 수 있음
+  1. **large**-scale features(e.g., diffuse shading(난반사된 빛) on curved surfaces) 
+      - low shading frequency로 계산되어야 함
+      - vertex stage
+  2. **small**-scale features(e.g., sharp highlightsor detailed textures) 
+      - high shading frequency로 계산됨
+      - vertex stage  & fragment stage 모두 가능
+  
+<br>
+
+---
+simple anti-aliasing, culling primitives 내용 교재 참고
