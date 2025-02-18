@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Jiyoung Seo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2025-02-16T15:01:13+09:00</updated>
+  <updated>2025-02-18T23:23:02+09:00</updated>
   <author>
     <name>Jiyoung Seo</name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,46 @@
 
   
   <entry>
+    <title>Graphics-Ch9. Signal Processing</title>
+    <link href="http://localhost:4000/posts/ch9-Signal_Processing/" rel="alternate" type="text/html" title="Graphics-Ch9. Signal Processing" />
+    <published>2025-02-18T21:04:00+09:00</published>
+  
+    <updated>2025-02-18T21:04:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/ch9-Signal_Processing/</id>
+    <content type="text/html" src="http://localhost:4000/posts/ch9-Signal_Processing/" />
+    <author>
+      <name>jiyoung</name>
+    </author>
+
+  
+    
+    <category term="Graphics" />
+    
+    <category term="Study" />
+    
+  
+
+  <summary>Intro
+
+  신호 처리 단원
+  Sampling(연속적인 아날로그 신호에서 이산적인 디지털 신호로 샘플링하는 과정)과 Reconstruction(이산적인 신호 -&amp;amp;gt; 연속적인 아날로그 신호)의 일련의 과정에서 수행되는 filtering, anti-aliasing, Fourier transform,등의 내용을 다룸
+  학부 패턴인식 수업 중간범위에서 배웠던 내용이랑 많이 겹침, 나중에 참고
+
+
+1. Digital Audio : Sampling in 1D
+
+  Continuous Analog signal $\rightarrow$ Lowpass filter $\rightarrow$ ADC(A/D converter : Sampling) $\rightarrow$ Discrete digital signal...</summary>
+
+  </entry>
+
+  
+  <entry>
     <title>Graphics-Ch8. Graphics Pipeline</title>
     <link href="http://localhost:4000/posts/ch8-Graphics_pipeline/" rel="alternate" type="text/html" title="Graphics-Ch8. Graphics Pipeline" />
     <published>2025-02-15T12:04:00+09:00</published>
   
-    <updated>2025-02-15T19:00:02+09:00</updated>
+    <updated>2025-02-16T15:01:39+09:00</updated>
   
     <id>http://localhost:4000/posts/ch8-Graphics_pipeline/</id>
     <content type="text/html" src="http://localhost:4000/posts/ch8-Graphics_pipeline/" />
@@ -154,42 +189,6 @@ Abstract
       SuGaR처럼 포아송 재건(Poisson reconstruction)을 사용하지 않으며, 2DGS와 GS2Mesh처럼 TSDF fusion을 사용하지 않음
       surface normal을 ray-Gaussian intersection plane(ray와 교차하는 가우시안의 평면)을 이용하여 근사함
       geome...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>RaDe-GS, arXiv preprint</title>
-    <link href="http://localhost:4000/posts/RaDe-GS/" rel="alternate" type="text/html" title="RaDe-GS, arXiv preprint" />
-    <published>2025-02-07T19:34:00+09:00</published>
-  
-    <updated>2025-02-08T11:46:12+09:00</updated>
-  
-    <id>http://localhost:4000/posts/RaDe-GS/</id>
-    <content type="text/html" src="http://localhost:4000/posts/RaDe-GS/" />
-    <author>
-      <name>jiyoung</name>
-    </author>
-
-  
-    
-    <category term="Paper Review" />
-    
-  
-
-  <summary>RaDe-GS: Rasterizing Depth in Gaussian Splatting
-
-  인용도 많이 됐고 나온지 꽤 됐는데 아직 아카이브이길래 아마 cvpr2025 이번에 내지 않았을까 싶은데…
-  GOF(Gaussian Opacity Fields, SIGGRAPH Asia 2024) 다음에 읽기
-
-
-
-
-Abstract
-
-  3DGS의 이산적이고 비구조적인 특성때문에 shape accurac가 떨어지는 문제 있음
-  최근 관련 연구 중, 2D-GS에서는 shape reconstruction 성능을 올리기 위해, Gaussian primitives들을 이용했지만 이것은 렌더링 퀄리티랑 계산적인 효율성은 감소시키는 효과가 있음
-  그래서 본 논문에서는 rasterized 접근법을 통해, 3DGS의 d...</summary>
 
   </entry>
 
