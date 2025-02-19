@@ -45,7 +45,7 @@
 <meta name="twitter:site" content="@" />
 <meta name="twitter:creator" content="@Jiyoung Seo" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Jiyoung Seo","url":"https://jyseo531.github.io/about"},"dateModified":"2025-02-18T21:04:00+09:00","datePublished":"2025-02-18T21:04:00+09:00","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"Graphics-Ch9. Signal Processing","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/ch9-Signal_Processing/"},"url":"http://localhost:4000/posts/ch9-Signal_Processing/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Jiyoung Seo","url":"https://jyseo531.github.io/about"},"dateModified":"2025-02-19T14:33:48+09:00","datePublished":"2025-02-18T21:04:00+09:00","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"Graphics-Ch9. Signal Processing","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/ch9-Signal_Processing/"},"url":"http://localhost:4000/posts/ch9-Signal_Processing/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1037,6 +1037,69 @@
     <!-- combine -->
     
   
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+    
+
+    
+      
+
+      
+      
+      
+
+      
+    
+      
+
+      
+      
+      
+
+      
+    
+
+    <!-- take out classes -->
+    
+
+    
+    
+
+    
+
+    
+      
+    
+
+    <!-- lazy-load images -->
+    
+
+    
+      <!-- make sure the `<img>` is wrapped by `<a>` -->
+      
+
+      
+        <!-- create the image wrapper -->
+        
+
+        
+        
+      
+    
+
+    <!-- combine -->
+    
+  
 
   
 
@@ -1143,28 +1206,6 @@
       
         
         
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-      
-      
-
-      
-    
       
 
       
@@ -1411,6 +1452,29 @@
 
       <!-- lastmod date -->
       
+        <span>
+          Updated
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1739943228"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  Feb 19, 2025
+</time>
+
+        </span>
+      
 
       
 
@@ -1456,9 +1520,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1547 words"
+  title="1892 words"
 >
-  <em>8 min</em> read</span>
+  <em>10 min</em> read</span>
 
         </div>
       </div>
@@ -1721,21 +1785,54 @@
 
 <h2 id="5-sampling-theory"><span class="me-2">5. Sampling Theory</span><a href="#5-sampling-theory" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <ul>
-  <li>푸리에 신호와 관련된 샘플링 이론을 배워보자.</li>
+  <li>푸리에 신호와 관련된 샘플링 이론 관련한 내용</li>
   <li>나이퀘스트 샘플링 이론이라던지 anti-aliasing 부분을 주파수 도메인의 푸리에 변환, 역푸리에변환과 관련되어 깊은 수학적인 내용을 다룸</li>
 </ul>
 
 <h3 id="51-fourier-transform"><span class="me-2">5.1. Fourier Transform</span><a href="#51-fourier-transform" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 <ul>
-  <li>푸리에 변환 내용</li>
-  <li>여기서부터 패턴인식 강의노트 같이 복습하며 내일 공부하기, 급한건 아님 논문읽기먼저</li>
+  <li>푸리에 신호 내용</li>
+  <li><strong>Fourier Series</strong>
+    <ul>
+      <li>주기 $T$를 갖는 <strong>주기</strong> 신호 $x(t) = x(t+T)$가 존재할 때, fundamental frequency $w_0 = 2\pi / T$ 이다</li>
+      <li>이를 오일러 공식을 이용해서 cosine함수로 아래처럼 표현가능 :</li>
+    </ul>
+
+    <p>\(\begin{align} x(t) = cos w_0 t \quad x(t) = e^{jw_0t} \end{align}\)\</p>
+
+    <ul>
+      <li>
+        <p><strong>Harmonically related complex exponentials 세트란?</strong> <br />
+ \(\begin{align} \Theta_k(t) = e^{jkw_0t} = e^jk(2\pi /T)t \quad k = 0, +-1. +- 2, .. \end{align}\)</p>
+      </li>
+      <li>이 때, 위의 <u> harmonically related complex exponential들의 선형결합</u>을 “<strong>Fourier Series Representation</strong>“이라고 함</li>
+      <li>그럼 <strong>주기가 없는(aperiodic)한 신호</strong>들에 대해서는 푸리에 변환으로 표현할 수 있다, sum말고 integral을 사용함</li>
+    </ul>
+
+    <p>\(\begin{align} \hat{f(u)} &amp;= \int_{-\infty}^{+\infty} f(x) e^{-2\pi i u x} \,dx \\
+                  f(x) &amp; = \int_{-\infty}^{+\infty} \hat{f(u)}e^{2\pi i u x} \,du \\
+                  \int (f(x))^2 \,dx &amp;= \int (\hat{f(u)})^2 \,du \end{align}\)</p>
+    <ul>
+      <li>차례대로 <strong>Fourier transform</strong>을 이용해서 <em>푸리에 계수(Fourier Coefficient)</em>구하는 공식, <strong>Inverse Fourier Transform</strong>으로 원본 aperiodic signal을 표현하는 공식</li>
+    </ul>
+
+    <p><a href="/assets/img/posts_storage/ch9/image.png" class="popup img-link  shimmer"><img src="/assets/img/posts_storage/ch9/image.png" alt="img.png" loading="lazy"></a></p>
+  </li>
 </ul>
 
-<h3 id="52-convolution-and-the-fourier-transform"><span class="me-2">5.2. Convolution and the Fourier Transform</span><a href="#52-convolution-and-the-fourier-transform" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-
-<h3 id="53-dirac-impulsed-in-sampling-theory"><span class="me-2">5.3. Dirac Impulsed in Sampling Theory</span><a href="#53-dirac-impulsed-in-sampling-theory" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<p>…</p>
 
 <h3 id="54-sampling-and-aliasing"><span class="me-2">5.4. Sampling and Aliasing</span><a href="#54-sampling-and-aliasing" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<ul>
+  <li>앨리아싱 현상을 완화하려면, 적절한 sampling filter와 reconstruction filter를 설정하는 것이 중요하다</li>
+  <li>이때 low pass filter로 filtering을 하는 목적은, 일정 주파수 도메인 범위를 잘라내서 제한하는 것임 $\rightarrow$ alias spectra 가 원본 신호를 방해하지 않게 도와줌</li>
+  <li>“<strong>Nyquist Criterion</strong>“(나이퀘스트 샘플링 이론):
+    <ul>
+      <li>연속 신호를 디지털 신호로 변환(샘플링)할 때, 신호의 <strong>최대 주파수(f_{max}​)의 최소 두 배 이상으로 샘플링</strong>해야 정보 손실 없이 복원 가능</li>
+      <li>샘플링 실행하는 min frequency =  나이퀘스트 속도(Nyquist Rate) = 2f_{max​}</li>
+    </ul>
+  </li>
+</ul>
 
   </div>
 
@@ -1863,6 +1960,13 @@
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/ch10-Surface_Shading/">Graphics-Ch10. Surface shading</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/ch9-Signal_Processing/">Graphics-Ch9. Signal Processing</a>
         </li>
       
@@ -1885,13 +1989,6 @@
         
         <li class="text-truncate lh-lg">
           <a href="/posts/MipNerf360/">Mip-NeRF 360, CVPR 2022</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/GOF/">Gaussian Opacity Fields, SIGGRAPH Asia 2024</a>
         </li>
       
     </ul>
@@ -2418,6 +2515,18 @@
 
   
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
 
@@ -2561,9 +2670,13 @@
   
 
   
-    <div class="btn btn-outline-primary disabled" aria-label="Newer">
-      <p>-</p>
-    </div>
+    <a
+      href="/posts/ch10-Surface_Shading/"
+      class="btn btn-outline-primary"
+      aria-label="Newer"
+    >
+      <p>Graphics-Ch10. Surface shading</p>
+    </a>
   
 </nav>
 
