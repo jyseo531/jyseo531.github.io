@@ -188,17 +188,35 @@ $$
 ---
 
 ## 5. Sampling Theory
-- 푸리에 신호와 관련된 샘플링 이론을 배워보자.
+- 푸리에 신호와 관련된 샘플링 이론 관련한 내용
 - 나이퀘스트 샘플링 이론이라던지 anti-aliasing 부분을 주파수 도메인의 푸리에 변환, 역푸리에변환과 관련되어 깊은 수학적인 내용을 다룸
 
 ### 5.1. Fourier Transform
-- 푸리에 변환 내용
-- 여기서부터 패턴인식 강의노트 같이 복습하며 내일 공부하기, 급한건 아님 논문읽기먼저
+- 푸리에 신호 내용
+- **Fourier Series**
+  - 주기 $T$를 갖는 **주기** 신호 $x(t) = x(t+T)$가 존재할 때, fundamental frequency $w_0 = 2\pi / T$ 이다
+  - 이를 오일러 공식을 이용해서 cosine함수로 아래처럼 표현가능 :
+   
+   $$ \begin{align} x(t) = cos w_0 t \quad x(t) = e^{jw_0t} \end{align} $$\
 
-### 5.2. Convolution and the Fourier Transform
+  - **Harmonically related complex exponentials 세트란?** <br>
+     $$ \begin{align} \Theta_k(t) = e^{jkw_0t} = e^jk(2\pi /T)t \quad k = 0, +-1. +- 2, .. \end{align} $$
+  
+  - 이 때, 위의 <u> harmonically related complex exponential들의 선형결합</u>을 "**Fourier Series Representation**"이라고 함
+  - 그럼 **주기가 없는(aperiodic)한 신호**들에 대해서는 푸리에 변환으로 표현할 수 있다, sum말고 integral을 사용함
+  
+  $$ \begin{align} \hat{f(u)} &= \int_{-\infty}^{+\infty} f(x) e^{-2\pi i u x} \,dx \\
+                    f(x) & = \int_{-\infty}^{+\infty} \hat{f(u)}e^{2\pi i u x} \,du \\
+                    \int (f(x))^2 \,dx &= \int (\hat{f(u)})^2 \,du \end{align} $$
+  - 차례대로 **Fourier transform**을 이용해서 *푸리에 계수(Fourier Coefficient)*구하는 공식, **Inverse Fourier Transform**으로 원본 aperiodic signal을 표현하는 공식
+  
+  ![img.png](assets/img/posts_storage/ch9/image.png)
 
-
-### 5.3. Dirac Impulsed in Sampling Theory
-
+...
 
 ### 5.4. Sampling and Aliasing
+- 앨리아싱 현상을 완화하려면, 적절한 sampling filter와 reconstruction filter를 설정하는 것이 중요하다
+- 이때 low pass filter로 filtering을 하는 목적은, 일정 주파수 도메인 범위를 잘라내서 제한하는 것임 $\rightarrow$ alias spectra 가 원본 신호를 방해하지 않게 도와줌
+- "**Nyquist Criterion**"(나이퀘스트 샘플링 이론):
+  - 연속 신호를 디지털 신호로 변환(샘플링)할 때, 신호의 **최대 주파수(f_{max}​)의 최소 두 배 이상으로 샘플링**해야 정보 손실 없이 복원 가능
+  - 샘플링 실행하는 min frequency =  나이퀘스트 속도(Nyquist Rate) = 2f_{max​}
