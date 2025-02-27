@@ -45,7 +45,7 @@
 <meta name="twitter:site" content="@" />
 <meta name="twitter:creator" content="@Jiyoung Seo" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Jiyoung Seo","url":"https://jyseo531.github.io/about"},"dateModified":"2025-02-19T20:04:00+09:00","datePublished":"2025-02-19T20:04:00+09:00","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"Graphics-Ch10. Surface shading","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/ch10-Surface_Shading/"},"url":"http://localhost:4000/posts/ch10-Surface_Shading/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Jiyoung Seo","url":"https://jyseo531.github.io/about"},"dateModified":"2025-02-19T22:57:02+09:00","datePublished":"2025-02-19T20:04:00+09:00","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"Graphics-Ch10. Surface shading","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/ch10-Surface_Shading/"},"url":"http://localhost:4000/posts/ch10-Surface_Shading/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -1050,6 +1050,29 @@
 
       <!-- lastmod date -->
       
+        <span>
+          Updated
+          <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1739973422"
+  data-df="ll"
+  
+    data-bs-toggle="tooltip" data-bs-placement="bottom"
+  
+>
+  Feb 19, 2025
+</time>
+
+        </span>
+      
 
       
 
@@ -1095,9 +1118,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="624 words"
+  title="761 words"
 >
-  <em>3 min</em> read</span>
+  <em>4 min</em> read</span>
 
         </div>
       </div>
@@ -1159,8 +1182,8 @@
 
     <ul>
       <li>$c$ : surface color</li>
-      <li>$n$ : surface normal</li>
-      <li>vector $l$ : light direction (물체가 놓여진 표면의 위치에 영향을 받지 않는다는 중요한 성질 있음)</li>
+      <li>$\mathrm{n}$ : surface normal</li>
+      <li>vector $\mathrm{l}$ : light direction (물체가 놓여진 표면의 위치에 영향을 받지 않는다는 중요한 성질 있음)</li>
     </ul>
   </li>
   <li>광원의 <strong>세기(intensity)</strong>와 표면의 <strong>반사도(reflectance)</strong>에 따라 표면은 더 밝아지거나 어두워질 수 있음
@@ -1177,7 +1200,7 @@
 \[\begin{align} c = c_r  c_l \mathrm{n} \cdot \mathrm{l}. \end{align}\]
   </li>
   <li>
-    <p>이 때, $n \cdot l$은 만약 surface normal이 light direction과 정반대 즉, 두 벡터 사이 각도 $\theta$가 180도 이상인 경우는 dot product를 “max” function으로 대체할 수 있음 :</p>
+    <p>이 때, $n \cdot l$은 만약 surface normal이 light direction과 정반대 즉, 두 벡터 사이 각도 $\theta$가 180도 이상인 경우는 dot product값이 음수가 나오는 상황이므로, 내적연산을 “max” function으로 대체할 수 있음 :</p>
 
 \[\begin{align} c = c_r  c_l max(0, \mathrm{n} \cdot \mathrm{l}). \end{align}\]
   </li>
@@ -1251,8 +1274,15 @@ c &amp;= c_l max(0, \mathrm{e} \cdot \mathrm{r}) ^p \end{align}\]
 
 \[\begin{align} \mathrm{r} = -\mathrm{l} + 2(\mathrm{l} \cdot \mathrm{n})\mathrm{n}, \end{align}\]
   </li>
+  <li>$\mathrm{r}$대신 휴리스틱하게 $\mathrm{l}$과 $\mathrm{e}$의 가운데 존재하는 halfway vector $\mathrm{h}$를 이용하여 <strong>highlight 영역</strong> light modeling 가능함
+    <ul>
+      <li>n과 h의 내적은 항상 양수라는 장점 있음</li>
+      <li>단점은 h 계산을 위해서는 루트 연산과 나눗셈이 필요함</li>
+    </ul>
+  </li>
+  <li>$\mathrm{h}$가 $\mathrm{n}$ 과 가까울수록 highlight가 커진다고 해석 가능</li>
   <li>
-    <p>그러나, $\mathrm{r}$대신 휴리스틱하게 $\mathrm{l}$과 $\mathrm{e}$의 가운데 존재하는 halfway vector $\mathrm{h}$를 이용할 수 있음</p>
+    <p>이때, h와 n 사이의 각도는 $\theta$보다 작아질 수밖에 없어서 디테일이 살짝 달라질수는 있다</p>
 
 \[\begin{align} &amp;c = c_l (\mathrm{h} \cdot \mathrm{n})^p , \\
   &amp;where, \quad \mathrm{h} = \frac{\mathrm{e} + \mathrm{l}}{|| \mathrm{e} + \mathrm{l} ||} \end{align}\]
@@ -1265,8 +1295,10 @@ c &amp;= c_l max(0, \mathrm{e} \cdot \mathrm{r}) ^p \end{align}\]
 </div>
 
 <ul>
-  <li>
-    <p>최종 <strong>Phong illumination model</strong> :</p>
+  <li>최종 <strong>Phong illumination model</strong> :
+    <ul>
+      <li>ambient light term, diffse(lambertian) term, highlight term이 순서대로 더해진 전체 shading model 수식</li>
+    </ul>
 
 \[\begin{align} c = c_r(c_a + c_l max(0, \mathrm{n} \cdot \mathrm{l})) + c_l c_p (\mathrm{h} \cdot \mathrm{n})^p \end{align}\]
 

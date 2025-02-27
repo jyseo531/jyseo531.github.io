@@ -26,13 +26,14 @@ Since July 2024, I have been working as an Undergrad research intern, involved i
 ### 📄 Publications
 > #### EditSplat: Multi-View Fusion and Attention-Guided Optimization for View-Consistent 3D Scene Editing with 3D Gaussian Splatting <span style="color:grey"> </span>
 >
-> CVPR 2025, 3rd author
-> *(D lee, H Park, **J Seo**, E Park, H Park, H Baek, S Shin, S Kim, S Kim)*
+> **CVPR 2025**
+> 
+> 3rd author *(D lee, H Park, **J Seo**, E Park, H Park, H Baek, S Shin, S Kim, S Kim)*
 > 
 > [arXiv](https://arxiv.org/pdf/2412.11520) 
 > [project-page](https://kuai-lab.github.io/editsplat2024/) 
 > 
-> Feb. 2025, Under Review 
+> Feb. 2025 
 <br>
 
 > 
