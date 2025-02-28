@@ -33,7 +33,7 @@ Since July 2024, I have been working as an Undergrad research intern, involved i
 > [arXiv](https://arxiv.org/pdf/2412.11520) 
 > [project-page](https://kuai-lab.github.io/editsplat2024/) 
 > 
-> Feb. 2025 
+> Nov. 2024 
 <br>
 
 > 
