@@ -35,7 +35,8 @@ Since July 2024, I have been working as an Undergrad research intern, involved i
 > ##### ICCV 2025 Submission, **Under Review** 
 > March 2025 <br>
 > 3rd author *(H Baek, H Shin, **J Seo**, C Kim, S Kim, H Kim, S Kim)*  <br>
-<!-- > [arxiv] (coming soon) -->
+> [arxiv](coming soon) |
+> [project-page](https:/iccv2025-avsurf.github.io)
 
 > #### Coming Soon 
 >
