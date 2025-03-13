@@ -32,7 +32,7 @@ Since July 2024, I have been working as an Undergrad research intern, involved i
 > [project-page](https://kuai-lab.github.io/editsplat2024/) 
 
 > #### AV-Surf: Surface-Enhanced Geometry-Aware Novel-View Acoustic Synthesis <span style="color:grey"> </span>
-> ##### ICCV 2025 Submission, **Under Review** 
+> ##### **Under Review** 
 > March 2025 <br>
 > 3rd author *(H Baek, H Shin, **J Seo**, C Kim, S Kim, H Kim, S Kim)*  <br>
 <!-- > [arxiv](coming soon) | -->
