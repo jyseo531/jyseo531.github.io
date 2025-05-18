@@ -35,7 +35,7 @@ Since July 2024, I have been working as an Undergrad research intern, involved i
 > ##### **Under Review** 
 > March 2025 <br>
 > 3rd author *(H Baek, H Shin, **J Seo**, C Kim, S Kim, H Kim, S Kim)*  <br>
-<!-- > [arxiv](coming soon) | -->
+> [arxiv](https://arxiv.org/pdf/2503.12806) |
 > [project-page](https://avsurf.github.io/)
 
 > #### VAT-KG: Knowledge-Intensive Multimodal Knowledge Graph Dataset for Retrieval-Augmented Generation <span style="color:grey"> </span>
