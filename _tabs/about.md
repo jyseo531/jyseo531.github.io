@@ -3,7 +3,7 @@
 icon: fas fa-info-circle
 order: 4
 ---
-Hi, I'm a member of [Computer Vision Lab](https://kuaicv.com/) in **Korea University** *(March 2025~)*, provised by Prof. Sangpil Kim. <br>
+Hi, 
 I received a B.S. in Statistics and Artificial Intelligence(Double Major) from the **University of Seoul***(2021~2025)*. <br>
 
 Throughout my undergraduate studies, I built a strong foundation in pattern recognition, computer vision, and 3D graphics, working on projects related to 3D reconstruction, inverse rendering, and low-level vision. <br>
