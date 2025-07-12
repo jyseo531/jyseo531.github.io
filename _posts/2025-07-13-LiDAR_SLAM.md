@@ -1,13 +1,24 @@
 ---
 title: LiDAR SLAM tutorial
 author: jiyoung
-date: 2025-07-13 08:00:00 +0800
+date: 2025-07-13 07:00:00 +0800
 categories: [Study, SLAM]
 tags: [SLAM, 3D Perception, Autonomous Driving]
 ---
-## Paper List
+
+<script type="text/javascript">
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+## Paper List (TODO)
 - 87 PAMI Least-squares fitting of two 3D point sets
-    
+
     *tldr: SVD-based closed form of registration; a basic of basic of the scan matching* 
     
 - 92 PAMI A method for registration of 3-D shapes

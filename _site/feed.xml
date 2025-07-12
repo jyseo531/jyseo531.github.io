@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Jiyoung Seo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2025-05-18T20:58:19+09:00</updated>
+  <updated>2025-07-13T08:43:13+09:00</updated>
   <author>
     <name>Jiyoung Seo</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,47 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>LiDAR SLAM tutorial</title>
+    <link href="http://localhost:4000/posts/LiDAR_SLAM/" rel="alternate" type="text/html" title="LiDAR SLAM tutorial" />
+    <published>2025-07-13T08:00:00+09:00</published>
+  
+    <updated>2025-07-13T08:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/LiDAR_SLAM/</id>
+    <content type="text/html" src="http://localhost:4000/posts/LiDAR_SLAM/" />
+    <author>
+      <name>jiyoung</name>
+    </author>
+
+  
+    
+    <category term="Study" />
+    
+    <category term="SLAM" />
+    
+  
+
+  <summary>Paper List (TODO)
+
+  
+    87 PAMI Least-squares fitting of two 3D point sets
+
+    tldr: SVD-based closed form of registration; a basic of basic of the scan matching
+  
+  
+    92 PAMI A method for registration of 3-D shapes
+
+    tldr: a.k.a ICP; a basic of the scan matching
+  
+  
+    97 AR Globally Consistent Range Scan Alignment for Environment Mapping
+
+    tldr: mostly called as “Lu and Milios...</summary>
+
+  </entry>
 
   
   <entry>
@@ -157,48 +198,6 @@
   ch4(Ray-Tracing)단원에서 orthographic(paralled) view와 perspective view에서 vieweing ray가 어떻게 생성되는지에 대해 간단하게 다루었음
     
       ray-tracer는 ray와 만나는 가장 가까운 교차점에 대한 surface를 찾는 것이고, object-order renderer는 solid-looking object에서 어떤 표면이 screen space(pixcel space)의 어떤 점들에 매칭...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Mip-NeRF 360, CVPR 2022</title>
-    <link href="http://localhost:4000/posts/MipNerf360/" rel="alternate" type="text/html" title="Mip-NeRF 360, CVPR 2022" />
-    <published>2025-02-10T12:30:00+09:00</published>
-  
-    <updated>2025-02-14T13:49:38+09:00</updated>
-  
-    <id>http://localhost:4000/posts/MipNerf360/</id>
-    <content type="text/html" src="http://localhost:4000/posts/MipNerf360/" />
-    <author>
-      <name>jiyoung</name>
-    </author>
-
-  
-    
-    <category term="Paper Review" />
-    
-  
-
-  <summary>Mip-NeRF 360: Unbounded Anti-Aliased Neural Radiance Fields
-
-  depth distortion loss의 시초
-    
-      현재 GS기반 Surface Reconstruction 정규화 텀들에 많이 사용함
-    
-  
-
-
-Abstract
-
-  “unbounded scene” : 학습된 데이터의 방향(direction)과 거리(distance)와 무관하게 모든 ray상에 존재하는 point에 대해 잘 합성된 scene
-    
-      주로 전경 물체 뿐만아니라 배경까지 있는 scene을 의미함
-    
-  
-  NeRF(Neural Radiance Fields)
-    
-      volumentric density 랑 color를 MLP를 통...</summary>
 
   </entry>
 
