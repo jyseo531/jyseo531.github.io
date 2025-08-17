@@ -42,7 +42,8 @@ Since July 2024, I have been working as an Undergrad research intern, involved i
 > ##### **Under Review** 
 > May 2025 <br>
 > 5th author *(H Park, M Jang, H Baek, G Chang, **J Seo**, J Park, H Park, S Kim)*  <br>
-
+> [arxiv](https://arxiv.org/pdf/2506.21556) |
+> [project-page](https://vatkg.github.io)
 
 > #### Coming Soon 
 >
