@@ -3,8 +3,8 @@
 icon: fas fa-info-circle
 order: 4
 ---
-Hi, 
-I received a B.S. in Statistics and Artificial Intelligence(Double Major) from the **University of Seoul***(2021~2025)*. <br>
+Hi, I’m Jiyoung Seo, a master’s student in the Computer Vision Lab at **Korea University***(2025.03~)*. <br>
+I received a B.S. in Statistics and Artificial Intelligence(Double-Major) from the **University of Seoul***(2021~2025)*. <br>
 
 Throughout my undergraduate studies, I built a strong foundation in pattern recognition, computer vision, and 3D graphics, working on projects related to 3D reconstruction, inverse rendering, and low-level vision. <br>
 Since July 2024, I have been working as an Undergrad research intern, involved in research projects. My ultimate goal is to become a top-tier researcher who drives innovation in computer vision and 3D graphics. <br>
@@ -27,26 +27,29 @@ Since July 2024, I have been working as an Undergrad research intern, involved i
 > #### EditSplat: Multi-View Fusion and Attention-Guided Optimization for View-Consistent 3D Scene Editing with 3D Gaussian Splatting <span style="color:grey"> </span>
 > 
 > ##### **CVPR 2025**
-> 3rd author *(D lee, H Park, **J Seo**, E Park, H Park, H Baek, S Shin, S Kim, S Kim)*  <br>
+> 3rd author *(D Lee, H Park, **J Seo**, E Park, H Park, H Baek, S Shin, S Kim, S Kim)*  <br>
 > [arXiv](https://arxiv.org/pdf/2412.11520) |
 > [project-page](https://kuai-lab.github.io/editsplat2024/) 
 
 > #### AV-Surf: Surface-Enhanced Geometry-Aware Novel-View Acoustic Synthesis <span style="color:grey"> </span>
-> ##### **Under Review** 
+> ##### ***Under Review*** 
 > March 2025 <br>
 > 3rd author *(H Baek, H Shin, **J Seo**, C Kim, S Kim, H Kim, S Kim)*  <br>
 > [arxiv](https://arxiv.org/pdf/2503.12806) |
 > [project-page](https://avsurf.github.io/)
 
 > #### VAT-KG: Knowledge-Intensive Multimodal Knowledge Graph Dataset for Retrieval-Augmented Generation <span style="color:grey"> </span>
-> ##### **Under Review** 
+> ##### ***Under Revie*w** 
 > May 2025 <br>
 > 5th author *(H Park, M Jang, H Baek, G Chang, **J Seo**, J Park, H Park, S Kim)*  <br>
 > [arxiv](https://arxiv.org/pdf/2506.21556) |
 > [project-page](https://vatkg.github.io)
 
-> #### Coming Soon 
->
+> #### Egocentric Hand Activity Video Dataset and Bidirectional Motion-Priors for Hand Action Recognition
+> ##### ***Submitted to IMAVIS*** 
+> Aug 2025 <br>
+> 1st author *(**J Seo**, D Lee, P Lee, J Lee, Y Gil, K Ramani, S Kim)*  <br>
+> 
 
 
 <br> <br>

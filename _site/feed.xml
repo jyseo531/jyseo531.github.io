@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Jiyoung Seo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2025-08-17T12:14:01+09:00</updated>
+  <updated>2025-08-26T16:36:43+09:00</updated>
   <author>
     <name>Jiyoung Seo</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,52 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>PERSONA, ICCV 2025</title>
+    <link href="http://localhost:4000/posts/PERSONA/" rel="alternate" type="text/html" title="PERSONA, ICCV 2025" />
+    <published>2025-08-26T13:00:00+09:00</published>
+  
+    <updated>2025-08-26T13:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/PERSONA/</id>
+    <content type="text/html" src="http://localhost:4000/posts/PERSONA/" />
+    <author>
+      <name>jiyoung</name>
+    </author>
+
+  
+    
+    <category term="Study" />
+    
+    <category term="Paper-review" />
+    
+  
+
+  <summary>기존 선행 연구들 문제
+
+(1) 3D 기반:
+
+
+  3DGS + SMPL-X같은 뉴럴렌더링 활용하는방법
+  ⇒  주로 강체(rigid) 변형만을 지원하는 3D 파라메트릭 모델을 활용하기 떄문에, 변형가능한(non-rigid)한 옷의 주름을 포착하기 위해서는 다양한 Pose정보가 포함된 대규모 데이터셋으로 학습이 필요함
+
+
+(2) 2D 기반:
+
+
+  diffusion활용
+  gemotry정보 잡는거 취약하고 multi-view에 의해 복원 inconsistency함
+
+
+Persona’s Contributions
+
+
+  앞선 3D neural rendering기반 메소드랑 2D diffusion기반 메소드의 장점만 모아서
+  단일 이미지 한 장으로 pose-driven deformation(변형) 잘 포착...</summary>
+
+  </entry>
 
   
   <entry>
@@ -166,38 +212,6 @@
     
       Vertex processing : vertices(꼭짓점)들이 연산되는 과정
       Rasterziation stage : 그 꼭짓점들을 이용한 primitives가 보내져서 연산되고, 각각의 Primitive...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Graphics-Ch7. Viewing</title>
-    <link href="http://localhost:4000/posts/ch7-Viewing/" rel="alternate" type="text/html" title="Graphics-Ch7. Viewing" />
-    <published>2025-02-13T12:04:00+09:00</published>
-  
-    <updated>2025-02-14T14:33:33+09:00</updated>
-  
-    <id>http://localhost:4000/posts/ch7-Viewing/</id>
-    <content type="text/html" src="http://localhost:4000/posts/ch7-Viewing/" />
-    <author>
-      <name>jiyoung</name>
-    </author>
-
-  
-    
-    <category term="Graphics" />
-    
-    <category term="Study" />
-    
-  
-
-  <summary>Intro
-
-  3D to 2D mapping을 통해 object를 3d location과 2D view 사이에서 이동시키는 것을 “viewing Transformation“이라고 함
-  object-order rendering에서 중요함
-  ch4(Ray-Tracing)단원에서 orthographic(paralled) view와 perspective view에서 vieweing ray가 어떻게 생성되는지에 대해 간단하게 다루었음
-    
-      ray-tracer는 ray와 만나는 가장 가까운 교차점에 대한 surface를 찾는 것이고, object-order renderer는 solid-looking object에서 어떤 표면이 screen space(pixcel space)의 어떤 점들에 매칭...</summary>
 
   </entry>
 
