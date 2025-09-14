@@ -46,10 +46,12 @@ Since July 2024, I have been working as an Undergrad research intern, involved i
 > [project-page](https://vatkg.github.io)
 
 > #### Egocentric Hand Activity Video Dataset and Bidirectional Motion-Priors for Hand Action Recognition
-> ##### ***Submitted to IMAVIS*** 
+> ##### ***Submitted to IEEE*** 
 > Aug 2025 <br>
 > 1st author *(**J Seo**, D Lee, P Lee, J Lee, Y Gil, K Ramani, S Kim)*  <br>
-> 
+
+#### Coming Soon!
+
 
 
 <br> <br>

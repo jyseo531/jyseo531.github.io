@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Jiyoung Seo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2025-08-26T16:36:43+09:00</updated>
+  <updated>2025-09-14T16:51:34+09:00</updated>
   <author>
     <name>Jiyoung Seo</name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,46 @@
 
   
   <entry>
+    <title>3D-LLM, NIPS 2023</title>
+    <link href="http://localhost:4000/posts/3DLLM/" rel="alternate" type="text/html" title="3D-LLM, NIPS 2023" />
+    <published>2025-09-14T13:00:00+09:00</published>
+  
+    <updated>2025-09-14T13:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/3DLLM/</id>
+    <content type="text/html" src="http://localhost:4000/posts/3DLLM/" />
+    <author>
+      <name>jiyoung</name>
+    </author>
+
+  
+    
+    <category term="Study" />
+    
+    <category term="Paper-review" />
+    
+  
+
+  <summary>paper link
+
+Abstract
+
+
+  3D 공간의 정보 즉,  spatial relationships, physics, layout같은 더 많은 정보를 언어모델에게 주입해서 확장해보자
+  3D point cloud와 그것에 대한 feature + LLM query(prompt)를 인풋으로 줌
+  가능한 3D-related tasks : 3D QA, navigation, 3D grounding, captioning, ..
+  크게 세가지의 프롬프트 메커니즘을 통해 3D-language Data를 만들었다
+  학습 방법 : 멀티뷰 이미지들로부터 3D Feature extractor를 통해 3D feature(point cloud)를 얻은 이후 이거를 2D VLM 백본에 넣어주어 3D LLM학습하게 ...</summary>
+
+  </entry>
+
+  
+  <entry>
     <title>PERSONA, ICCV 2025</title>
     <link href="http://localhost:4000/posts/PERSONA/" rel="alternate" type="text/html" title="PERSONA, ICCV 2025" />
     <published>2025-08-26T13:00:00+09:00</published>
   
-    <updated>2025-08-26T13:00:00+09:00</updated>
+    <updated>2025-08-26T16:45:16+09:00</updated>
   
     <id>http://localhost:4000/posts/PERSONA/</id>
     <content type="text/html" src="http://localhost:4000/posts/PERSONA/" />
@@ -179,39 +214,6 @@ Persona’s Contributions
 1. Digital Audio : Sampling in 1D
 
   Continuous Analog signal $\rightarrow$ Lowpass filter $\rightarrow$ ADC(A/D converter : Sampling) $\rightarrow$ Discrete digital signal...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Graphics-Ch8. Graphics Pipeline</title>
-    <link href="http://localhost:4000/posts/ch8-Graphics_pipeline/" rel="alternate" type="text/html" title="Graphics-Ch8. Graphics Pipeline" />
-    <published>2025-02-15T12:04:00+09:00</published>
-  
-    <updated>2025-02-16T15:01:39+09:00</updated>
-  
-    <id>http://localhost:4000/posts/ch8-Graphics_pipeline/</id>
-    <content type="text/html" src="http://localhost:4000/posts/ch8-Graphics_pipeline/" />
-    <author>
-      <name>jiyoung</name>
-    </author>
-
-  
-    
-    <category term="Graphics" />
-    
-    <category term="Study" />
-    
-  
-
-  <summary>Intro
-
-  Graphics Pipeline : object에서 시작해서 pixel이 업데이트되기까지의 일련의 operations sequence
-  object-order rendering = rendering by “rasterization”
-  그래픽스 파이프라인 과정들 중에서 “vertex processing”, “Rasterization”, “Fragment Processing”, “Blending” 이렇게 핵심 네 스텝에 대해서 이번 단원에 다루도록 하겠다
-    
-      Vertex processing : vertices(꼭짓점)들이 연산되는 과정
-      Rasterziation stage : 그 꼭짓점들을 이용한 primitives가 보내져서 연산되고, 각각의 Primitive...</summary>
 
   </entry>
 
