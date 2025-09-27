@@ -1,6 +1,23 @@
 [
   
   {
+    "title": "Pixie, arxiv prepring 2025",
+    "url": "/posts/Pixie/",
+    "categories": "Study, Paper-review",
+    "tags": "3D Physics prediction",
+    "date": "2025-09-27 13:00:00 +0900",
+    
+
+
+
+
+
+    
+    "snippet": "paper linkAbstract  태스크: 3D scene의 물리적 특성 복원  Novel method that trains a generalizable neural network to predict physical properties across multiple scenes from 3D visual features purely using supe...",
+    "content": "paper linkAbstract  태스크: 3D scene의 물리적 특성 복원  Novel method that trains a generalizable neural network to predict physical properties across multiple scenes from 3D visual features purely using supervised losses  학습시키고 나면, 우리의 feed-forward network는 빠르고 정확하게 “material fields”를 추론할 수 있다  가우시안 스플래팅으로 표현된 정적인 static scene을 현실적으로 물리기반 시뮬레이션하는 scene으로 변형 가능  PixieVerse 데이터셋 ⇒ 3D assets + physical material annotation포함  CLIP같은 pretrained visual features 활용해서 zero-shot일반화          real-world scene + synthetic data(이게 더 학습되나봄)      Introduction  NeRF + 3DGS ⇒ learning-based scene reconstruction 네트워크          sparse camera 뷰로부터 3D geometry와 장면을 사실적으로 복원할 수 있음      visual appearance에만 집중해서 표현함                  geoemtry와 scene의 color만          physical properties 부재함                      기존 3D scnee의 physical properties복원의 메소드를 크게 두가지로 분류됨          사용자가 도메인 지식을 바탕으로 장면 전체에 대한 재질 파라미터를 직접 지정하도록 요구(?)      테스트 시점 최적화(test-time optimization)를 통해 재질 추출 과정을 자동화        PIXIE : geometry + appearance + physical learning 통합해서 예측  PixieVerse 데이터 :  1,624개의 paired 3D objects &amp; annotated materials          spanning 10 semantic classes      Contributions  3D Physics Prediction에서의 새로운 프레임워크 제안          이산적인 물질의 타입을 예측 &amp;      연속적인 physical parameter (Young’s modulus, Poisson’s ratio, density)를 예측        PIXIEVERSE 데이터셋 제안          3D objects (from Objaverse) + physical material annotations 제공      1624종류의 물체 + 10개의 semantic한 클래스        Inference가 빠르고 generalizable함          CLIP의 pretrained visual feature와 3D U-Net의 feed-forward활용하여 빠른 테스트타임 최적화        Real scene에서의 zero-shot generalization 성능          합성데이터로만 학습함에도 ㅂ루구하고, real-world scene에 잘 작동함      sim-to-real gap완화        MPM(material point-method) Solver와 함께 Seamless integration 성능          물리 시뮬레이션을 위해, 예측된 material field는 Gaussian Splatting모델이랑 같이 합쳐져서 렌더링될 수 있음 ⇒ wind, gravity같은 애니메이션      Method            기본 논지: 3D 시각적 외형(기존 NeRF와 3DGS같은 뉴럴렌더링(i.e., volumetric reconstruction model)으로 얻어지는 texture, shading, shape featrue 포함) 만으로도 객체의 물리적 파라미터를 복원하기에 충분한 정보를 제공한다는 것        Young’s modulus(영률) &amp; Poisson’s ratio(포아송비)같은 물성 예측"
+  },
+  
+  {
     "title": "3D-LLM, NIPS 2023",
     "url": "/posts/3DLLM/",
     "categories": "Study, Paper-review",

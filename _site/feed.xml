@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Jiyoung Seo</title>
   <subtitle>A minimal, responsive and feature-rich Jekyll theme for technical writing.</subtitle>
-  <updated>2025-09-27T11:54:19+09:00</updated>
+  <updated>2025-09-27T17:42:24+09:00</updated>
   <author>
     <name>Jiyoung Seo</name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,52 @@
 
   
   <entry>
+    <title>Pixie, arxiv prepring 2025</title>
+    <link href="http://localhost:4000/posts/Pixie/" rel="alternate" type="text/html" title="Pixie, arxiv prepring 2025" />
+    <published>2025-09-27T13:00:00+09:00</published>
+  
+    <updated>2025-09-27T13:00:00+09:00</updated>
+  
+    <id>http://localhost:4000/posts/Pixie/</id>
+    <content type="text/html" src="http://localhost:4000/posts/Pixie/" />
+    <author>
+      <name>jiyoung</name>
+    </author>
+
+  
+    
+    <category term="Study" />
+    
+    <category term="Paper-review" />
+    
+  
+
+  <summary>paper link
+
+
+
+
+
+
+
+Abstract
+
+
+  태스크: 3D scene의 물리적 특성 복원
+  Novel method that trains a generalizable neural network to predict physical properties across multiple scenes from 3D visual features purely using supervised losses
+  학습시키고 나면, 우리의 feed-forward network는 빠르고 정확하게 “material fields”를 추론할 수 있다
+  가우시안 스플래팅으로 표현된 정적인 static scene을 현실적으로 물리기반 시뮬레이션하는 scene으로 변형 가능
+  PixieVerse 데이터셋 ⇒ 3D assets ...</summary>
+
+  </entry>
+
+  
+  <entry>
     <title>3D-LLM, NIPS 2023</title>
     <link href="http://localhost:4000/posts/3DLLM/" rel="alternate" type="text/html" title="3D-LLM, NIPS 2023" />
     <published>2025-09-14T13:00:00+09:00</published>
   
-    <updated>2025-09-14T13:00:00+09:00</updated>
+    <updated>2025-09-27T11:56:31+09:00</updated>
   
     <id>http://localhost:4000/posts/3DLLM/</id>
     <content type="text/html" src="http://localhost:4000/posts/3DLLM/" />
@@ -179,41 +220,6 @@ Persona’s Contributions
 
 \[\begin{align} c &amp;amp;amp;\propto cos \theta . \\
                 c &amp;amp;amp;\propto \mathrm{n} \cdot \...</summary>
-
-  </entry>
-
-  
-  <entry>
-    <title>Graphics-Ch9. Signal Processing</title>
-    <link href="http://localhost:4000/posts/ch9-Signal_Processing/" rel="alternate" type="text/html" title="Graphics-Ch9. Signal Processing" />
-    <published>2025-02-18T21:04:00+09:00</published>
-  
-    <updated>2025-02-19T14:33:48+09:00</updated>
-  
-    <id>http://localhost:4000/posts/ch9-Signal_Processing/</id>
-    <content type="text/html" src="http://localhost:4000/posts/ch9-Signal_Processing/" />
-    <author>
-      <name>jiyoung</name>
-    </author>
-
-  
-    
-    <category term="Graphics" />
-    
-    <category term="Study" />
-    
-  
-
-  <summary>Intro
-
-  신호 처리 단원
-  Sampling(연속적인 아날로그 신호에서 이산적인 디지털 신호로 샘플링하는 과정)과 Reconstruction(이산적인 신호 -&amp;amp;gt; 연속적인 아날로그 신호)의 일련의 과정에서 수행되는 filtering, anti-aliasing, Fourier transform,등의 내용을 다룸
-  학부 패턴인식 수업 중간범위에서 배웠던 내용이랑 많이 겹침, 나중에 참고
-
-
-1. Digital Audio : Sampling in 1D
-
-  Continuous Analog signal $\rightarrow$ Lowpass filter $\rightarrow$ ADC(A/D converter : Sampling) $\rightarrow$ Discrete digital signal...</summary>
 
   </entry>
 
