@@ -38,19 +38,19 @@ Since July 2024, I have been working as an Undergrad research intern, involved i
 > [arxiv](https://arxiv.org/pdf/2503.12806) |
 > [project-page](https://avsurf.github.io/)
 
-> #### VAT-KG: Knowledge-Intensive Multimodal Knowledge Graph Dataset for Retrieval-Augmented Generation <span style="color:grey"> </span>
-> ##### ***Under Revie*w** 
-> May 2025 <br>
-> 5th author *(H Park, M Jang, H Baek, G Chang, **J Seo**, J Park, H Park, S Kim)*  <br>
-> [arxiv](https://arxiv.org/pdf/2506.21556) |
-> [project-page](https://vatkg.github.io)
-
 > #### Egocentric Hand Activity Video Dataset and Bidirectional Motion-Priors for Hand Action Recognition
 > ##### ***Submitted to IEEE*** 
 > Aug 2025 <br>
 > 1st author *(**J Seo**, D Lee, P Lee, J Lee, Y Gil, K Ramani, S Kim)*  <br>
 
-#### Coming Soon!
+> #### VAT-KG: Knowledge-Intensive Multimodal Knowledge Graph Dataset for Retrieval-Augmented Generation <span style="color:grey"> </span>
+> ##### ***Under Revie*w** 
+> Sep 2025 <br>
+> 2nd author *(H Park, **J Seo**, M Jang, H Baek, G Chang, H Park, S Kim)*  <br>
+> [arxiv](https://arxiv.org/pdf/2506.21556) |
+> [project-page](https://vatkg.github.io)
+
+> #### Coming Soon!
 
 
 
