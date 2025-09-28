@@ -80,12 +80,14 @@ tags: [3D Editable Simulation, 3D Editing, Autonomous Driving]
   - 각 bin은 시간에 따라 인접한 bin의 중첩 영역을 사용하여 점진적으로 Gaussian 필드에 병합
   - 원근 변화로 인한 스케일 혼란과 아티팩트를 방지
 -   Gaussians의 파라미터(위치 $P(x,y,z)$, 공분산 행렬 $\Sigma$, 구면 고조파 계수 $C(r,g,b)$, 불투명도 $\alpha$)는 주변 뷰를 통해 아래 수식으로 업데이트
+  <br>
     $$\tilde{C} = \varsigma(G_{s}) \sum \omega(\hat{C}(G_{s}) | R, T)$$
     -  $\tilde{C}$는 최적화된 픽셀 색상
     -  $\varsigma$는 미분 가능한 Splatting
     -  $\omega$는 서로 다른 뷰에 대한 가중치
     -  $[R, T]$는 다중 카메라 뷰 정렬을 위한 뷰-매트릭스
-
+- 나눠지는 빈의 나중것(latter bin)이 점진적으로 가우시안 필드에 융합되면서 최적화하는 느낌
+  
 
 #### Composite "Dynamic Gaussian Graph"
 - 동적인 물체(dynamic objects)
