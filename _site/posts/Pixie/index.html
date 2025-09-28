@@ -45,7 +45,7 @@
 <meta name="twitter:site" content="@" />
 <meta name="twitter:creator" content="@Jiyoung Seo" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Jiyoung Seo","url":"https://jyseo531.github.io/about"},"dateModified":"2025-09-28T09:52:56+09:00","datePublished":"2025-09-27T13:00:00+09:00","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"Pixie, arxiv preprint 2025","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Pixie/"},"url":"http://localhost:4000/posts/Pixie/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Jiyoung Seo","url":"https://jyseo531.github.io/about"},"dateModified":"2025-09-28T13:09:48+09:00","datePublished":"2025-09-27T13:00:00+09:00","description":"A minimal, responsive and feature-rich Jekyll theme for technical writing.","headline":"Pixie, arxiv preprint 2025","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/Pixie/"},"url":"http://localhost:4000/posts/Pixie/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -787,6 +787,17 @@
 
       
     
+      
+
+      
+      
+
+      
+      
+      
+
+      
+    
 
     
   
@@ -859,7 +870,7 @@
 
 <time
   
-  data-ts="1759020776"
+  data-ts="1759032588"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
@@ -915,9 +926,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="2126 words"
+  title="2599 words"
 >
-  <em>11 min</em> read</span>
+  <em>14 min</em> read</span>
 
         </div>
       </div>
@@ -1180,14 +1191,56 @@ $\hat{\ell}(p)$ 와 $\ell^{GT}(p)$ 는 각각 예측된 재질 클래스 로짓(
   <li>따라서 자세(poses)가 주어진 다중 뷰 RGB 영상으로부터 <strong>별도로 가우시안 스플래팅 모델을 학습</strong>시킴</li>
   <li>이후, 예측된 재질 그리드에서 얻은 재질 속성을 최근접 <em>이웃 보간법</em>(nearest neighbor interpolation)을 통해 가우시안 스플래팅 모델로 전이
     <ul>
-      <li>그니까 재질 필드는 NeRF이용해서 학습하되, 마지막 시뮬레이션을 위해서만 가우시안 스픞래팅 모델 렌더링된거에서 재질 속성들만 “전이”하는 거임 (via nearest neighbor interpolation)</li>
-      <li>쥰나 비효율적인데?</li>
+      <li>그니까 재질 필드는 NeRF이용해서 학습하되, 마지막 시뮬레이션을 위해서만 가우시안 스픞래팅 모델 학습시키고 렌더링된거에서 재질 속성들만 “전이”하는 거임 (via nearest neighbor interpolation)</li>
+      <li>쥰나 비효율적이긴 한데 너프모델에서 물성예측이 더 잘 됐었나봄~</li>
     </ul>
   </li>
 </ul>
 
-<h3 id="pixieverse-dataset"><span class="me-2">PixieVerse Dataset</span><a href="#pixieverse-dataset" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<hr />
 
+<h3 id="pixieverse-dataset"><span class="me-2">PixieVerse Dataset</span><a href="#pixieverse-dataset" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<ul>
+  <li>데이터셋 얘기</li>
+</ul>
+
+<hr />
+
+<h3 id="experiment"><span class="me-2">Experiment</span><a href="#experiment" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<ul>
+  <li><strong>Dataset</strong>: PixieVerse + evaluated on 38 합성 씬</li>
+  <li><strong>Simulation Details</strong>:
+    <ul>
+      <li>MPM solver implementation from PhysGaussian</li>
+      <li>Gaussian particle(입자) from Gaussian Splatting model</li>
+      <li>External forces: gravity &amp; wind</li>
+    </ul>
+  </li>
+  <li><strong>Baselines</strong>
+    <ul>
+      <li>DreamPhysics</li>
+      <li>OmniPhysGS</li>
+      <li>LLM method- NeRF2Physics</li>
+    </ul>
+  </li>
+  <li>DreamPhysics는 영률(Young’s modulus) 필드를 최적화하지만, 사용자에게 재질 ID(material ID), 포아송비(Poisson’s ratio), 밀도(density)와 같은 다른 값을 직접 지정하도록 요구함</li>
+  <li>OmniPhysGS는 초탄성 에너지 밀도 함수(hyperelastic energy density function)와 리턴 매핑 모델(return mapping model)을 선택하며, 이 둘의 조합으로 필드 내 각 지점의 재질 ID가 결정됨, 다만 다른 물리 파라미터들은 여전히 수동으로 지정해야 함. 
+=&gt; 두 방법 모두 ‘바람에 흔들리는 나무 그네(a tree swing in the wind)’와 같은 사용자 프롬프트와 생성형 비디오 확산 모델(generative video diffusion model)에 의존하여 모션 디스틸레이션 손실(motion distillation loss)을 최적화하는 메소드</li>
+  <li>PIXIE는 모든 이산(discrete) 및 연속(continuous) 파라미터를 동시에 추론할 수 있음.</li>
+  <li>
+    <p>NeRF2Physics는 먼저 장면을 캡션으로 기술한 뒤, 대규모 언어 모델(LLM)에 질의하여 가능한 모든 재질 유형(예: ‘금속’)과 이에 대응하는 연속값을 얻는다. 이후 재질의 의미적 이름들은 CLIP 특징 필드 내의 3D 포인트와 연계되고, 물리적 속성들은 가중치가 부여된 유사도(weighted similarities)를 통해 할당됨</p>
+  </li>
+  <li><strong>Evaluation metrics</strong>
+    <ul>
+      <li>Vision-Language mdoel Jude score(Gemini 2.5-Pro) =&gt; 물리 속성 잘 예측했는지 + 시뮬레이션 정성 평가
+        <ul>
+          <li>프롬프트 (어펜딕스 참고)로 0~5점 사이 평가매김</li>
+        </ul>
+      </li>
+      <li>PSNR &amp; SSIM metric =&gt; reconstruction quality 정량 평가</li>
+    </ul>
+  </li>
+</ul>
 
   </div>
 
@@ -1315,6 +1368,13 @@ $\hat{\ell}(p)$ 와 $\ell^{GT}(p)$ 는 각각 예측된 재질 클래스 로짓(
         
         
         <li class="text-truncate lh-lg">
+          <a href="/posts/DrivingGaussian/">DrivingGaussian++, arxiv preprint 2025</a>
+        </li>
+      
+        
+        
+        
+        <li class="text-truncate lh-lg">
           <a href="/posts/Pixie/">Pixie, arxiv preprint 2025</a>
         </li>
       
@@ -1337,13 +1397,6 @@ $\hat{\ell}(p)$ 와 $\ell^{GT}(p)$ 는 각각 예측된 재질 클래스 로짓(
         
         <li class="text-truncate lh-lg">
           <a href="/posts/RaDe-GS/">RaDe-GS, arXiv preprint</a>
-        </li>
-      
-        
-        
-        
-        <li class="text-truncate lh-lg">
-          <a href="/posts/LiDAR_SLAM/">LiDAR SLAM tutorial</a>
         </li>
       
     </ul>
@@ -1412,85 +1465,6 @@ $\hat{\ell}(p)$ 와 $\ell^{GT}(p)$ 는 각각 예측된 재질 클래스 로짓(
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -1510,16 +1484,50 @@ $\hat{\ell}(p)$ 와 $\ell^{GT}(p)$ 는 각각 예측된 재질 클래스 로짓(
     
     
     
-      
-        
-        
-
   
     
     
     
     
-      
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -1575,6 +1583,35 @@ $\hat{\ell}(p)$ 와 $\ell^{GT}(p)$ 는 각각 예측된 재질 클래스 로짓(
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
     
   
@@ -1601,6 +1638,122 @@ $\hat{\ell}(p)$ 와 $\ell^{GT}(p)$ 는 각각 예측된 재질 클래스 로짓(
     
     
     
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -1638,20 +1791,10 @@ $\hat{\ell}(p)$ 와 $\ell^{GT}(p)$ 는 각각 예측된 재질 클래스 로짓(
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     
@@ -1673,11 +1816,6 @@ $\hat{\ell}(p)$ 와 $\ell^{GT}(p)$ 는 각각 예측된 재질 클래스 로짓(
     
     
     
-  
-    
-    
-    
-    
       
     
   
@@ -1691,36 +1829,6 @@ $\hat{\ell}(p)$ 와 $\ell^{GT}(p)$ 는 각각 예측된 재질 클래스 로짓(
     
     
     
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -1736,11 +1844,6 @@ $\hat{\ell}(p)$ 와 $\ell^{GT}(p)$ 는 각각 예측된 재질 클래스 로짓(
     
     
     
-  
-    
-    
-    
-    
       
     
   
@@ -1754,8 +1857,6 @@ $\hat{\ell}(p)$ 와 $\ell^{GT}(p)$ 는 각각 예측된 재질 클래스 로짓(
     
     
     
-    
-      
     
   
     
@@ -1789,25 +1890,25 @@ $\hat{\ell}(p)$ 와 $\ell^{GT}(p)$ 는 각각 예측된 재질 클래스 로짓(
         <a class="post-tag btn btn-outline-primary" href="/tags/3d-gaussian-splatting/">3D Gaussian Splatting</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/autonomous-driving/">Autonomous Driving</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/mesh-extraction/">Mesh extraction</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/mesh-reconstruction/">Mesh reconstruction</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/3d-editable-simulation/">3D Editable Simulation</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/3d-editing/">3D Editing</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/3d-llm/">3D LLM</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/3d-perception/">3D Perception</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/3d-physics-prediction/">3D Physics prediction</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/3d-reconstruction/">3D reconstruction</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/autonomous-driving/">Autonomous Driving</a>
       
     </div>
   </section>
@@ -2000,6 +2101,18 @@ $\hat{\ell}(p)$ 와 $\ell^{GT}(p)$ 는 각각 예측된 재질 클래스 로짓(
 
   
     
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
 
@@ -2055,6 +2168,42 @@ $\hat{\ell}(p)$ 와 $\ell^{GT}(p)$ 는 각각 예측된 재질 클래스 로짓(
         </article>
       
         <article class="col">
+          <a href="/posts/DrivingGaussian/" class="post-preview card h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+<time
+  
+  data-ts="1759032000"
+  data-df="ll"
+  
+>
+  Sep 28, 2025
+</time>
+
+              <h4 class="pt-0 my-2">DrivingGaussian++, arxiv preprint 2025</h4>
+              <div class="text-muted">
+                <p>paper link
+
+  DrivingGaussian(CVPR 2024) 후속 연구
+
+
+Abstract
+
+  driving scene(주행 환경)에서 “realistic reconstructing“과 “contrallable editing”을 수행하는 프레임워크 제안
+  정적인 배경을 3D gaussian으로 복원하고, 움직이는 물체는 dynamic ...</p>
+              </div>
+            </div>
+          </a>
+        </article>
+      
+        <article class="col">
           <a href="/posts/3DLLM/" class="post-preview card h-100">
             <div class="card-body">
               <!--
@@ -2089,42 +2238,6 @@ Abstract
           </a>
         </article>
       
-        <article class="col">
-          <a href="/posts/LiDAR_SLAM/" class="post-preview card h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-<time
-  
-  data-ts="1752361200"
-  data-df="ll"
-  
->
-  Jul 13, 2025
-</time>
-
-              <h4 class="pt-0 my-2">LiDAR SLAM tutorial</h4>
-              <div class="text-muted">
-                <p>Paper List (TODO)
-
-  
-    87 PAMI Least-squares fitting of two 3D point sets
-
-    tldr: SVD-based closed form of registration; a basic of basic of the scan matching
-  
-  
-    92 PAMI A method for r...</p>
-              </div>
-            </div>
-          </a>
-        </article>
-      
     </nav>
   </aside>
   <!-- #related-posts -->
@@ -2149,9 +2262,13 @@ Abstract
   
 
   
-    <div class="btn btn-outline-primary disabled" aria-label="Newer">
-      <p>-</p>
-    </div>
+    <a
+      href="/posts/DrivingGaussian/"
+      class="btn btn-outline-primary"
+      aria-label="Newer"
+    >
+      <p>DrivingGaussian++, arxiv preprint 2025</p>
+    </a>
   
 </nav>
 
@@ -2262,85 +2379,6 @@ Abstract
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
   
     
     
@@ -2360,16 +2398,50 @@ Abstract
     
     
     
-      
-        
-        
-
   
     
     
     
     
-      
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
     
   
     
@@ -2425,6 +2497,35 @@ Abstract
     
     
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
       
     
   
@@ -2451,6 +2552,122 @@ Abstract
     
     
     
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
     
   
     
@@ -2488,20 +2705,10 @@ Abstract
     
     
     
-  
-    
-    
-    
-    
       
         
         
 
-  
-    
-    
-    
-    
   
     
     
@@ -2523,11 +2730,6 @@ Abstract
     
     
     
-  
-    
-    
-    
-    
       
     
   
@@ -2541,36 +2743,6 @@ Abstract
     
     
     
-    
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
     
   
     
@@ -2586,11 +2758,6 @@ Abstract
     
     
     
-  
-    
-    
-    
-    
       
     
   
@@ -2604,8 +2771,6 @@ Abstract
     
     
     
-    
-      
     
   
     
@@ -2639,25 +2804,25 @@ Abstract
         <a class="post-tag btn btn-outline-primary" href="/tags/3d-gaussian-splatting/">3D Gaussian Splatting</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/autonomous-driving/">Autonomous Driving</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/mesh-extraction/">Mesh extraction</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/mesh-reconstruction/">Mesh reconstruction</a>
       
         
+        <a class="post-tag btn btn-outline-primary" href="/tags/3d-editable-simulation/">3D Editable Simulation</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/3d-editing/">3D Editing</a>
+      
+        
         <a class="post-tag btn btn-outline-primary" href="/tags/3d-llm/">3D LLM</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/3d-perception/">3D Perception</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/3d-physics-prediction/">3D Physics prediction</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/3d-reconstruction/">3D reconstruction</a>
-      
-        
-        <a class="post-tag btn btn-outline-primary" href="/tags/autonomous-driving/">Autonomous Driving</a>
       
     </div>
   </section>
