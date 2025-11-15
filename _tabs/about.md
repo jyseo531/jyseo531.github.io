@@ -50,6 +50,11 @@ Since July 2024, I have been working as an Undergrad research intern, involved i
 > [arxiv](https://arxiv.org/pdf/2506.21556) |
 > [project-page](https://vatkg.github.io)
 
+> #### M³KG-RAG: Multi-hop Multimodal Knowledge Graph-enhanced Retrieval-Augmented Generation <span style="color:grey"> </span>
+> ##### ***Under Revie*w** 
+> Nov 2025 <br>
+> 2nd author *(H Park, **J Seo**, J Moon, H Park, W Byeon, S Kim, H Im, J Lee, S Kim)*  <br>
+
 > #### Coming Soon!
 
 
