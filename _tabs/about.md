@@ -28,34 +28,34 @@ Since July 2024, I have been working as an Undergrad research intern, involved i
 > 
 > ##### **CVPR 2025 (Published)**
 > 3rd author *(D Lee, H Park, **J Seo**, E Park, H Park, H Baek, S Shin, S Kim, S Kim)*  <br>
-> [arXiv](https://arxiv.org/pdf/2412.11520) |
+> [paper](https://arxiv.org/pdf/2412.11520) |
 > [project-page](https://kuai-lab.github.io/editsplat2024/) 
 
 > #### AV-Surf: Surface-Enhanced Geometry-Aware Novel-View Acoustic Synthesis <span style="color:grey"> </span>
 > ##### ***Under Review*** 
 > March 2025 <br>
 > 3rd author *(H Baek, H Shin, **J Seo**, C Kim, S Kim, H Kim, S Kim)*  <br>
-> [arxiv](https://arxiv.org/pdf/2503.12806) |
+> [paper](https://arxiv.org/pdf/2503.12806) |
 > [project-page](https://avsurf.github.io/)
 
 > #### Egocentric Hand Activity Video Dataset and Bidirectional Motion-Priors for Hand Action Recognition
 > ##### **IEEE Access (Published)**
 > Aug 2025 <br>
 > 1st author *(**J Seo**, D Lee, P Lee, J Lee, Y Gil, K Ramani, S Kim)*  <br>
-> [arXiv](https://ieeexplore.ieee.org/document/11345097) 
+> [paper](https://ieeexplore.ieee.org/document/11345097) 
 
 > #### VAT-KG: Knowledge-Intensive Multimodal Knowledge Graph Dataset for Retrieval-Augmented Generation <span style="color:grey"> </span>
 > ##### ***Under Review*** 
 > Sep 2025 <br>
 > 2nd author *(H Park, **J Seo**, M Jang, H Baek, G Chang, H Park, S Kim)*  <br>
-> [arxiv](https://arxiv.org/pdf/2506.21556) |
+> [paper](https://arxiv.org/pdf/2506.21556) |
 > [project-page](https://vatkg.github.io)
 
 > #### M³KG-RAG: Multi-hop Multimodal Knowledge Graph-enhanced Retrieval-Augmented Generation <span style="color:grey"> </span>
 > ##### ***Under Revie*w** 
 > Nov 2025 <br>
 > 2nd author *(H Park, **J Seo**, J Moon, H Park, W Byeon, S Kim, H Im, J Lee, S Kim)*  <br>
-> [arXiv](https://arxiv.org/pdf/2512.20136) 
+> [paper](https://arxiv.org/pdf/2512.20136) 
 
 > #### Coming Soon!
 
