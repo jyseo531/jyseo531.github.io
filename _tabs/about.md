@@ -26,7 +26,7 @@ Since July 2024, I have been working as an Undergrad research intern, involved i
 ### 📄 Publications
 > #### EditSplat: Multi-View Fusion and Attention-Guided Optimization for View-Consistent 3D Scene Editing with 3D Gaussian Splatting <span style="color:grey"> </span>
 > 
-> ##### **CVPR 2025**
+> ##### **CVPR 2025 (Published)**
 > 3rd author *(D Lee, H Park, **J Seo**, E Park, H Park, H Baek, S Shin, S Kim, S Kim)*  <br>
 > [arXiv](https://arxiv.org/pdf/2412.11520) |
 > [project-page](https://kuai-lab.github.io/editsplat2024/) 
@@ -39,12 +39,13 @@ Since July 2024, I have been working as an Undergrad research intern, involved i
 > [project-page](https://avsurf.github.io/)
 
 > #### Egocentric Hand Activity Video Dataset and Bidirectional Motion-Priors for Hand Action Recognition
-> ##### ***Submitted to IEEE*** 
+> ##### **IEEE Access (Published)**
 > Aug 2025 <br>
 > 1st author *(**J Seo**, D Lee, P Lee, J Lee, Y Gil, K Ramani, S Kim)*  <br>
+> [arXiv](https://ieeexplore.ieee.org/document/11345097) 
 
 > #### VAT-KG: Knowledge-Intensive Multimodal Knowledge Graph Dataset for Retrieval-Augmented Generation <span style="color:grey"> </span>
-> ##### ***Under Revie*w** 
+> ##### ***Under Review*** 
 > Sep 2025 <br>
 > 2nd author *(H Park, **J Seo**, M Jang, H Baek, G Chang, H Park, S Kim)*  <br>
 > [arxiv](https://arxiv.org/pdf/2506.21556) |
@@ -54,6 +55,7 @@ Since July 2024, I have been working as an Undergrad research intern, involved i
 > ##### ***Under Revie*w** 
 > Nov 2025 <br>
 > 2nd author *(H Park, **J Seo**, J Moon, H Park, W Byeon, S Kim, H Im, J Lee, S Kim)*  <br>
+> [arXiv](https://arxiv.org/pdf/2512.20136) 
 
 > #### Coming Soon!
 
