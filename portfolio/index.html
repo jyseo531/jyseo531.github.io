@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#1C1F24">
 <title>Jiyoung Seo — Research Portfolio</title>
 <meta name="description" content="Jiyoung Seo, M.S. student at Korea University. Research on egocentric motion, grounded multimodal RAG, 3D scene editing and physical AI, toward world models for games and robots.">
 <link rel="icon" href="/assets/img/favicons/favicon.ico">
@@ -10,16 +12,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#EDEFF2; --surface:#FFFFFF; --ink:#1F2328; --muted:#5B636E; --line:#D5D9DF; --grid:rgba(31,35,40,.06);
-  --x:#D63A3A; --y:#23955A; --z:#2E5FD6;
-  --x-soft:rgba(214,58,58,.10); --y-soft:rgba(35,149,90,.10); --z-soft:rgba(46,95,214,.10);
+:root{color-scheme:dark;--bg:#1C1F24; --surface:#24282E; --ink:#E8EBEF; --muted:#9AA3AE; --line:#363C44; --grid:rgba(232,235,239,.05);
+    --x:#FF6B6B; --y:#4CC38A; --z:#6F98FF; --x-soft:rgba(255,107,107,.12); --y-soft:rgba(76,195,138,.12); --z-soft:rgba(111,152,255,.12);
   --wide:"wdth" 125; --narrow:"wdth" 100;
 }
-@media (prefers-color-scheme: dark){
-  :root{ --bg:#1C1F24; --surface:#24282E; --ink:#E8EBEF; --muted:#9AA3AE; --line:#363C44; --grid:rgba(232,235,239,.05);
-    --x:#FF6B6B; --y:#4CC38A; --z:#6F98FF; --x-soft:rgba(255,107,107,.12); --y-soft:rgba(76,195,138,.12); --z-soft:rgba(111,152,255,.12);}
-}
+
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
@@ -70,7 +67,7 @@ h1{font-size:clamp(40px,5.4vw,72px);line-height:1;margin:0 0 24px;font-weight:80
 .ring.spin{stroke-dasharray:2 7;transform-origin:260px 251px;animation:spin 40s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 @media (prefers-reduced-motion: reduce){.ring.spin{animation:none}}
-.trail{fill:#FFB347}
+.trail{fill:#FFE3A0}
 @media (prefers-reduced-motion: reduce){.pulse{display:none}}
 
 /* sections */
@@ -196,7 +193,10 @@ footer a{color:var(--ink)}
           <marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--muted)"/></marker>
                   <radialGradient id="starGlow"><stop offset="0" stop-color="#FFE7A3" stop-opacity=".95"/><stop offset=".35" stop-color="#FFB84D" stop-opacity=".45"/><stop offset="1" stop-color="#FF8A3D" stop-opacity="0"/></radialGradient>
           <linearGradient id="starFill" x1="0" y1="-1" x2="0" y2="1" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="#FFF6D6"/><stop offset=".5" stop-color="#FFC24A"/><stop offset="1" stop-color="#FF8F3A"/></linearGradient>
-</defs>
+  <radialGradient id="moonGlow"><stop offset="0" stop-color="#FFF4D2" stop-opacity=".75"/><stop offset=".5" stop-color="#FFE7A8" stop-opacity=".25"/><stop offset="1" stop-color="#FFE7A8" stop-opacity="0"/></radialGradient>
+          <radialGradient id="moonBody" cx=".38" cy=".35" r=".75"><stop offset="0" stop-color="#FFFDF4"/><stop offset=".6" stop-color="#EDE6D3"/><stop offset="1" stop-color="#CFC6B0"/></radialGradient>
+          <radialGradient id="moonShade" cx=".8" cy=".8" r=".9"><stop offset=".45" stop-color="#3A3F4A" stop-opacity="0"/><stop offset="1" stop-color="#3A3F4A" stop-opacity=".45"/></radialGradient>
+        </defs>
         <!-- arcs: P(260,80) -> R(430,370) -> W(90,370) -> P -->
         <path id="a1" class="arc" d="M318,108 Q420,170 430,300" marker-end="url(#ah)"/>
         <path id="a2" class="arc" d="M362,398 Q260,440 158,398" marker-end="url(#ah)"/>
@@ -236,24 +236,20 @@ footer a{color:var(--ink)}
           <text class="sub" x="90" y="394" text-anchor="middle">3D · physics</text>
         </a>
         <g class="pulse" aria-hidden="true">
-        <circle class="trail" r="4.6" opacity="0.55"><animateMotion dur="6s" begin="-0.06s" repeatCount="indefinite" path="M318,108 Q420,170 430,300 L362,398 Q260,440 158,398 L90,300 Q100,170 202,108 Z"/></circle>
-        <circle class="trail" r="4.1" opacity="0.42"><animateMotion dur="6s" begin="-0.12s" repeatCount="indefinite" path="M318,108 Q420,170 430,300 L362,398 Q260,440 158,398 L90,300 Q100,170 202,108 Z"/></circle>
-        <circle class="trail" r="3.6" opacity="0.32"><animateMotion dur="6s" begin="-0.18s" repeatCount="indefinite" path="M318,108 Q420,170 430,300 L362,398 Q260,440 158,398 L90,300 Q100,170 202,108 Z"/></circle>
-        <circle class="trail" r="3.1" opacity="0.24"><animateMotion dur="6s" begin="-0.24s" repeatCount="indefinite" path="M318,108 Q420,170 430,300 L362,398 Q260,440 158,398 L90,300 Q100,170 202,108 Z"/></circle>
-        <circle class="trail" r="2.6" opacity="0.17"><animateMotion dur="6s" begin="-0.3s" repeatCount="indefinite" path="M318,108 Q420,170 430,300 L362,398 Q260,440 158,398 L90,300 Q100,170 202,108 Z"/></circle>
-        <circle class="trail" r="2.1" opacity="0.11"><animateMotion dur="6s" begin="-0.36s" repeatCount="indefinite" path="M318,108 Q420,170 430,300 L362,398 Q260,440 158,398 L90,300 Q100,170 202,108 Z"/></circle>
-        <circle class="trail" r="1.6" opacity="0.07"><animateMotion dur="6s" begin="-0.42s" repeatCount="indefinite" path="M318,108 Q420,170 430,300 L362,398 Q260,440 158,398 L90,300 Q100,170 202,108 Z"/></circle>
+        <circle class="trail" r="5.5" opacity="0.22"><animateMotion dur="6s" begin="-0.07s" repeatCount="indefinite" path="M318,108 Q420,170 430,300 L362,398 Q260,440 158,398 L90,300 Q100,170 202,108 Z"/></circle>
+        <circle class="trail" r="4.8" opacity="0.16"><animateMotion dur="6s" begin="-0.14s" repeatCount="indefinite" path="M318,108 Q420,170 430,300 L362,398 Q260,440 158,398 L90,300 Q100,170 202,108 Z"/></circle>
+        <circle class="trail" r="4.0" opacity="0.11"><animateMotion dur="6s" begin="-0.21s" repeatCount="indefinite" path="M318,108 Q420,170 430,300 L362,398 Q260,440 158,398 L90,300 Q100,170 202,108 Z"/></circle>
+        <circle class="trail" r="3.2" opacity="0.07"><animateMotion dur="6s" begin="-0.28s" repeatCount="indefinite" path="M318,108 Q420,170 430,300 L362,398 Q260,440 158,398 L90,300 Q100,170 202,108 Z"/></circle>
+        <circle class="trail" r="2.4" opacity="0.04"><animateMotion dur="6s" begin="-0.35s" repeatCount="indefinite" path="M318,108 Q420,170 430,300 L362,398 Q260,440 158,398 L90,300 Q100,170 202,108 Z"/></circle>
         <g>
           <animateMotion dur="6s" repeatCount="indefinite" path="M318,108 Q420,170 430,300 L362,398 Q260,440 158,398 L90,300 Q100,170 202,108 Z"/>
-          <g transform="scale(1.45)">
-          <circle r="16" fill="url(#starGlow)"/>
-          <g>
-            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="4s" repeatCount="indefinite"/>
-            <path d="M0,-11 C1,-3 3,-1 11,0 C3,1 1,3 0,11 C-1,3 -3,1 -11,0 C-3,-1 -1,-3 0,-11 Z" fill="url(#starFill)"/>
-            <path d="M0,-6 C.6,-1.6 1.6,-.6 6,0 C1.6,.6 .6,1.6 0,6 C-.6,1.6 -1.6,.6 -6,0 C-1.6,-.6 -.6,-1.6 0,-6 Z" fill="url(#starFill)" transform="rotate(45)" opacity=".85"/>
-          </g>
-          <circle r="2.2" fill="#FFFFFF"/>
-          </g>
+          <circle r="22" fill="url(#moonGlow)"/>
+          <circle r="10.5" fill="url(#moonBody)"/>
+          <circle cx="-3.5" cy="-3" r="2.3" fill="#B9B3A6" opacity=".55"/>
+          <circle cx="3.6" cy="1.6" r="1.6" fill="#B9B3A6" opacity=".5"/>
+          <circle cx="-1" cy="5" r="1.2" fill="#B9B3A6" opacity=".45"/>
+          <circle cx="4.2" cy="-5" r=".9" fill="#B9B3A6" opacity=".4"/>
+          <circle r="10.5" fill="url(#moonShade)"/>
         </g>
         </g>
       </svg>
@@ -491,7 +487,7 @@ footer a{color:var(--ink)}
       return {x:c + x*R, y:c - y2*R, z:z2, p};
     }).sort((u,v) => u.z - v.z);
     // globe body
-    const ink = hex(css('--ink')), dark = matchMedia('(prefers-color-scheme: dark)').matches;
+    const ink = hex(css('--ink')), dark = true;
     const body = ctx.createRadialGradient(c - R*0.35, c - R*0.4, R*0.1, c, c, R*1.02);
     body.addColorStop(0, dark ? 'rgba(111,152,255,.20)' : 'rgba(255,255,255,1)');
     body.addColorStop(0.7, dark ? 'rgba(46,95,214,.10)' : 'rgba(222,229,240,1)');
@@ -532,8 +528,7 @@ footer a{color:var(--ink)}
   };
   mkSprites(); size();
   addEventListener('resize', () => { size(); if (reduce) draw(0); });
-  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => { mkSprites(); if (reduce) draw(0); });
-  if (reduce) { draw(0); stage.querySelectorAll('.node').forEach(n => ['mouseenter','mouseleave','focus','blur'].forEach(e => n.addEventListener(e, () => draw(0)))); }
+    if (reduce) { draw(0); stage.querySelectorAll('.node').forEach(n => ['mouseenter','mouseleave','focus','blur'].forEach(e => n.addEventListener(e, () => draw(0)))); }
   else requestAnimationFrame(draw);
 })();
 </script>
