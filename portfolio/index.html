@@ -97,9 +97,8 @@ h2{font-size:clamp(30px,4vw,44px);line-height:1.05;margin:0 0 8px;font-weight:80
 .fig img{width:100%;height:auto;display:block;border-radius:6px}
 .fig figcaption{font-size:13.5px;color:var(--muted);padding:10px 4px 2px}
 .fig img + img{margin-top:10px}
-.fig img.narrow{width:64%;margin:0 auto}
-.fig img.narrow2{width:84%;margin-left:auto;margin-right:auto}
-@media (max-width:880px){.fig img.narrow{width:82%}.fig img.narrow2{width:100%}}
+.fig img.narrow,.fig img.narrow2{width:82%;margin-left:auto;margin-right:auto}
+@media (max-width:880px){.fig img.narrow,.fig img.narrow2{width:100%}}
 .work .wide{grid-column:1/-1}
 
 /* physical pipeline svg */
