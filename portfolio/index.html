@@ -62,7 +62,9 @@ h1{font-size:clamp(40px,5.4vw,72px);line-height:1;margin:0 0 24px;font-weight:80
 .core{font-size:16px;font-weight:800;fill:var(--ink);font-variation-settings:"wdth" 112}
 .core-sub{font-size:12px;fill:var(--muted)}
 .stage{position:relative}
-.stage canvas{position:absolute;left:50%;top:53.4%;width:40%;aspect-ratio:1;transform:translate(-50%,-50%);pointer-events:none}
+.stage canvas#moon{position:absolute;left:0;top:0;width:5.8%;aspect-ratio:1;transform:translate(-50%,-50%);pointer-events:none}
+@media (prefers-reduced-motion: reduce){.stage canvas#moon,#moonTrail{display:none}}
+.stage canvas#splat{position:absolute;left:50%;top:53.4%;width:40%;aspect-ratio:1;transform:translate(-50%,-50%);pointer-events:none}
 .ring{fill:none;stroke:var(--line);stroke-width:1.2}
 .ring.spin{stroke-dasharray:2 7;transform-origin:260px 251px;animation:spin 40s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
@@ -194,8 +196,6 @@ footer a{color:var(--ink)}
                   <radialGradient id="starGlow"><stop offset="0" stop-color="#FFE7A3" stop-opacity=".95"/><stop offset=".35" stop-color="#FFB84D" stop-opacity=".45"/><stop offset="1" stop-color="#FF8A3D" stop-opacity="0"/></radialGradient>
           <linearGradient id="starFill" x1="0" y1="-1" x2="0" y2="1" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="#FFF6D6"/><stop offset=".5" stop-color="#FFC24A"/><stop offset="1" stop-color="#FF8F3A"/></linearGradient>
   <radialGradient id="moonGlow"><stop offset="0" stop-color="#FFF4D2" stop-opacity=".75"/><stop offset=".5" stop-color="#FFE7A8" stop-opacity=".25"/><stop offset="1" stop-color="#FFE7A8" stop-opacity="0"/></radialGradient>
-          <radialGradient id="moonBody" cx=".38" cy=".35" r=".75"><stop offset="0" stop-color="#FFFDF4"/><stop offset=".6" stop-color="#EDE6D3"/><stop offset="1" stop-color="#CFC6B0"/></radialGradient>
-          <radialGradient id="moonShade" cx=".8" cy=".8" r=".9"><stop offset=".45" stop-color="#3A3F4A" stop-opacity="0"/><stop offset="1" stop-color="#3A3F4A" stop-opacity=".45"/></radialGradient>
         </defs>
         <!-- arcs: P(260,80) -> R(430,370) -> W(90,370) -> P -->
         <path id="a1" class="arc" d="M318,108 Q420,170 430,300" marker-end="url(#ah)"/>
@@ -235,27 +235,15 @@ footer a{color:var(--ink)}
           <text class="lbl" x="90" y="378" text-anchor="middle">Predict</text>
           <text class="sub" x="90" y="394" text-anchor="middle">3D · physics</text>
         </a>
-        <g class="pulse" aria-hidden="true">
-        <circle class="trail" r="5.5" opacity="0.22"><animateMotion dur="6s" begin="-0.07s" repeatCount="indefinite" path="M318,108 Q420,170 430,300 L362,398 Q260,440 158,398 L90,300 Q100,170 202,108 Z"/></circle>
-        <circle class="trail" r="4.8" opacity="0.16"><animateMotion dur="6s" begin="-0.14s" repeatCount="indefinite" path="M318,108 Q420,170 430,300 L362,398 Q260,440 158,398 L90,300 Q100,170 202,108 Z"/></circle>
-        <circle class="trail" r="4.0" opacity="0.11"><animateMotion dur="6s" begin="-0.21s" repeatCount="indefinite" path="M318,108 Q420,170 430,300 L362,398 Q260,440 158,398 L90,300 Q100,170 202,108 Z"/></circle>
-        <circle class="trail" r="3.2" opacity="0.07"><animateMotion dur="6s" begin="-0.28s" repeatCount="indefinite" path="M318,108 Q420,170 430,300 L362,398 Q260,440 158,398 L90,300 Q100,170 202,108 Z"/></circle>
-        <circle class="trail" r="2.4" opacity="0.04"><animateMotion dur="6s" begin="-0.35s" repeatCount="indefinite" path="M318,108 Q420,170 430,300 L362,398 Q260,440 158,398 L90,300 Q100,170 202,108 Z"/></circle>
-        <g>
-          <animateMotion dur="6s" repeatCount="indefinite" path="M318,108 Q420,170 430,300 L362,398 Q260,440 158,398 L90,300 Q100,170 202,108 Z"/>
-          <circle r="22" fill="url(#moonGlow)"/>
-          <circle r="10.5" fill="url(#moonBody)"/>
-          <circle cx="-3.5" cy="-3" r="2.3" fill="#B9B3A6" opacity=".55"/>
-          <circle cx="3.6" cy="1.6" r="1.6" fill="#B9B3A6" opacity=".5"/>
-          <circle cx="-1" cy="5" r="1.2" fill="#B9B3A6" opacity=".45"/>
-          <circle cx="4.2" cy="-5" r=".9" fill="#B9B3A6" opacity=".4"/>
-          <circle r="10.5" fill="url(#moonShade)"/>
-        </g>
+        <path id="orbit" d="M318,108 Q420,170 430,300 L362,398 Q260,440 158,398 L90,300 Q100,170 202,108 Z" fill="none" stroke="none"/>
+        <g class="pulse" aria-hidden="true" id="moonTrail"><circle class="trail" r="7" opacity="0.2" cx="-50" cy="-50"/><circle class="trail" r="6.2" opacity="0.15" cx="-50" cy="-50"/><circle class="trail" r="5.4" opacity="0.11" cx="-50" cy="-50"/><circle class="trail" r="4.6" opacity="0.08" cx="-50" cy="-50"/><circle class="trail" r="3.8" opacity="0.05" cx="-50" cy="-50"/><circle class="trail" r="3" opacity="0.03" cx="-50" cy="-50"/>
+          <circle id="moonHalo" r="24" fill="url(#moonGlow)" cx="-50" cy="-50"/>
         </g>
       </svg>
       <canvas id="splat" aria-hidden="true"></canvas>
+      <canvas id="moon" aria-hidden="true"></canvas>
       </div>
-      <figcaption class="cap">Click a node to see the research behind it.</figcaption>
+      <figcaption class="cap">Three directions, one goal: a world model that predicts what happens next. Click a node to see the research behind it.</figcaption>
     </figure>
   </div>
 
@@ -530,6 +518,67 @@ footer a{color:var(--ink)}
   addEventListener('resize', () => { size(); if (reduce) draw(0); });
     if (reduce) { draw(0); stage.querySelectorAll('.node').forEach(n => ['mouseenter','mouseleave','focus','blur'].forEach(e => n.addEventListener(e, () => draw(0)))); }
   else requestAnimationFrame(draw);
+})();
+</script>
+<script>
+(() => {
+  const mc = document.getElementById('moon'), orbit = document.getElementById('orbit');
+  if (!mc || !orbit || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const svg = orbit.ownerSVGElement, mctx = mc.getContext('2d');
+  const trail = [...document.querySelectorAll('#moonTrail .trail')], halo = document.getElementById('moonHalo');
+  const L = orbit.getTotalLength(), PERIOD = 14000; // ms per loop
+  // procedural albedo map (longitude x latitude): maria + craters
+  const TW = 160, TH = 80, alb = new Float32Array(TW*TH).fill(0.86);
+  const rnd = (a,b) => a + Math.random()*(b-a);
+  const blob = (cu, cv, r, d, rim) => {
+    for (let v = 0; v < TH; v++) for (let u = 0; u < TW; u++) {
+      let du = Math.abs(u-cu); du = Math.min(du, TW-du); const dv = (v-cv)*2;
+      const dist = Math.hypot(du, dv)/r;
+      if (dist < 1) alb[v*TW+u] -= d*(1-dist*dist);
+      else if (rim && dist < 1.25) alb[v*TW+u] += rim*(1-(dist-1)/.25);
+    }
+  };
+  for (let i = 0; i < 7; i++) blob(rnd(0,TW), rnd(18,62), rnd(10,22), rnd(.18,.30), 0);       // maria
+  for (let i = 0; i < 46; i++) blob(rnd(0,TW), rnd(6,74), rnd(1.5,5), rnd(.08,.18), .06);   // craters
+  let S = 0, img;
+  const size = () => {
+    const d = Math.min(2, devicePixelRatio||1);
+    S = Math.max(24, Math.round(mc.clientWidth*d)); mc.width = mc.height = S; img = mctx.createImageData(S,S);
+  };
+  const lx=-.55, ly=-.5, lz=.67; // light from upper left, toward viewer
+  const renderMoon = rot => {
+    const data = img.data, R = S/2 - 1;
+    for (let j = 0; j < S; j++) for (let i = 0; i < S; i++) {
+      const x = (i - S/2 + .5)/R, y = (j - S/2 + .5)/R, rr = x*x + y*y, k = (j*S+i)*4;
+      if (rr > 1) { data[k+3] = 0; continue; }
+      const z = Math.sqrt(1-rr);
+      const lon = Math.atan2(x, z) + rot, lat = Math.asin(-y);
+      let u = Math.floor(((lon/(2*Math.PI))%1+1)%1*TW), v = Math.floor((.5 - lat/Math.PI)*(TH-1));
+      const a = alb[v*TW+u];
+      const lam = Math.max(0, x*lx + y*ly + z*lz);
+      const sh = .07 + .93*Math.pow(lam, .85);
+      const c = a*sh*255;
+      data[k] = Math.min(255, c*1.02); data[k+1] = Math.min(255, c*.99); data[k+2] = Math.min(255, c*.92);
+      data[k+3] = rr > .94 ? Math.round(255*(1-rr)/.06) : 255;
+    }
+    mctx.putImageData(img, 0, 0);
+  };
+  const place = (el, len) => {
+    const pt = orbit.getPointAtLength(((len % L) + L) % L);
+    el.setAttribute('cx', pt.x); el.setAttribute('cy', pt.y); return pt;
+  };
+  size(); addEventListener('resize', size);
+  const t0 = performance.now();
+  const tick = now => {
+    const len = ((now - t0) % PERIOD)/PERIOD*L;
+    const pt = place(halo, len);
+    trail.forEach((c, i) => place(c, len - (i+1)*7));
+    const vb = svg.viewBox.baseVal, sx = svg.clientWidth/vb.width, sy = svg.clientHeight/vb.height;
+    mc.style.left = (pt.x*sx) + 'px'; mc.style.top = (pt.y*sy) + 'px';
+    renderMoon((now - t0)*0.00035);
+    requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
 })();
 </script>
 </body>
