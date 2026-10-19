@@ -69,7 +69,7 @@ h1{font-size:clamp(40px,5.4vw,72px);line-height:1;margin:0 0 24px;font-weight:80
 .ring.spin{stroke-dasharray:2 7;transform-origin:260px 251px;animation:spin 40s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 @media (prefers-reduced-motion: reduce){.ring.spin{animation:none}}
-.pulse{fill:var(--ink)}
+.trail{fill:#FFB347}
 @media (prefers-reduced-motion: reduce){.pulse{display:none}}
 
 /* sections */
@@ -193,7 +193,9 @@ footer a{color:var(--ink)}
         <desc id="loopd">Three research directions arranged as a loop around a world model: perceive motion (Ego-Bi), reason with grounded knowledge (M3KG-RAG), and predict 3D worlds and physics (EditSplat and physical AI). Each node links to the matching research.</desc>
         <defs>
           <marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--muted)"/></marker>
-        </defs>
+                  <radialGradient id="starGlow"><stop offset="0" stop-color="#FFE7A3" stop-opacity=".95"/><stop offset=".35" stop-color="#FFB84D" stop-opacity=".45"/><stop offset="1" stop-color="#FF8A3D" stop-opacity="0"/></radialGradient>
+          <linearGradient id="starFill" x1="0" y1="-1" x2="0" y2="1" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="#FFF6D6"/><stop offset=".5" stop-color="#FFC24A"/><stop offset="1" stop-color="#FF8F3A"/></linearGradient>
+</defs>
         <!-- arcs: P(260,80) -> R(430,370) -> W(90,370) -> P -->
         <path id="a1" class="arc" d="M318,108 Q420,170 430,300" marker-end="url(#ah)"/>
         <path id="a2" class="arc" d="M362,398 Q260,440 158,398" marker-end="url(#ah)"/>
@@ -229,9 +231,27 @@ footer a{color:var(--ink)}
           <text class="lbl" x="90" y="368" text-anchor="middle">Predict</text>
           <text class="sub" x="90" y="386" text-anchor="middle">3D · physics</text>
         </a>
-        <circle class="pulse" r="5">
+        <g class="pulse" aria-hidden="true">
+        <circle class="trail" r="4.6" opacity="0.55"><animateMotion dur="6s" begin="-0.06s" repeatCount="indefinite" path="M318,108 Q420,170 430,300 L362,398 Q260,440 158,398 L90,300 Q100,170 202,108 Z"/></circle>
+        <circle class="trail" r="4.1" opacity="0.42"><animateMotion dur="6s" begin="-0.12s" repeatCount="indefinite" path="M318,108 Q420,170 430,300 L362,398 Q260,440 158,398 L90,300 Q100,170 202,108 Z"/></circle>
+        <circle class="trail" r="3.6" opacity="0.32"><animateMotion dur="6s" begin="-0.18s" repeatCount="indefinite" path="M318,108 Q420,170 430,300 L362,398 Q260,440 158,398 L90,300 Q100,170 202,108 Z"/></circle>
+        <circle class="trail" r="3.1" opacity="0.24"><animateMotion dur="6s" begin="-0.24s" repeatCount="indefinite" path="M318,108 Q420,170 430,300 L362,398 Q260,440 158,398 L90,300 Q100,170 202,108 Z"/></circle>
+        <circle class="trail" r="2.6" opacity="0.17"><animateMotion dur="6s" begin="-0.3s" repeatCount="indefinite" path="M318,108 Q420,170 430,300 L362,398 Q260,440 158,398 L90,300 Q100,170 202,108 Z"/></circle>
+        <circle class="trail" r="2.1" opacity="0.11"><animateMotion dur="6s" begin="-0.36s" repeatCount="indefinite" path="M318,108 Q420,170 430,300 L362,398 Q260,440 158,398 L90,300 Q100,170 202,108 Z"/></circle>
+        <circle class="trail" r="1.6" opacity="0.07"><animateMotion dur="6s" begin="-0.42s" repeatCount="indefinite" path="M318,108 Q420,170 430,300 L362,398 Q260,440 158,398 L90,300 Q100,170 202,108 Z"/></circle>
+        <g>
           <animateMotion dur="6s" repeatCount="indefinite" path="M318,108 Q420,170 430,300 L362,398 Q260,440 158,398 L90,300 Q100,170 202,108 Z"/>
-        </circle>
+          <g transform="scale(1.45)">
+          <circle r="16" fill="url(#starGlow)"/>
+          <g>
+            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="4s" repeatCount="indefinite"/>
+            <path d="M0,-11 C1,-3 3,-1 11,0 C3,1 1,3 0,11 C-1,3 -3,1 -11,0 C-3,-1 -1,-3 0,-11 Z" fill="url(#starFill)"/>
+            <path d="M0,-6 C.6,-1.6 1.6,-.6 6,0 C1.6,.6 .6,1.6 0,6 C-.6,1.6 -1.6,.6 -6,0 C-1.6,-.6 -.6,-1.6 0,-6 Z" fill="url(#starFill)" transform="rotate(45)" opacity=".85"/>
+          </g>
+          <circle r="2.2" fill="#FFFFFF"/>
+          </g>
+        </g>
+        </g>
       </svg>
       <canvas id="splat" aria-hidden="true"></canvas>
       </div>
