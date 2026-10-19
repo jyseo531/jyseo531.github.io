@@ -97,6 +97,9 @@ h2{font-size:clamp(30px,4vw,44px);line-height:1.05;margin:0 0 8px;font-weight:80
 .fig img{width:100%;height:auto;display:block;border-radius:6px}
 .fig figcaption{font-size:13.5px;color:var(--muted);padding:10px 4px 2px}
 .fig img + img{margin-top:10px}
+.fig img.narrow{width:64%;margin:0 auto}
+.fig img.narrow2{width:84%;margin-left:auto;margin-right:auto}
+@media (max-width:880px){.fig img.narrow{width:82%}.fig img.narrow2{width:100%}}
 .work .wide{grid-column:1/-1}
 
 /* physical pipeline svg */
@@ -265,8 +268,8 @@ footer a{color:var(--ink)}
         <div class="wl"><a href="https://ieeexplore.ieee.org/document/11345097">Paper</a></div>
       </div>
       <figure class="fig">
-        <img src="/assets/img/portfolio/egobi-samples.jpg" alt="Ego-Bi dataset samples: first-person frames of clamp and unscrew actions with hand type and object labels" loading="lazy" width="1122" height="670">
-        <img src="/assets/img/portfolio/egobi-bmp.jpg" alt="Architecture of the BMP-based action recognition framework with motion, object and hand-type branches" loading="lazy" width="1600" height="747">
+        <img class="narrow" src="/assets/img/portfolio/egobi-samples.jpg" alt="Ego-Bi dataset samples: first-person frames of clamp and unscrew actions with hand type and object labels" loading="lazy" width="1122" height="670">
+        <img class="narrow2" src="/assets/img/portfolio/egobi-bmp.jpg" alt="Architecture of the BMP-based action recognition framework with motion, object and hand-type branches" loading="lazy" width="1600" height="747">
         <figcaption>Dataset samples and the BMP framework.</figcaption>
       </figure>
     </article>
