@@ -60,6 +60,7 @@ h1{font-size:clamp(40px,5.4vw,72px);line-height:1;margin:0 0 24px;font-weight:80
 .node text{font-family:"Archivo",sans-serif}
 .lbl{font-size:17px;font-weight:700;fill:var(--ink)}
 .sub{font-size:12.5px;fill:var(--muted)}
+.ico{fill:none;stroke-width:1.8;stroke-linejoin:round;stroke-linecap:round}
 .arc{fill:none;stroke:var(--line);stroke-width:2.5}
 .core{font-size:16px;font-weight:800;fill:var(--ink);font-variation-settings:"wdth" 112}
 .core-sub{font-size:12px;fill:var(--muted)}
@@ -216,20 +217,23 @@ footer a{color:var(--ink)}
         <a class="node" data-axis="x" href="#ego-bi" aria-label="Perceive: Ego-Bi, egocentric motion">
           <circle class="halo" cx="260" cy="80" r="56" fill="var(--x-soft)"/>
           <circle cx="260" cy="80" r="46" fill="var(--surface)" stroke="var(--x)" stroke-width="3"/>
-          <text class="lbl" x="260" y="78" text-anchor="middle">Perceive</text>
-          <text class="sub" x="260" y="96" text-anchor="middle">motion</text>
+          <g class="ico" transform="translate(260,60)" stroke="var(--x)"><path d="M-11,0 C-6,-7 6,-7 11,0 C6,7 -6,7 -11,0 Z"/><circle r="3.6"/><circle r="1.2" fill="var(--x)" stroke="none"/></g>
+          <text class="lbl" x="260" y="88" text-anchor="middle">Perceive</text>
+          <text class="sub" x="260" y="104" text-anchor="middle">motion</text>
         </a>
         <a class="node" data-axis="y" href="#m3kg-rag" aria-label="Reason: M3KG-RAG, grounded knowledge">
           <circle class="halo" cx="430" cy="370" r="56" fill="var(--y-soft)"/>
           <circle cx="430" cy="370" r="46" fill="var(--surface)" stroke="var(--y)" stroke-width="3"/>
-          <text class="lbl" x="430" y="368" text-anchor="middle">Reason</text>
-          <text class="sub" x="430" y="386" text-anchor="middle">knowledge</text>
+          <g class="ico" transform="translate(430,351)" stroke="var(--y)"><line x1="-8" y1="5" x2="0" y2="-6"/><line x1="0" y1="-6" x2="9" y2="4"/><line x1="-8" y1="5" x2="9" y2="4"/><circle cx="-8" cy="5" r="3" fill="var(--surface)"/><circle cx="0" cy="-6" r="3" fill="var(--surface)"/><circle cx="9" cy="4" r="3" fill="var(--y)"/></g>
+          <text class="lbl" x="430" y="378" text-anchor="middle">Reason</text>
+          <text class="sub" x="430" y="394" text-anchor="middle">knowledge</text>
         </a>
         <a class="node" data-axis="z" href="#editsplat" aria-label="Predict: EditSplat and physical AI, 3D worlds and physics">
           <circle class="halo" cx="90" cy="370" r="56" fill="var(--z-soft)"/>
           <circle cx="90" cy="370" r="46" fill="var(--surface)" stroke="var(--z)" stroke-width="3"/>
-          <text class="lbl" x="90" y="368" text-anchor="middle">Predict</text>
-          <text class="sub" x="90" y="386" text-anchor="middle">3D · physics</text>
+          <g class="ico" transform="translate(90,350)" stroke="var(--z)"><path d="M0,-9 L9,-4.5 L9,5 L0,9.5 L-9,5 L-9,-4.5 Z"/><path d="M-9,-4.5 L0,0 L9,-4.5 M0,0 L0,9.5"/></g>
+          <text class="lbl" x="90" y="378" text-anchor="middle">Predict</text>
+          <text class="sub" x="90" y="394" text-anchor="middle">3D · physics</text>
         </a>
         <g class="pulse" aria-hidden="true">
         <circle class="trail" r="4.6" opacity="0.55"><animateMotion dur="6s" begin="-0.06s" repeatCount="indefinite" path="M318,108 Q420,170 430,300 L362,398 Q260,440 158,398 L90,300 Q100,170 202,108 Z"/></circle>
