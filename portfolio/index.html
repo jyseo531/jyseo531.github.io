@@ -64,7 +64,7 @@ h1{font-size:clamp(40px,5.4vw,72px);line-height:1;margin:0 0 24px;font-weight:80
 .core{font-size:16px;font-weight:800;fill:var(--ink);font-variation-settings:"wdth" 112}
 .core-sub{font-size:12px;fill:var(--muted)}
 .stage{position:relative}
-.stage canvas{position:absolute;left:50%;top:53.4%;width:38%;aspect-ratio:1;transform:translate(-50%,-50%);pointer-events:none}
+.stage canvas{position:absolute;left:50%;top:53.4%;width:40%;aspect-ratio:1;transform:translate(-50%,-50%);pointer-events:none}
 .ring{fill:none;stroke:var(--line);stroke-width:1.2}
 .ring.spin{stroke-dasharray:2 7;transform-origin:260px 251px;animation:spin 40s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
@@ -175,9 +175,9 @@ footer a{color:var(--ink)}
       <h1>Jiyoung Seo</h1>
       <p class="lead">I research AI that perceives how people move, reasons with grounded knowledge, and predicts how 3D worlds respond. These are the pieces a world model needs, for games and for robots.</p>
       <ul class="meta">
-        <li><strong>M.S. in Artificial Intelligence</strong>, Korea University Computer Vision Lab (KUAICV), graduating Feb 2027</li>
+        <li><strong>M.S. in Artificial Intelligence</strong>, Korea University Computer Vision Lab (KUAICV), Mar 2025 – Feb 2027 (expected)</li>
         <li><strong>5 papers</strong> including CVPR 2026, CVPR 2025 and a first-author IEEE Access article</li>
-        <li><strong>B.S.</strong> Statistics and Artificial Intelligence, University of Seoul</li>
+        <li><strong>B.S. in Statistics and Artificial Intelligence</strong> (double major), University of Seoul, Mar 2021 – Feb 2025</li>
       </ul>
       <div class="links">
         <a class="btn solid" href="#research">See the research</a>
@@ -235,7 +235,7 @@ footer a{color:var(--ink)}
       </svg>
       <canvas id="splat" aria-hidden="true"></canvas>
       </div>
-      <figcaption class="cap">The world model in the middle is drawn as a cloud of Gaussian splats, the same primitive used in EditSplat. Each node opens the research behind it. Colors follow the X, Y, Z axes of a 3D viewport and mark the same three directions throughout the page.</figcaption>
+      <figcaption class="cap">The world model in the middle is a globe covered in Gaussian splats, the same primitive used in EditSplat. Each node opens the research behind it. Colors follow the X, Y, Z axes of a 3D viewport and mark the same three directions throughout the page.</figcaption>
     </figure>
   </div>
 
@@ -439,11 +439,11 @@ footer a{color:var(--ink)}
     }
   };
   // Gaussian cloud on a sphere: each splat keeps the axis it leans toward
-  const N = 620, pts = [];
+  const N = 380, pts = [];
   const gauss = () => { let u=0,v=0; while(!u)u=Math.random(); while(!v)v=Math.random(); return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v); };
   for (let i = 0; i < N; i++) {
     let x=gauss(), y=gauss(), z=gauss(); const l=Math.hypot(x,y,z)||1;
-    const r = 1 + gauss()*0.07 - (Math.random()<.18 ? Math.random()*.45 : 0);
+    const r = 1 + gauss()*0.035;
     x=x/l*r; y=y/l*r; z=z/l*r;
     const ax = Math.abs(x)>=Math.abs(y) && Math.abs(x)>=Math.abs(z) ? 'x' : (Math.abs(y)>=Math.abs(z) ? 'y' : 'z');
     pts.push({x,y,z,ax,s:.6+Math.random()*.8});
@@ -466,9 +466,38 @@ footer a{color:var(--ink)}
       const y2 = y*ct - z*st, z2 = y*st + z*ct;
       return {x:c + x*R, y:c - y2*R, z:z2, p};
     }).sort((u,v) => u.z - v.z);
+    // globe body
+    const ink = hex(css('--ink')), dark = matchMedia('(prefers-color-scheme: dark)').matches;
+    const body = ctx.createRadialGradient(c - R*0.35, c - R*0.4, R*0.1, c, c, R*1.02);
+    body.addColorStop(0, dark ? 'rgba(111,152,255,.20)' : 'rgba(255,255,255,1)');
+    body.addColorStop(0.7, dark ? 'rgba(46,95,214,.10)' : 'rgba(222,229,240,1)');
+    body.addColorStop(1, dark ? 'rgba(46,95,214,.22)' : 'rgba(196,207,224,1)');
+    ctx.beginPath(); ctx.arc(c, c, R, 0, Math.PI*2); ctx.fillStyle = body; ctx.fill();
+    // graticule: meridians every 30 deg, parallels every 30 deg
+    const P = (lat, lon) => {
+      const x0 = Math.cos(lat)*Math.sin(lon), y0 = Math.sin(lat), z0 = Math.cos(lat)*Math.cos(lon);
+      let x = x0*ca - z0*sa, z = x0*sa + z0*ca;
+      const y2 = y0*ct - z*st, z2 = y0*st + z*ct;
+      return [c + x*R, c - y2*R, z2];
+    };
+    const line = pts2 => {
+      for (let i = 1; i < pts2.length; i++) {
+        const [x1,y1,z1] = pts2[i-1], [x2,y2,z2] = pts2[i];
+        const zm = (z1+z2)/2;
+        ctx.strokeStyle = `rgba(${ink[0]},${ink[1]},${ink[2]},${zm > 0 ? 0.10 + 0.22*zm : 0.05})`;
+        ctx.lineWidth = zm > 0 ? 1 : 0.6;
+        ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2); ctx.stroke();
+      }
+    };
+    const D = Math.PI/180;
+    for (let lon = 0; lon < 360; lon += 30) { const a2 = []; for (let lat = -90; lat <= 90; lat += 6) a2.push(P(lat*D, lon*D)); line(a2); }
+    for (let lat = -60; lat <= 60; lat += 30) { const a2 = []; for (let lon = 0; lon <= 360; lon += 6) a2.push(P(lat*D, lon*D)); line(a2); }
+    ctx.beginPath(); ctx.arc(c, c, R, 0, Math.PI*2);
+    ctx.strokeStyle = `rgba(${ink[0]},${ink[1]},${ink[2]},.35)`; ctx.lineWidth = 1.2; ctx.stroke();
     for (const q of proj) {
       const depth = (q.z+1.2)/2.4;
-      const sz = W*0.075*q.p.s*(0.55+0.6*depth);
+      if (q.z < -0.05) continue;
+      const sz = W*0.06*q.p.s*(0.55+0.6*depth);
       let alpha = 0.18 + 0.62*depth;
       if (focus && q.p.ax !== focus) alpha *= 0.18;
       ctx.globalAlpha = Math.max(0, Math.min(1, alpha));
