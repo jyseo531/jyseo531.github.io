@@ -3,6 +3,9 @@
 icon: fas fa-info-circle
 order: 4
 ---
+> **Research portfolio:** [jyseo531.github.io/portfolio](/portfolio/) — selected research with figures, publications and projects.
+{: .prompt-tip }
+
 Hi, I’m Jiyoung Seo, a master’s student in the Computer Vision Lab at **Korea University***(2025.03~)*. <br>
 I received a B.S. in Statistics and Artificial Intelligence(Double-Major) from the **University of Seoul***(2021~2025)*. <br>
 

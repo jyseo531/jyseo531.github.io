@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jiyoung Seo — Research Portfolio</title>
+<meta name="description" content="Jiyoung Seo, M.S. student at Korea University. Research on egocentric motion, grounded multimodal RAG, 3D scene editing and physical AI, toward world models for games and robots.">
+<link rel="icon" href="/assets/img/favicons/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EDEFF2; --surface:#FFFFFF; --ink:#1F2328; --muted:#5B636E; --line:#D5D9DF; --grid:rgba(31,35,40,.06);
+  --x:#D63A3A; --y:#23955A; --z:#2E5FD6;
+  --x-soft:rgba(214,58,58,.10); --y-soft:rgba(35,149,90,.10); --z-soft:rgba(46,95,214,.10);
+  --wide:"wdth" 125; --narrow:"wdth" 100;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#1C1F24; --surface:#24282E; --ink:#E8EBEF; --muted:#9AA3AE; --line:#363C44; --grid:rgba(232,235,239,.05);
+    --x:#FF6B6B; --y:#4CC38A; --z:#6F98FF; --x-soft:rgba(255,107,107,.12); --y-soft:rgba(76,195,138,.12); --z-soft:rgba(111,152,255,.12);}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Archivo",system-ui,sans-serif;font-variation-settings:var(--narrow);font-size:17px;line-height:1.6;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:32px 32px;}
+a{color:inherit;text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{color:var(--z)}
+:focus-visible{outline:2px solid var(--z);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* header */
+.top{display:flex;justify-content:space-between;align-items:center;padding:20px 0;gap:16px;flex-wrap:wrap}
+.top .me{font-weight:700;text-decoration:none;font-variation-settings:var(--wide);letter-spacing:-.01em}
+.top nav{display:flex;gap:20px;flex-wrap:wrap;font-size:15px}
+.top nav a{text-decoration:none;color:var(--muted)}
+.top nav a:hover{color:var(--ink)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding:48px 0 56px}
+h1{font-size:clamp(48px,8vw,104px);line-height:.9;margin:0 0 28px;font-weight:800;font-variation-settings:"wdth" 125;letter-spacing:-.03em}
+h1 span{display:block}
+.lead{font-size:clamp(19px,2.1vw,23px);line-height:1.45;margin:0 0 24px;max-width:30em}
+.meta{margin:0;padding:0;list-style:none;color:var(--muted);font-size:15px;display:grid;gap:4px}
+.meta strong{color:var(--ink);font-weight:600}
+.links{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-block;padding:10px 16px;border:1.5px solid var(--ink);border-radius:999px;text-decoration:none;font-weight:600;font-size:15px}
+.btn.solid{background:var(--ink);color:var(--bg)}
+.btn.solid:hover{background:var(--z);border-color:var(--z);color:#fff}
+.btn:hover{border-color:var(--z)}
+
+/* loop diagram */
+.loop{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:20px 20px 16px;position:relative}
+.loop svg{width:100%;height:auto;display:block}
+.loop .cap{font-size:14px;color:var(--muted);margin:8px 4px 0}
+.node{cursor:pointer}
+.node circle.halo{transition:r .2s}
+.node:hover circle.halo,.node:focus-visible circle.halo{r:62}
+.node text{font-family:"Archivo",sans-serif}
+.lbl{font-size:17px;font-weight:700;fill:var(--ink)}
+.sub{font-size:12.5px;fill:var(--muted)}
+.arc{fill:none;stroke:var(--line);stroke-width:2.5}
+.core{font-size:15px;font-weight:700;fill:var(--ink)}
+.pulse{fill:var(--ink)}
+@media (prefers-reduced-motion: reduce){.pulse{display:none}}
+
+/* sections */
+section{padding:56px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(30px,4vw,44px);line-height:1.05;margin:0 0 8px;font-weight:800;font-variation-settings:var(--wide);letter-spacing:-.02em}
+.intro{color:var(--muted);margin:0 0 36px;max-width:40em}
+
+/* research entries */
+.work{display:grid;grid-template-columns:5fr 6fr;gap:36px;padding:36px 0;border-bottom:1px solid var(--line);scroll-margin-top:24px}
+.work:last-child{border-bottom:0}
+.axis{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;padding:4px 10px 4px 8px;border-radius:999px;margin-bottom:14px}
+.axis::before{content:"";width:10px;height:10px;border-radius:50%;background:currentColor}
+.ax-x{color:var(--x);background:var(--x-soft)} .ax-y{color:var(--y);background:var(--y-soft)} .ax-z{color:var(--z);background:var(--z-soft)}
+.work h3{font-size:clamp(24px,2.6vw,30px);line-height:1.15;margin:0 0 6px;font-weight:800;font-variation-settings:"wdth" 112;letter-spacing:-.015em}
+.venue{color:var(--muted);font-size:15px;margin:0 0 16px}
+.venue b{color:var(--ink);font-weight:600}
+.work p{margin:0 0 12px;max-width:36em}
+.work ul{margin:0 0 16px;padding-left:20px;max-width:36em}
+.work li{margin-bottom:6px}
+.result{display:flex;align-items:baseline;gap:12px;margin:18px 0 14px;flex-wrap:wrap}
+.result .n{font-size:40px;font-weight:800;font-variation-settings:var(--wide);line-height:1;letter-spacing:-.02em}
+.result .d{color:var(--muted);font-size:15px;max-width:22em}
+.wl{display:flex;gap:16px;font-size:15px;font-weight:600}
+.fig{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px;align-self:start}
+.fig img{width:100%;height:auto;display:block;border-radius:6px}
+.fig figcaption{font-size:13.5px;color:var(--muted);padding:10px 4px 2px}
+.fig img + img{margin-top:10px}
+
+/* physical pipeline svg */
+.pipe text{font-family:"Archivo",sans-serif}
+
+/* publications */
+.pubs{list-style:none;margin:0;padding:0;counter-reset:p}
+.pubs li{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid var(--line)}
+.pubs .when{font-weight:700;font-variation-settings:"wdth" 112}
+.pubs .when small{display:block;font-weight:400;color:var(--muted);font-size:14px;font-variation-settings:var(--narrow)}
+.pubs .t{font-weight:600;margin:0 0 4px}
+.pubs .a{color:var(--muted);font-size:15px;margin:0 0 6px}
+.pubs .a b{color:var(--ink)}
+.pubs .l{font-size:15px;display:flex;gap:14px}
+
+/* journey */
+.journey{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:0;counter-reset:j;position:relative}
+.journey li{padding:20px 18px 0 0;border-top:3px solid var(--ink);position:relative}
+.journey li:last-child{border-top-style:dashed}
+.journey li::before{content:"";position:absolute;top:-9px;left:0;width:15px;height:15px;border-radius:50%;background:var(--bg);border:3px solid var(--ink)}
+.journey .y{font-size:14px;color:var(--muted);display:block}
+.journey .s{font-weight:800;font-size:19px;font-variation-settings:"wdth" 112;display:block;margin:2px 0 6px;line-height:1.2}
+.journey p{margin:0;font-size:15px;color:var(--muted)}
+
+/* table */
+table{width:100%;border-collapse:collapse;font-size:15.5px}
+th,td{text-align:left;padding:12px 12px 12px 0;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;color:var(--muted);font-size:14px}
+td.r{white-space:nowrap}
+.win{font-weight:700;color:var(--x)}
+
+/* notes */
+.notes{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.note{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px 24px}
+.note h3{margin:0 0 6px;font-size:20px;font-variation-settings:"wdth" 112}
+.note p{margin:0 0 12px;color:var(--muted);font-size:15.5px}
+
+footer{padding:40px 0 64px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:15px}
+footer a{color:var(--ink)}
+
+@media (max-width:880px){
+  .hero{grid-template-columns:1fr;padding-top:24px}
+  .work{grid-template-columns:1fr;gap:20px}
+  .journey{grid-template-columns:1fr;border-left:3px solid var(--ink);margin-left:6px}
+  .journey li{border-top:0;padding:0 0 22px 22px}
+  .journey li:last-child{border-top:0}
+  .journey li::before{top:4px;left:-9px}
+  .pubs li{grid-template-columns:1fr;gap:4px}
+  .notes{grid-template-columns:1fr}
+  td.r{white-space:normal}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .wrap{padding:0 16px}
+  .tbl{overflow-x:auto}
+  table{min-width:520px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="me" href="/portfolio/">Jiyoung Seo</a>
+    <nav aria-label="Sections">
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#journey">Journey</a>
+      <a href="#projects">Projects</a>
+      <a href="/">Blog</a>
+    </nav>
+  </header>
+
+  <main>
+  <div class="hero">
+    <div>
+      <h1><span>Jiyoung</span><span>Seo</span></h1>
+      <p class="lead">I research AI that perceives how people move, reasons with grounded knowledge, and predicts how 3D worlds respond. These are the pieces a world model needs, for games and for robots.</p>
+      <ul class="meta">
+        <li><strong>M.S. in Artificial Intelligence</strong>, Korea University Computer Vision Lab (KUAICV), graduating Feb 2027</li>
+        <li><strong>5 papers</strong> including CVPR 2026, CVPR 2025 and a first-author IEEE Access article</li>
+        <li><strong>B.S.</strong> Statistics and Artificial Intelligence, University of Seoul</li>
+      </ul>
+      <div class="links">
+        <a class="btn solid" href="#research">See the research</a>
+        <a class="btn" href="mailto:tjwldud0531@korea.ac.kr">Email me</a>
+        <a class="btn" href="https://github.com/jyseo531">GitHub</a>
+      </div>
+    </div>
+
+    <figure class="loop" style="margin:0">
+      <svg viewBox="0 0 520 470" role="img" aria-labelledby="loopt loopd">
+        <title id="loopt">The perceive, reason, predict loop</title>
+        <desc id="loopd">Three research directions arranged as a loop around a world model: perceive motion (Ego-Bi), reason with grounded knowledge (M3KG-RAG), and predict 3D worlds and physics (EditSplat and physical AI). Each node links to the matching research.</desc>
+        <defs>
+          <marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--muted)"/></marker>
+        </defs>
+        <!-- arcs: P(260,80) -> R(430,370) -> W(90,370) -> P -->
+        <path id="a1" class="arc" d="M318,108 Q420,170 430,300" marker-end="url(#ah)"/>
+        <path id="a2" class="arc" d="M362,398 Q260,440 158,398" marker-end="url(#ah)"/>
+        <path id="a3" class="arc" d="M90,300 Q100,170 202,108" marker-end="url(#ah)"/>
+        <path id="loopPath" d="M318,108 Q420,170 430,300 M362,398 Q260,440 158,398 M90,300 Q100,170 202,108" fill="none" stroke="none"/>
+        <!-- core -->
+        <circle cx="260" cy="262" r="58" fill="none" stroke="var(--ink)" stroke-width="1.5" stroke-dasharray="4 5"/>
+        <text class="core" x="260" y="258" text-anchor="middle">World</text>
+        <text class="core" x="260" y="277" text-anchor="middle">model</text>
+        <!-- axis gizmo -->
+        <g transform="translate(470,52)" aria-hidden="true" stroke-linecap="round">
+          <line x1="0" y1="0" x2="26" y2="0" stroke="var(--x)" stroke-width="3"/>
+          <line x1="0" y1="0" x2="0" y2="-26" stroke="var(--y)" stroke-width="3"/>
+          <line x1="0" y1="0" x2="-16" y2="16" stroke="var(--z)" stroke-width="3"/>
+        </g>
+        <!-- nodes -->
+        <a class="node" href="#ego-bi" aria-label="Perceive: Ego-Bi, egocentric motion">
+          <circle class="halo" cx="260" cy="80" r="56" fill="var(--x-soft)"/>
+          <circle cx="260" cy="80" r="46" fill="var(--surface)" stroke="var(--x)" stroke-width="3"/>
+          <text class="lbl" x="260" y="78" text-anchor="middle">Perceive</text>
+          <text class="sub" x="260" y="96" text-anchor="middle">motion</text>
+        </a>
+        <a class="node" href="#m3kg-rag" aria-label="Reason: M3KG-RAG, grounded knowledge">
+          <circle class="halo" cx="430" cy="370" r="56" fill="var(--y-soft)"/>
+          <circle cx="430" cy="370" r="46" fill="var(--surface)" stroke="var(--y)" stroke-width="3"/>
+          <text class="lbl" x="430" y="368" text-anchor="middle">Reason</text>
+          <text class="sub" x="430" y="386" text-anchor="middle">knowledge</text>
+        </a>
+        <a class="node" href="#editsplat" aria-label="Predict: EditSplat and physical AI, 3D worlds and physics">
+          <circle class="halo" cx="90" cy="370" r="56" fill="var(--z-soft)"/>
+          <circle cx="90" cy="370" r="46" fill="var(--surface)" stroke="var(--z)" stroke-width="3"/>
+          <text class="lbl" x="90" y="368" text-anchor="middle">Predict</text>
+          <text class="sub" x="90" y="386" text-anchor="middle">3D · physics</text>
+        </a>
+        <circle class="pulse" r="5">
+          <animateMotion dur="6s" repeatCount="indefinite" path="M318,108 Q420,170 430,300 L362,398 Q260,440 158,398 L90,300 Q100,170 202,108 Z"/>
+        </circle>
+      </svg>
+      <figcaption class="cap">Each node opens the research behind it. Colors follow the X, Y, Z axes of a 3D viewport and mark the same three directions throughout the page.</figcaption>
+    </figure>
+  </div>
+
+  <section id="research" aria-labelledby="h-research">
+    <h2 id="h-research">Research</h2>
+    <p class="intro">Four projects, one per direction of the loop. Each started from a problem existing data or methods could not answer.</p>
+
+    <article class="work" id="ego-bi">
+      <div>
+        <span class="axis ax-x">Perceive · motion</span>
+        <h3>Ego-Bi: telling apart actions that differ only in direction</h3>
+        <p class="venue"><b>IEEE Access 2026</b>, first author</p>
+        <p>Tightening and loosening a screw look the same in a single frame. Existing datasets barely contained such bidirectional pairs, so models confused them.</p>
+        <ul>
+          <li>Recorded real hand-tool work from the first-person view: 1,200+ sequences, 622,737 frames, 19 fine-grained actions, and wrote the annotation guide.</li>
+          <li>Designed the Bidirectional Motion-Prior (BMP) module, which accumulates rotation and wrist direction from 3D hand joints over time.</li>
+        </ul>
+        <div class="result"><span class="n" style="color:var(--x)">+8.96%p</span><span class="d">Top-1 accuracy on Ego-Bi, 83.15% → 92.11%, with gains on FPHA and H2O as well</span></div>
+        <div class="wl"><a href="https://ieeexplore.ieee.org/document/11345097">Paper</a></div>
+      </div>
+      <figure class="fig">
+        <img src="/assets/img/portfolio/egobi-samples.jpg" alt="Ego-Bi dataset samples: first-person frames of clamp and unscrew actions with hand type and object labels" loading="lazy" width="1122" height="670">
+        <img src="/assets/img/portfolio/egobi-bmp.jpg" alt="Architecture of the BMP-based action recognition framework with motion, object and hand-type branches" loading="lazy" width="1600" height="747">
+        <figcaption>Dataset samples and the BMP framework.</figcaption>
+      </figure>
+    </article>
+
+    <article class="work" id="m3kg-rag">
+      <div>
+        <span class="axis ax-y">Reason · knowledge</span>
+        <h3>M³KG-RAG: retrieval that checks its own evidence</h3>
+        <p class="venue"><b>CVPR 2026</b>, second author</p>
+        <p>Audio-visual LLMs given outside knowledge often get worse answers, because single-hop graphs and embedding search pull in facts unrelated to the clip.</p>
+        <ul>
+          <li>Built a pipeline in which seven role-specific LLM agents turn raw audio, video and text into a multi-hop knowledge graph with no human labeling.</li>
+          <li>Proposed the core idea of GRASP: keep a retrieved fact only if visual and audio grounding confirm it appears in the clip, then let a small LLM prune what does not help the answer.</li>
+          <li>Set up the LLM-as-a-Judge protocol and hand-scored samples to check the judge.</li>
+        </ul>
+        <div class="result"><span class="n" style="color:var(--y)">+9.23</span><span class="d">LLM-as-a-Judge points over prior work, with win rates up to 86.3% across audio, video and audio-visual QA</span></div>
+        <div class="wl"><a href="https://arxiv.org/pdf/2512.20136">Paper</a></div>
+      </div>
+      <figure class="fig">
+        <img src="/assets/img/portfolio/m3kg-pipeline.jpg" alt="Multi-agent pipeline that extracts, grounds and refines knowledge graph triplets" loading="lazy" width="1600" height="520">
+        <img src="/assets/img/portfolio/m3kg-grasp.jpg" alt="GRASP: modality-wise retrieval followed by visual and audio grounding and selective pruning before the multimodal LLM" loading="lazy" width="1600" height="579">
+        <figcaption>The agent pipeline that builds the graph, and GRASP retrieval.</figcaption>
+      </figure>
+    </article>
+
+    <article class="work" id="editsplat">
+      <div>
+        <span class="axis ax-z">Predict · 3D worlds</span>
+        <h3>EditSplat: text edits that stay consistent from every view</h3>
+        <p class="venue"><b>CVPR 2025</b>, third author</p>
+        <p>Editing a 3D Gaussian Splatting scene with a 2D diffusion model view by view makes the result disagree between viewpoints.</p>
+        <ul>
+          <li>The method fuses multi-view information into diffusion guidance and trims Gaussians where attention says the edit must happen.</li>
+          <li>My part: reproduced the baselines, ran the comparisons, selected and checked qualitative results, and built the project page.</li>
+        </ul>
+        <div class="wl"><a href="https://arxiv.org/pdf/2412.11520">Paper</a><a href="https://kuai-lab.github.io/editsplat2024/">Project page</a></div>
+      </div>
+      <figure class="fig">
+        <img src="/assets/img/portfolio/editsplat.jpg" alt="EditSplat overview: multi-view fusion, multi-view fusion guidance in the diffusion network, and attention-guided trimming of 3D Gaussians" loading="lazy" width="1600" height="542">
+        <figcaption>Multi-view fusion guidance and attention-guided trimming.</figcaption>
+      </figure>
+    </article>
+
+    <article class="work" id="physical-ai">
+      <div>
+        <span class="axis ax-z">Predict · physics</span>
+        <h3>Recovering what objects are made of, from video</h3>
+        <p class="venue"><b>In progress</b>, first author, submission planned for Nov 2026</p>
+        <p>A world model should know not only how a scene looks but how it reacts when touched. This project estimates hidden material properties from multi-view video of dynamic scenes.</p>
+        <ul>
+          <li>Redefined contact between different materials in a differentiable form, after the standard contact handling made training unstable.</li>
+          <li>There are no ground-truth labels, so I built the evaluation from simple cases whose physical quantities are known.</li>
+        </ul>
+      </div>
+      <figure class="fig">
+        <svg class="pipe" viewBox="0 0 560 210" role="img" aria-labelledby="pt pd" style="width:100%;height:auto">
+          <title id="pt">Physical property estimation loop</title>
+          <desc id="pd">Multi-view video is reconstructed with 4D Gaussians, simulated with contact handling, compared with observations, and the error updates the estimated material properties.</desc>
+          <defs><marker id="ah2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="var(--muted)"/></marker></defs>
+          <g font-size="14">
+            <rect x="8" y="40" width="118" height="70" rx="10" fill="var(--surface)" stroke="var(--line)" stroke-width="1.5"/>
+            <text x="67" y="72" text-anchor="middle" font-weight="700" fill="var(--ink)">Multi-view</text>
+            <text x="67" y="90" text-anchor="middle" fill="var(--muted)" font-size="12.5">dynamic video</text>
+            <rect x="146" y="40" width="118" height="70" rx="10" fill="var(--surface)" stroke="var(--line)" stroke-width="1.5"/>
+            <text x="205" y="72" text-anchor="middle" font-weight="700" fill="var(--ink)">4DGS</text>
+            <text x="205" y="90" text-anchor="middle" fill="var(--muted)" font-size="12.5">reconstruction</text>
+            <rect x="284" y="40" width="128" height="70" rx="10" fill="var(--z-soft)" stroke="var(--z)" stroke-width="2"/>
+            <text x="348" y="72" text-anchor="middle" font-weight="700" fill="var(--ink)">Simulation</text>
+            <text x="348" y="90" text-anchor="middle" fill="var(--muted)" font-size="12.5">multi-material contact</text>
+            <rect x="432" y="40" width="120" height="70" rx="10" fill="var(--surface)" stroke="var(--line)" stroke-width="1.5"/>
+            <text x="492" y="72" text-anchor="middle" font-weight="700" fill="var(--ink)">Compare</text>
+            <text x="492" y="90" text-anchor="middle" fill="var(--muted)" font-size="12.5">sim vs. observed</text>
+            <line x1="126" y1="75" x2="144" y2="75" stroke="var(--muted)" stroke-width="2" marker-end="url(#ah2)"/>
+            <line x1="264" y1="75" x2="282" y2="75" stroke="var(--muted)" stroke-width="2" marker-end="url(#ah2)"/>
+            <line x1="412" y1="75" x2="430" y2="75" stroke="var(--muted)" stroke-width="2" marker-end="url(#ah2)"/>
+            <path d="M492,110 L492,170 L348,170 L348,114" fill="none" stroke="var(--z)" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#ah2)"/>
+            <text x="420" y="196" text-anchor="middle" fill="var(--z)" font-weight="600">update material properties</text>
+          </g>
+        </svg>
+        <figcaption>Estimation loop, simplified.</figcaption>
+      </figure>
+    </article>
+  </section>
+
+  <section id="publications" aria-labelledby="h-pubs">
+    <h2 id="h-pubs">Publications</h2>
+    <p class="intro">Newest first.</p>
+    <ol class="pubs">
+      <li><span class="when">CVPR 2026<small>second author</small></span>
+        <div><p class="t">M³KG-RAG: Multi-hop Multimodal Knowledge Graph-enhanced Retrieval-Augmented Generation</p>
+        <p class="a">H Park, <b>J Seo</b>, J Moon, H Park, W Byeon, S Kim, H Im, J Lee, S Kim</p>
+        <p class="l"><a href="https://arxiv.org/pdf/2512.20136">Paper</a></p></div></li>
+      <li><span class="when">IEEE Access<small>first author, 2026</small></span>
+        <div><p class="t">Egocentric Hand Activity Video Dataset and Bidirectional Motion-Priors for Hand Action Recognition</p>
+        <p class="a"><b>J Seo</b>, D Lee, P Lee, J Lee, Y Gil, K Ramani, S Kim</p>
+        <p class="l"><a href="https://ieeexplore.ieee.org/document/11345097">Paper</a></p></div></li>
+      <li><span class="when">arXiv 2025<small>second author</small></span>
+        <div><p class="t">VAT-KG: Knowledge-Intensive Multimodal Knowledge Graph Dataset for Retrieval-Augmented Generation</p>
+        <p class="a">H Park, <b>J Seo</b>, M Jang, H Baek, G Chang, H Park, S Kim</p>
+        <p class="l"><a href="https://arxiv.org/pdf/2506.21556">Paper</a><a href="https://vatkg.github.io">Project page</a></p></div></li>
+      <li><span class="when">arXiv 2025<small>third author, under review</small></span>
+        <div><p class="t">AV-Surf: Surface-Enhanced Geometry-Aware Novel-View Acoustic Synthesis</p>
+        <p class="a">H Baek, H Shin, <b>J Seo</b>, C Kim, S Kim, H Kim, S Kim</p>
+        <p class="l"><a href="https://arxiv.org/pdf/2503.12806">Paper</a><a href="https://avsurf.github.io/">Project page</a></p></div></li>
+      <li><span class="when">CVPR 2025<small>third author</small></span>
+        <div><p class="t">EditSplat: Multi-View Fusion and Attention-Guided Optimization for View-Consistent 3D Scene Editing with 3D Gaussian Splatting</p>
+        <p class="a">D Lee, H Park, <b>J Seo</b>, E Park, H Park, H Baek, S Shin, S Kim, S Kim</p>
+        <p class="l"><a href="https://arxiv.org/pdf/2412.11520">Paper</a><a href="https://kuai-lab.github.io/editsplat2024/">Project page</a></p></div></li>
+    </ol>
+  </section>
+
+  <section id="journey" aria-labelledby="h-journey">
+    <h2 id="h-journey">How the research moved</h2>
+    <p class="intro">Each step took the question one layer closer to a world that responds to actions.</p>
+    <ol class="journey">
+      <li><span class="y">2023</span><span class="s">Agents in games</span><p>Trained reinforcement learning agents in the VizDoom environment.</p></li>
+      <li><span class="y">2024</span><span class="s">Audio and speech</span><p>Dialect speech to standard speech, end to end. Then sound for new viewpoints in AV-Surf.</p></li>
+      <li><span class="y">2024–2025</span><span class="s">3D scenes</span><p>Consistent 3D editing with Gaussian Splatting in EditSplat.</p></li>
+      <li><span class="y">2025–2026</span><span class="s">Motion and knowledge</span><p>Egocentric motion in Ego-Bi, grounded multimodal knowledge in VAT-KG and M³KG-RAG.</p></li>
+      <li><span class="y">Now</span><span class="s">Physics</span><p>Inferring material properties so a reconstructed scene reacts like the real one.</p></li>
+    </ol>
+  </section>
+
+  <section id="projects" aria-labelledby="h-projects">
+    <h2 id="h-projects">Projects and awards</h2>
+    <p class="intro">Outside the lab, mostly as team lead.</p>
+    <div class="tbl">
+    <table>
+      <thead><tr><th scope="col">When</th><th scope="col">What</th><th scope="col">Role</th><th scope="col">Outcome</th></tr></thead>
+      <tbody>
+        <tr><td class="r">Jan 2024</td><td>AICOSS Hackathon (Dacon): multi-label classification of satellite images</td><td>Participant</td><td><span class="win">7th place, HD Hyundai Site Solution Award.</span> Rebalanced a heavily skewed label set with tempered sigmoid, logit adjustment and ASL, then tuned per-class thresholds for mAP.</td></tr>
+        <tr><td class="r">Mar–Jul 2024</td><td>TAVE, computer vision track</td><td>Presenter</td><td>Compared HRNet and Faster R-CNN for 24-point body keypoint detection with 5-fold cross-validation.</td></tr>
+        <tr><td class="r">Jan–Apr 2024</td><td>Deep daiv, audio deep learning</td><td>Team lead</td><td>Dialect speech recognition, translation to standard Korean with Ko-BART, and speech synthesis with FastSpeech2, evaluated by CER. <a href="https://github.com/jyseo531/2024_Audio_deeplearning">Code</a></td></tr>
+        <tr><td class="r">Sep–Dec 2023</td><td>NLP course project</td><td>Team lead</td><td>Built 2,400 YouTube subtitle and comment pairs and fine-tuned LLaMA2-7B with PEFT to write context-aware comments.</td></tr>
+        <tr><td class="r">Sep–Dec 2023</td><td>Reinforcement learning course</td><td>Participant</td><td>Trained agents in VizDoom. <a href="https://github.com/jyseo531/VizDoom">Code</a></td></tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <section id="notes" aria-labelledby="h-notes">
+    <h2 id="h-notes">Notes</h2>
+    <p class="intro">I keep study notes on this site.</p>
+    <div class="notes">
+      <div class="note"><h3>Computer graphics</h3><p>Raster images, ray tracing, transformation matrices, viewing, the graphics pipeline, signal processing and surface shading.</p><a href="/categories/">Browse categories</a></div>
+      <div class="note"><h3>3D vision paper reviews</h3><p>2DGS, SuGaR, RaDe-GS, Mip-NeRF 360, PERSONA, 3D-LLM, Pixie, DrivingGaussian++ and more.</p><a href="/">Read the blog</a></div>
+    </div>
+  </section>
+  </main>
+
+  <footer>
+    <span>Jiyoung Seo · Seoul, Korea</span>
+    <span><a href="mailto:tjwldud0531@korea.ac.kr">tjwldud0531@korea.ac.kr</a> &nbsp; <a href="https://github.com/jyseo531">GitHub</a> &nbsp; <a href="https://www.linkedin.com/in/jiyoung-seo-643238349/">LinkedIn</a></span>
+  </footer>
+</div>
+</body>
+</html>
