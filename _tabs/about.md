@@ -51,14 +51,14 @@ Since July 2024, I have been working as an Undergrad research intern, involved i
 > ##### ***Under Review*** 
 > Sep 2025 <br>
 > 2nd author *(H Park, **J Seo**, M Jang, H Baek, G Chang, H Park, S Kim)*  <br>
-> [paper](https://arxiv.org/pdf/2506.21556) |
-> [project-page](https://vatkg.github.io)
+> [paper](https://arxiv.org/pdf/2506.21556)
 
 > #### M³KG-RAG: Multi-hop Multimodal Knowledge Graph-enhanced Retrieval-Augmented Generation <span style="color:grey"> </span>
 > ##### **CVPR 2026 (Published)**
 > Nov 2025 <br>
 > 2nd author *(H Park, **J Seo**, J Moon, H Park, W Byeon, S Kim, H Im, J Lee, S Kim)*  <br>
-> [paper](https://arxiv.org/pdf/2512.20136) 
+> [paper](https://arxiv.org/pdf/2512.20136) |
+> [project-page](https://kuai-lab.github.io/cvpr2026m3kgrag/)
 
 > #### Coming Soon!
 
