@@ -100,6 +100,9 @@ h2{font-size:clamp(30px,4vw,44px);line-height:1.05;margin:0 0 8px;font-weight:80
 .fig img.narrow,.fig img.narrow2{width:82%;margin-left:auto;margin-right:auto}
 @media (max-width:880px){.fig img.narrow,.fig img.narrow2{width:100%}}
 .work .wide{grid-column:1/-1}
+.fig img.qual{width:76%;margin:0 auto}
+.fig .qcap{text-align:center}
+@media (max-width:880px){.fig img.qual{width:100%}.fig .qcap{text-align:left}}
 
 /* physical pipeline svg */
 .pipe text{font-family:"Archivo",sans-serif}
@@ -293,8 +296,8 @@ footer a{color:var(--ink)}
         <figcaption>The agent pipeline that builds the graph, and GRASP retrieval.</figcaption>
       </figure>
       <figure class="fig wide">
-        <img src="/assets/img/portfolio/m3kg-qualitative.jpg" alt="Audio-visual question answering examples: on a stage clip, the base model invents a keyboard player while M3KG-RAG correctly names two bagpipes and two drums; on a clip of a hair dryer on a carpet, the base model calls it a speaker while M3KG-RAG identifies the hair dryer and its sound" loading="lazy" width="2200" height="815">
-        <figcaption>Qualitative results from the paper on audio-visual QA. Without retrieval, Qwen2.5-Omni adds a keyboard player to the stage and mistakes a hair dryer for a speaker. With M³KG-RAG, both answers match what is seen and heard.</figcaption>
+        <img class="qual" src="/assets/img/portfolio/m3kg-qualitative.jpg" alt="Audio-visual question answering examples: on a stage clip, the base model invents a keyboard player while M3KG-RAG correctly names two bagpipes and two drums; on a clip of a hair dryer on a carpet, the base model calls it a speaker while M3KG-RAG identifies the hair dryer and its sound" loading="lazy" width="2200" height="815">
+        <figcaption class="qcap">Audio-visual QA examples from the paper. Red marks wrong answers, blue marks correct ones.</figcaption>
       </figure>
     </article>
 
