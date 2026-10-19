@@ -39,8 +39,8 @@ a:hover{color:var(--z)}
 
 /* hero */
 .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding:48px 0 56px}
-h1{font-size:clamp(48px,8vw,104px);line-height:.9;margin:0 0 28px;font-weight:800;font-variation-settings:"wdth" 125;letter-spacing:-.03em}
-h1 span{display:block}
+h1{font-size:clamp(40px,5.4vw,72px);line-height:1;margin:0 0 24px;font-weight:800;font-variation-settings:"wdth" 125;letter-spacing:-.025em;white-space:nowrap}
+@media (max-width:420px){h1{white-space:normal}}
 .lead{font-size:clamp(19px,2.1vw,23px);line-height:1.45;margin:0 0 24px;max-width:30em}
 .meta{margin:0;padding:0;list-style:none;color:var(--muted);font-size:15px;display:grid;gap:4px}
 .meta strong{color:var(--ink);font-weight:600}
@@ -61,7 +61,14 @@ h1 span{display:block}
 .lbl{font-size:17px;font-weight:700;fill:var(--ink)}
 .sub{font-size:12.5px;fill:var(--muted)}
 .arc{fill:none;stroke:var(--line);stroke-width:2.5}
-.core{font-size:15px;font-weight:700;fill:var(--ink)}
+.core{font-size:16px;font-weight:800;fill:var(--ink);font-variation-settings:"wdth" 112}
+.core-sub{font-size:12px;fill:var(--muted)}
+.stage{position:relative}
+.stage canvas{position:absolute;left:50%;top:53.4%;width:38%;aspect-ratio:1;transform:translate(-50%,-50%);pointer-events:none}
+.ring{fill:none;stroke:var(--line);stroke-width:1.2}
+.ring.spin{stroke-dasharray:2 7;transform-origin:260px 251px;animation:spin 40s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion: reduce){.ring.spin{animation:none}}
 .pulse{fill:var(--ink)}
 @media (prefers-reduced-motion: reduce){.pulse{display:none}}
 
@@ -90,6 +97,7 @@ h2{font-size:clamp(30px,4vw,44px);line-height:1.05;margin:0 0 8px;font-weight:80
 .fig img{width:100%;height:auto;display:block;border-radius:6px}
 .fig figcaption{font-size:13.5px;color:var(--muted);padding:10px 4px 2px}
 .fig img + img{margin-top:10px}
+.work .wide{grid-column:1/-1}
 
 /* physical pipeline svg */
 .pipe text{font-family:"Archivo",sans-serif}
@@ -164,7 +172,7 @@ footer a{color:var(--ink)}
   <main>
   <div class="hero">
     <div>
-      <h1><span>Jiyoung</span><span>Seo</span></h1>
+      <h1>Jiyoung Seo</h1>
       <p class="lead">I research AI that perceives how people move, reasons with grounded knowledge, and predicts how 3D worlds respond. These are the pieces a world model needs, for games and for robots.</p>
       <ul class="meta">
         <li><strong>M.S. in Artificial Intelligence</strong>, Korea University Computer Vision Lab (KUAICV), graduating Feb 2027</li>
@@ -179,6 +187,7 @@ footer a{color:var(--ink)}
     </div>
 
     <figure class="loop" style="margin:0">
+      <div class="stage" id="stage">
       <svg viewBox="0 0 520 470" role="img" aria-labelledby="loopt loopd">
         <title id="loopt">The perceive, reason, predict loop</title>
         <desc id="loopd">Three research directions arranged as a loop around a world model: perceive motion (Ego-Bi), reason with grounded knowledge (M3KG-RAG), and predict 3D worlds and physics (EditSplat and physical AI). Each node links to the matching research.</desc>
@@ -191,9 +200,10 @@ footer a{color:var(--ink)}
         <path id="a3" class="arc" d="M90,300 Q100,170 202,108" marker-end="url(#ah)"/>
         <path id="loopPath" d="M318,108 Q420,170 430,300 M362,398 Q260,440 158,398 M90,300 Q100,170 202,108" fill="none" stroke="none"/>
         <!-- core -->
-        <circle cx="260" cy="262" r="58" fill="none" stroke="var(--ink)" stroke-width="1.5" stroke-dasharray="4 5"/>
-        <text class="core" x="260" y="258" text-anchor="middle">World</text>
-        <text class="core" x="260" y="277" text-anchor="middle">model</text>
+        <circle class="ring" cx="260" cy="251" r="104"/>
+        <circle class="ring spin" cx="260" cy="251" r="112"/>
+        <text class="core" x="260" y="378" text-anchor="middle">World model</text>
+        <text class="core-sub" x="260" y="395" text-anchor="middle">what happens next</text>
         <!-- axis gizmo -->
         <g transform="translate(470,52)" aria-hidden="true" stroke-linecap="round">
           <line x1="0" y1="0" x2="26" y2="0" stroke="var(--x)" stroke-width="3"/>
@@ -201,19 +211,19 @@ footer a{color:var(--ink)}
           <line x1="0" y1="0" x2="-16" y2="16" stroke="var(--z)" stroke-width="3"/>
         </g>
         <!-- nodes -->
-        <a class="node" href="#ego-bi" aria-label="Perceive: Ego-Bi, egocentric motion">
+        <a class="node" data-axis="x" href="#ego-bi" aria-label="Perceive: Ego-Bi, egocentric motion">
           <circle class="halo" cx="260" cy="80" r="56" fill="var(--x-soft)"/>
           <circle cx="260" cy="80" r="46" fill="var(--surface)" stroke="var(--x)" stroke-width="3"/>
           <text class="lbl" x="260" y="78" text-anchor="middle">Perceive</text>
           <text class="sub" x="260" y="96" text-anchor="middle">motion</text>
         </a>
-        <a class="node" href="#m3kg-rag" aria-label="Reason: M3KG-RAG, grounded knowledge">
+        <a class="node" data-axis="y" href="#m3kg-rag" aria-label="Reason: M3KG-RAG, grounded knowledge">
           <circle class="halo" cx="430" cy="370" r="56" fill="var(--y-soft)"/>
           <circle cx="430" cy="370" r="46" fill="var(--surface)" stroke="var(--y)" stroke-width="3"/>
           <text class="lbl" x="430" y="368" text-anchor="middle">Reason</text>
           <text class="sub" x="430" y="386" text-anchor="middle">knowledge</text>
         </a>
-        <a class="node" href="#editsplat" aria-label="Predict: EditSplat and physical AI, 3D worlds and physics">
+        <a class="node" data-axis="z" href="#editsplat" aria-label="Predict: EditSplat and physical AI, 3D worlds and physics">
           <circle class="halo" cx="90" cy="370" r="56" fill="var(--z-soft)"/>
           <circle cx="90" cy="370" r="46" fill="var(--surface)" stroke="var(--z)" stroke-width="3"/>
           <text class="lbl" x="90" y="368" text-anchor="middle">Predict</text>
@@ -223,7 +233,9 @@ footer a{color:var(--ink)}
           <animateMotion dur="6s" repeatCount="indefinite" path="M318,108 Q420,170 430,300 L362,398 Q260,440 158,398 L90,300 Q100,170 202,108 Z"/>
         </circle>
       </svg>
-      <figcaption class="cap">Each node opens the research behind it. Colors follow the X, Y, Z axes of a 3D viewport and mark the same three directions throughout the page.</figcaption>
+      <canvas id="splat" aria-hidden="true"></canvas>
+      </div>
+      <figcaption class="cap">The world model in the middle is drawn as a cloud of Gaussian splats, the same primitive used in EditSplat. Each node opens the research behind it. Colors follow the X, Y, Z axes of a 3D viewport and mark the same three directions throughout the page.</figcaption>
     </figure>
   </div>
 
@@ -287,6 +299,10 @@ footer a{color:var(--ink)}
       <figure class="fig">
         <img src="/assets/img/portfolio/editsplat.jpg" alt="EditSplat overview: multi-view fusion, multi-view fusion guidance in the diffusion network, and attention-guided trimming of 3D Gaussians" loading="lazy" width="1600" height="542">
         <figcaption>Multi-view fusion guidance and attention-guided trimming.</figcaption>
+      </figure>
+      <figure class="fig wide">
+        <img src="/assets/img/portfolio/editsplat-results.jpg" alt="Two source views of a bear statue, and the same two views after editing it into a wild boar and into a polar bear" loading="lazy" width="1800" height="251">
+        <figcaption>Results from the paper. Two source views of a bear statue, then the same views after “Turn the bear statue into a wild boar” and “Turn the bear statue into a polar bear”. The edit holds across viewpoints.</figcaption>
       </figure>
     </article>
 
@@ -402,5 +418,71 @@ footer a{color:var(--ink)}
     <span><a href="mailto:tjwldud0531@korea.ac.kr">tjwldud0531@korea.ac.kr</a> &nbsp; <a href="https://github.com/jyseo531">GitHub</a> &nbsp; <a href="https://www.linkedin.com/in/jiyoung-seo-643238349/">LinkedIn</a></span>
   </footer>
 </div>
+<script>
+(() => {
+  const cv = document.getElementById('splat'); if (!cv) return;
+  const stage = document.getElementById('stage');
+  const ctx = cv.getContext('2d');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+  const hex = h => { h = h.replace('#',''); return [0,2,4].map(i => parseInt(h.slice(i,i+2),16)); };
+  let cols, sprites;
+  const mkSprites = () => {
+    cols = { x: hex(css('--x')), y: hex(css('--y')), z: hex(css('--z')) };
+    sprites = {};
+    for (const k in cols) {
+      const c = document.createElement('canvas'); c.width = c.height = 64;
+      const g = c.getContext('2d'); const r = g.createRadialGradient(32,32,0,32,32,32);
+      const [R,G,B] = cols[k];
+      r.addColorStop(0, `rgba(${R},${G},${B},.95)`); r.addColorStop(.35, `rgba(${R},${G},${B},.5)`); r.addColorStop(1, `rgba(${R},${G},${B},0)`);
+      g.fillStyle = r; g.fillRect(0,0,64,64); sprites[k] = c;
+    }
+  };
+  // Gaussian cloud on a sphere: each splat keeps the axis it leans toward
+  const N = 620, pts = [];
+  const gauss = () => { let u=0,v=0; while(!u)u=Math.random(); while(!v)v=Math.random(); return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v); };
+  for (let i = 0; i < N; i++) {
+    let x=gauss(), y=gauss(), z=gauss(); const l=Math.hypot(x,y,z)||1;
+    const r = 1 + gauss()*0.07 - (Math.random()<.18 ? Math.random()*.45 : 0);
+    x=x/l*r; y=y/l*r; z=z/l*r;
+    const ax = Math.abs(x)>=Math.abs(y) && Math.abs(x)>=Math.abs(z) ? 'x' : (Math.abs(y)>=Math.abs(z) ? 'y' : 'z');
+    pts.push({x,y,z,ax,s:.6+Math.random()*.8});
+  }
+  let focus = null;
+  stage.querySelectorAll('.node').forEach(n => {
+    n.addEventListener('mouseenter', () => focus = n.dataset.axis);
+    n.addEventListener('focus', () => focus = n.dataset.axis);
+    n.addEventListener('mouseleave', () => focus = null);
+    n.addEventListener('blur', () => focus = null);
+  });
+  let W=0, dpr=1;
+  const size = () => { dpr = Math.min(2, devicePixelRatio||1); W = cv.clientWidth; cv.width = cv.height = Math.round(W*dpr); };
+  const draw = t => {
+    ctx.setTransform(dpr,0,0,dpr,0,0); ctx.clearRect(0,0,W,W);
+    const a = t*0.00022, tilt = 0.38, ca=Math.cos(a), sa=Math.sin(a), ct=Math.cos(tilt), st=Math.sin(tilt);
+    const R = W*0.36*(1+0.025*Math.sin(t*0.0012)), c = W/2;
+    const proj = pts.map(p => {
+      let x = p.x*ca - p.z*sa, z = p.x*sa + p.z*ca, y = p.y;
+      const y2 = y*ct - z*st, z2 = y*st + z*ct;
+      return {x:c + x*R, y:c - y2*R, z:z2, p};
+    }).sort((u,v) => u.z - v.z);
+    for (const q of proj) {
+      const depth = (q.z+1.2)/2.4;
+      const sz = W*0.075*q.p.s*(0.55+0.6*depth);
+      let alpha = 0.18 + 0.62*depth;
+      if (focus && q.p.ax !== focus) alpha *= 0.18;
+      ctx.globalAlpha = Math.max(0, Math.min(1, alpha));
+      ctx.drawImage(sprites[q.p.ax], q.x-sz/2, q.y-sz/2, sz, sz);
+    }
+    ctx.globalAlpha = 1;
+    if (!reduce) requestAnimationFrame(draw);
+  };
+  mkSprites(); size();
+  addEventListener('resize', () => { size(); if (reduce) draw(0); });
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => { mkSprites(); if (reduce) draw(0); });
+  if (reduce) { draw(0); stage.querySelectorAll('.node').forEach(n => ['mouseenter','mouseleave','focus','blur'].forEach(e => n.addEventListener(e, () => draw(0)))); }
+  else requestAnimationFrame(draw);
+})();
+</script>
 </body>
 </html>
